@@ -3,6 +3,14 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
+  images: {
+    protocol: "https",
+    hostname: "unsplash.com",
+    port: "",
+    domains: ["images.unsplash.com", "unsplash.com"],
+    formats: ["image/avif", "image/webp"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
+

@@ -1,0 +1,50 @@
+.main {
+  background-image: url("https://images.unsplash.com/photo-1608796239406-364d337e3c39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 10%;
+}
+.title {
+  color: white;
+}
+.subTitle {
+  color: white;
+  max-width: 600px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.container {
+  background-color: white;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: flex;
+  margin-top: 20px;
+}
+
+.container input {
+  background-color: transparent;
+  border: none;
+  width: clamp(10px, 40vw, 500px);
+  height: 40px;
+  outline: none;
+  color: black;
+}
+.container button {
+  height: 40px;
+  border: none;
+  padding: 0px 40px;
+  border-radius: 10px;
+  background-color: #ff7a00;
+  cursor: pointer;
+  color: white;
+}
