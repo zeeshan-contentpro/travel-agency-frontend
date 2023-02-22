@@ -1,6 +1,6 @@
 import styles from "./header.module.css";
 
-export default function Hero() {
+export default function Header() {
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>Lorem ipsum dolor sit amet.</h1>

@@ -16,6 +16,8 @@
 }
 .title {
   color: white;
+  font-family: var(--font-bold);
+  font-size: 3rem;
 }
 .subTitle {
   color: white;
