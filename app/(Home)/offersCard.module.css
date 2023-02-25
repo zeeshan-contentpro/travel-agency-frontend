@@ -12,6 +12,7 @@
     justify-content: center;
     padding: 40px 10px;
     cursor: pointer;
+    box-shadow: var(--shadow);
 }
 .container {
     transition: all ease-in-out 0.6s;
@@ -36,4 +37,7 @@
 }
 .main:hover > .container {
     transform: scale(1.1);
+}
+.main:hover{
+    box-shadow: var(--shadow);
 }
