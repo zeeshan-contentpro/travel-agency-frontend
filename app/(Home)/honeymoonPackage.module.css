@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
+.main {
+}
+.main p {
+    margin-top: 10px;
+}
+.cover {
+    background-image: url("https://images.unsplash.com/photo-1653624699099-c71fa90f1d62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1633&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+    min-height: 400px;
+    
+    width: 100%;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 20px;
+    margin: 50px 0px;
+    padding: 12px;
+}
+.container {
+    padding: 0px 10%;
+    transform: translate(0px,-200px);
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+.title {
+  transform: translate(0px,-50px);
+    font-family: var(--font-bold);
+    color: white;
+    font-size: clamp(4rem, 20vw, 10rem);
+    font-family: 'Road Rage', cursive;
+    text-align: center;
+}
