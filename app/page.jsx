@@ -3,6 +3,7 @@ import Header from "./(Home)/header";
 import HoneymoonPackages from "./(Home)/honeymoonPackage";
 import Offers from "./(Home)/offers";
 import Packages from "./(Home)/packages";
+import WhyUs from "./(Home)/whyUs";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
             <AudioVisual />
             <Offers />
             <HoneymoonPackages />
+            <WhyUs/>
         </main>
     );
 }
