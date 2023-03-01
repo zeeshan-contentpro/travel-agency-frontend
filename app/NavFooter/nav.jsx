@@ -10,14 +10,21 @@ function Menu({ close }) {
         <div className={styles.menu}>
             <div className={styles.left} onClick={() => close()}></div>
             <div className={styles.right}>
-                <Link href="/" onClick={() => close()}>Home</Link>
-                <hr className={styles.line}/>
-                <Link  href="/" onClick={() => close()}>About us</Link>
-                <hr className={styles.line}/>
-                <Link href="/visa" onClick={() => close()}>Visa info</Link>
-                <hr className={styles.line}/>
-                <Link href="/" onClick={() => close()}>Contact us</Link>
-         
+                <Link href="/" onClick={() => close()}>
+                    Home
+                </Link>
+                <hr className={styles.line} />
+                <Link href="/" onClick={() => close()}>
+                    About us
+                </Link>
+                <hr className={styles.line} />
+                <Link href="/visa" onClick={() => close()}>
+                    Visa info
+                </Link>
+                <hr className={styles.line} />
+                <Link href="/" onClick={() => close()}>
+                    Contact us
+                </Link>
             </div>
         </div>
     );
@@ -31,7 +38,10 @@ export default function Nav() {
                 className={styles.main}
                 style={viewMenu ? { background: "rgba(0, 0, 0, 0.9)" } : null}
             >
-                <img className={styles.logo} src="./logo.svg" alt="logo" />
+                <Link href="/" className={styles.logoContainer}>
+                    <img className={styles.logo} src="./logo.svg" alt="logo" />
+                </Link>
+
                 {!viewMenu ? (
                     <BiMenu
                         className={styles.icon}

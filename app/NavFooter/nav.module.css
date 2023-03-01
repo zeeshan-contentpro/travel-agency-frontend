@@ -15,8 +15,11 @@
     justify-content: space-between;
     color: white;
 }
-.logo {
+.logoContainer{
     margin-left: 10%;
+}
+.logo {
+   
     width: 200px;
     height: auto;
 }
