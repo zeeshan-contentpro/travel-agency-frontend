@@ -1,0 +1,22 @@
+.main {
+    background-image: url("../../public/images/howWorks.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 10%;
+    color: white;
+    text-shadow: var(--text-shadow);
+}
+.title {
+    font-size: 3rem;
+    font-family: var(--font-bold);
+}
+.article{
+    max-width: 50vw;
+}

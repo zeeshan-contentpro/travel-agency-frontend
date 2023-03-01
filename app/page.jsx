@@ -1,6 +1,7 @@
 import AudioVisual from "./(Home)/audioVisual";
 import Header from "./(Home)/header";
 import HoneymoonPackages from "./(Home)/honeymoonPackage";
+import HowWorks from "./(Home)/howWorks";
 import Offers from "./(Home)/offers";
 import Packages from "./(Home)/packages";
 import WhyUs from "./(Home)/whyUs";
@@ -15,6 +16,7 @@ export default function Home() {
             <Offers />
             <HoneymoonPackages />
             <WhyUs/>
+            <HowWorks/>
         </main>
     );
 }
