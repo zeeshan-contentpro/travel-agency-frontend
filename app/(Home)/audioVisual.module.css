@@ -5,8 +5,8 @@
     background-size: cover;
     background-attachment: fixed;
 
-    min-height: fit-content;
-    height: 50vh ;
+    min-height: 50vh ;
+    height: fit-content;
 
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     text-align: center;
     color: white;
     text-shadow: var(--text-shadow);
-    padding: 20px;
+    padding: 20px 10%;
 }
 .title {
     font-size: 3rem;
