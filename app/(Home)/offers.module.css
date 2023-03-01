@@ -10,6 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+
 }
 .left,
 .right {
@@ -21,7 +22,6 @@
 }
 .box {
     display: flex;
-
     gap: 20px;
 }
 @media (max-width: 653px) {

@@ -12,6 +12,7 @@
   margin: 50px 0px;
   
   padding: 12px;
+  border-radius: 10px;
 }
 .container::-webkit-scrollbar {
   display: none;
