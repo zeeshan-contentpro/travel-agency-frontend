@@ -14,7 +14,7 @@ function Menu({ close }) {
                     Home
                 </Link>
                 <hr className={styles.line} />
-                <Link href="/" onClick={() => close()}>
+                <Link href="/about" onClick={() => close()}>
                     About us
                 </Link>
                 <hr className={styles.line} />
@@ -45,7 +45,7 @@ export default function Nav() {
 
                 <div className={styles.menuContainer}>
                     <Link href="/">Home</Link>
-                    <Link href="/">About us</Link>
+                    <Link href="/about">About us</Link>
                     <Link href="/visa">Visa Info</Link>
                     <Link href="/contact">Contact</Link>
                 </div>
