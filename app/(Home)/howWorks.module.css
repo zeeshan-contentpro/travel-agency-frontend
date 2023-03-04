@@ -18,5 +18,5 @@
     font-family: var(--font-bold);
 }
 .article{
-    max-width: 50vw;
+    max-width: clamp(300px, 50vw, 50vw);
 }

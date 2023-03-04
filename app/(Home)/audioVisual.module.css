@@ -3,7 +3,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 
     min-height: 50vh ;
     height: fit-content;
@@ -16,6 +15,11 @@
     color: white;
     text-shadow: var(--text-shadow);
     padding: 20px 10%;
+}
+@media screen and (min-width: 479px) {
+    .main {
+        background-attachment: fixed;
+    }
 }
 .title {
     font-size: 3rem;

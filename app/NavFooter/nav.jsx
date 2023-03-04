@@ -22,7 +22,7 @@ function Menu({ close }) {
                     Visa info
                 </Link>
                 <hr className={styles.line} />
-                <Link href="/" onClick={() => close()}>
+                <Link href="/contact" onClick={() => close()}>
                     Contact us
                 </Link>
             </div>
@@ -32,6 +32,7 @@ function Menu({ close }) {
 
 export default function Nav() {
     const [viewMenu, setViewMenu] = useState(false);
+
     return (
         <>
             <div
@@ -42,17 +43,25 @@ export default function Nav() {
                     <img className={styles.logo} src="./logo.svg" alt="logo" />
                 </Link>
 
-                {!viewMenu ? (
-                    <BiMenu
-                        className={styles.icon}
-                        onClick={() => setViewMenu(true)}
-                    />
-                ) : (
-                    <IoClose
-                        className={styles.icon}
-                        onClick={() => setViewMenu(false)}
-                    />
-                )}
+                <div className={styles.menuContainer}>
+                    <Link href="/">Home</Link>
+                    <Link href="/">About us</Link>
+                    <Link href="/visa">Visa Info</Link>
+                    <Link href="/contact">Contact</Link>
+                </div>
+                <div className={styles.rightMenuContainer}>
+                    {!viewMenu ? (
+                        <BiMenu
+                            className={styles.icon}
+                            onClick={() => setViewMenu(true)}
+                        />
+                    ) : (
+                        <IoClose
+                            className={styles.icon}
+                            onClick={() => setViewMenu(false)}
+                        />
+                    )}
+                </div>
             </div>
             {viewMenu && (
                 <Menu
