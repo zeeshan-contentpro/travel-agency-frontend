@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styles from "./header.module.css";
 // import { useEffect, useState } from "react";
 import visaCentre from "../../public/assets/visa_centre.json";
