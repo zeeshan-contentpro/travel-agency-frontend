@@ -1,53 +1,62 @@
 .main {
-    background-image: url("https://images.unsplash.com/photo-1518317507427-5346735246ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 50vh;
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    padding: 10%;
+  background-image: url("https://images.unsplash.com/photo-1518317507427-5346735246ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 10%;
 }
 @media screen and (min-width: 479px) {
   .main {
-      background-attachment: fixed;
+    background-attachment: fixed;
   }
 }
 .title {
-    color: white;
-    font-family: var(--font-bold);
-    text-shadow: var(--text-shadow);
+  color: white;
+  font-family: var(--font-bold);
+  text-shadow: var(--text-shadow);
 }
 .dropdown {
-    background-color: rgba(255, 255, 255, 0.335);
-    backdrop-filter: blur(2px);
-    padding: 30px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-    flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, 0.335);
+  backdrop-filter: blur(2px);
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .dropdown select {
-    flex: 1;
-    padding: 10px;
-    height: 40px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    background-color: white;
-    color: rgb(89, 89, 89);
+  flex: 1;
+  padding: 10px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: white;
+  color: rgb(89, 89, 89);
 }
 .dropdown button {
-    min-width: 100px;
-    width: 15%;
-    background-color: var(--color-action);
-    border: none;
-    cursor: pointer;
-    height: 40px;
-    border-radius: 5px;
+  min-width: 100px;
+  width: 15%;
+  background-color: var(--color-action);
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 5px;
+}
+.list {
+  color: white;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.list li {
+  list-style: none;
+  line-height: 1.5;
 }
