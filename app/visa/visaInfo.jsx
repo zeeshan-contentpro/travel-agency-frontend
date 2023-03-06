@@ -1,9 +1,9 @@
 "use client";
-import styles from "./header.module.css";
+import styles from "./visaInfo.module.css";
 import { useState } from "react";
 import visaCentre from "../../public/assets/visa_centre.json";
 
-export default function Header() {
+export default function VisaInfo() {
     let indexOfSelectedCountry;
     const [selected, setSelected] = useState();
 
