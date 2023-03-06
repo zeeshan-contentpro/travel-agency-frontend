@@ -8,15 +8,15 @@ import WhyUs from "./(Home)/whyUs";
 import styles from "./page.module.css";
 
 export default function Home() {
-    return (
-        <main className={styles.main}>
-            <Header />
-            <Packages />
-            <AudioVisual />
-            <Offers />
-            <HoneymoonPackages />
-            <WhyUs/>
-            <HowWorks/>
-        </main>
-    );
+  return (
+    <main className={styles.main}>
+      <Header />
+      <Packages />
+      <AudioVisual />
+      <Offers />
+      <HoneymoonPackages />
+      <WhyUs />
+      <HowWorks />
+    </main>
+  );
 }

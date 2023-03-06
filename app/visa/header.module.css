@@ -52,9 +52,7 @@
   border-radius: 5px;
 }
 .list {
-  color: white;
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
+  padding: 10%;
 }
 .list li {
   list-style: none;
