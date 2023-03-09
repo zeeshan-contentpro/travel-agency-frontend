@@ -1,0 +1,104 @@
+.container {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 40vh;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 100px 10%;
+}
+.contactDetails {
+  display: flex;
+  gap: 30px;
+  padding-top: 30px;
+}
+.contactDetailsLeft {
+  flex: 4;
+  padding: 30px 20px;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
+.contactDetailsLeft h2 {
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 15px;
+}
+.contactDetailsRight {
+  flex: 8;
+  padding: 30px 20px;
+  background-color: white;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+}
+.contactDetailsRight h2 {
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 15px;
+}
+.contactDetailsLeftInner {
+  display: flex;
+  gap: 10px;
+}
+.contactDetailsLeftInner h3 {
+  font-size: 16px;
+  padding-bottom: 4px;
+}
+.contactDetailsLeftInner p {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.icon {
+  font-size: 40px;
+}
+.icon1 {
+  font-size: 24px;
+}
+.inputForm {
+  display: flex;
+  flex-direction: column;
+}
+.inputForm input {
+  background-color: rgb(241, 243, 245);
+  height: 22px;
+  width: 100%;
+  height: 40px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 8px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+.inputForm textarea {
+  background-color: rgb(241, 243, 245);
+  width: 100%;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 8px;
+  margin: 4px 0;
+  box-sizing: border-box;
+}
+.inputFormInner {
+  display: flex;
+}
+.inputLabel {
+  font-size: 16px;
+}
+.messageButton {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: red;
+}
