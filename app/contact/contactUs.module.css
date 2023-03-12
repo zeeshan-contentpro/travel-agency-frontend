@@ -11,94 +11,80 @@
   gap: 20px;
   padding: 100px 10%;
 }
+.mapContainer {
+  border: 0;
+  width: 100%;
+}
 .contactDetails {
   display: flex;
-  gap: 30px;
-  padding-top: 30px;
+  justify-content: space-between;
+  background-color: #e8e8e8;
+  border-radius: 15px;
+  padding-top: 20px;
+  gap: 15px;
 }
-.contactDetailsLeft {
-  flex: 4;
+/* .contactDetails > div {
+  width: 48%;
+} */
+.contactDetailsInnerLeft {
+  flex: 5;
   padding: 30px 20px;
-  background-color: white;
-  box-shadow: var(--shadow);
-  border-radius: 10px;
 }
-.contactDetailsLeft h2 {
-  font-size: 20px;
-  font-weight: 400;
-  padding-bottom: 15px;
-}
-.contactDetailsRight {
-  flex: 8;
+.contactDetailsInnerRight {
+  flex: 7;
   padding: 30px 20px;
-  background-color: white;
-  box-shadow: var(--shadow);
-  border-radius: 10px;
 }
-.contactDetailsRight h2 {
-  font-size: 20px;
-  font-weight: 400;
-  padding-bottom: 15px;
+.contactTitle {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 35px;
+  text-align: left;
+  margin-bottom: 20px;
 }
-.contactDetailsLeftInner {
-  display: flex;
-  gap: 10px;
-}
-.contactDetailsLeftInner h3 {
-  font-size: 16px;
-  padding-bottom: 4px;
-}
-.contactDetailsLeftInner p {
-  font-size: 14px;
-  padding-bottom: 10px;
-}
-.icon {
-  font-size: 40px;
-}
-.icon1 {
-  font-size: 24px;
-}
-.inputForm {
+.contactForm {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
-.inputForm input {
-  background-color: rgb(241, 243, 245);
-  height: 22px;
+.contactDetails form .formControl {
+  background-color: white;
+  border-radius: 10px;
+  border-color: transparent;
+  padding: 10px;
   width: 100%;
-  height: 40px;
-  outline: none;
-  font-size: 14px;
-  font-weight: 400;
-  color: #333;
-  border-radius: 5px;
-  border: 1px solid #aaa;
-  padding: 0 8px;
-  margin: 4px 0;
-  box-sizing: border-box;
+  /* height: 40px; */
 }
-.inputForm textarea {
-  background-color: rgb(241, 243, 245);
-  width: 100%;
-  outline: none;
-  font-size: 14px;
-  font-weight: 400;
-  color: #333;
-  border-radius: 5px;
-  border: 1px solid #aaa;
-  padding: 0 8px;
-  margin: 4px 0;
-  box-sizing: border-box;
+.contactDetails form .formControl:focus {
+  box-shadow: none;
+  border-color: inherit;
 }
-.inputFormInner {
+.button {
+  border: 0;
+  background-color: #232f3e;
+  color: white;
+  font-size: 14px;
+  padding: 13px 13px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #febd69;
+  color: #131921;
+}
+.contactDetails ul {
+  list-style: none;
+}
+.contactDetails li {
+  margin-bottom: 15px;
   display: flex;
+  align-items: center;
+  gap: 15px;
 }
-.inputLabel {
-  font-size: 16px;
-}
-.messageButton {
-  width: 100%;
-  height: 40px;
-  border-radius: 5px;
-  background-color: red;
+/* .contactDetails address,
+.contactDetails a,
+.contactDetails p {
+  color: #777777;
+} */
+.icon {
+  font-size: 24px;
 }
