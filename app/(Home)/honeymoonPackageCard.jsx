@@ -1,10 +1,13 @@
+"use client";
 import styles from "./honeymoonPackageCard.module.css";
+import Link from "next/link";
 
 export default function HoneymoonPackageCard({
     imageUrl,
     name = "n/a",
     duration = "n/a",
 }) {
+
     return (
         <div
             className={styles.main}
@@ -17,7 +20,11 @@ export default function HoneymoonPackageCard({
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
                     doloremque libero temporibus porro.
                 </small>
-                <p>{duration}</p> <button>View more</button>
+                <p>{duration}</p>
+                <Link href="/details">
+                <button>View more</button>
+                </Link>
+                
             </div>
         </div>
     );
