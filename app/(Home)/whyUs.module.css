@@ -22,7 +22,7 @@
     margin-top: 50px;
 }
 .card {
-    width: clamp(250px, 30vw, 380px);
+    width: clamp(250px, 25vw, 380px);
     text-align: center;
     box-shadow: var(--shadow);
     border-radius: 10px;
