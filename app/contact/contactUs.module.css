@@ -88,3 +88,8 @@
 .icon {
   font-size: 24px;
 }
+@media screen and (max-width: 700px) {
+  .contactDetails {
+    flex-direction: column;
+  }
+}

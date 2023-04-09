@@ -12,18 +12,6 @@
   gap: 20px;
   padding: 100px 10%;
 }
-@media screen and (min-width: 479px) {
-  .main {
-    background-attachment: fixed;
-  }
-  .visaDetails {
-  }
-  .visaDetailsRightTop {
-    height: min-content;
-  }
-  .visaDetailsRightBottom {
-  }
-}
 .title {
   color: white;
   font-family: var(--font-bold);
@@ -95,6 +83,7 @@
   background-color: white;
   box-shadow: var(--shadow);
   border-radius: 10px;
+  max-height: 40vh;
 }
 .visaDetailsRightBottom {
   flex: 6;
@@ -102,6 +91,7 @@
   background-color: white;
   box-shadow: var(--shadow);
   border-radius: 10px;
+  max-height: 40vh;
 }
 .visaDetailsRightBottom h4 {
   padding-bottom: 10px;
@@ -109,4 +99,9 @@
 }
 .visaDetailsRightBottom p {
   padding-bottom: 10px;
+}
+@media screen and (min-width: 479px) {
+  .main {
+    background-attachment: fixed;
+  }
 }
