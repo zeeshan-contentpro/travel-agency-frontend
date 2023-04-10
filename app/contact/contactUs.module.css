@@ -52,6 +52,7 @@
   border-color: transparent;
   padding: 10px;
   width: 100%;
+  color: #131921;
   /* height: 40px; */
 }
 .contactDetails form .formControl:focus {

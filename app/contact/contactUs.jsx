@@ -51,6 +51,7 @@ export default function ContactUs() {
                 cols="30"
                 rows="5"
                 placeholder="Comments"
+                style={{ fontFamily: "Roboto" }}
               ></textarea>
             </div>
             <div>
