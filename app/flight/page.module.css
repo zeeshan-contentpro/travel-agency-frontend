@@ -1,0 +1,43 @@
+.main {
+  background-image: url("https://images.pexels.com/photos/62623/wing-plane-flying-airplane-62623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 40vh;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+@media screen and (min-width: 479px) {
+  .main {
+    background-attachment: fixed;
+  }
+}
+.title {
+  color: white;
+  font-family: var(--font-bold);
+  text-shadow: var(--text-shadow);
+}
+.subtitle {
+  color: white;
+  font-family: var(--font-bold);
+  text-shadow: var(--text-shadow);
+  margin-top: 15px;
+}
+.searchFlight {
+  /* height: 300px;
+  width: 400px; */
+  background-color: rgba(255, 255, 255, 0.966);
+  backdrop-filter: blur(2px);
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
