@@ -1,6 +1,11 @@
 import ContactUs from "./contactUs";
 import styles from "./page.module.css";
 
+export const metadata = {
+  title: "Contact Us",
+  description: "Escape to your dream destination",
+};
+
 export default function Home() {
   return (
     <div>
