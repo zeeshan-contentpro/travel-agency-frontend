@@ -1,0 +1,118 @@
+.main {
+  background-image: url("https://images.pexels.com/photos/36487/above-adventure-aerial-air.jpg?auto=compress&cs=tinysrgb&w=1600");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 50vh;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+
+@media screen and (min-width: 479px) {
+  .main header {
+    background-attachment: fixed;
+  }
+}
+
+/* .title {
+  color: white;
+  font-family: var(--font-bold);
+  text-shadow: var(--text-shadow);
+} */
+
+.container {
+  background-color: rgba(255, 255, 255, 0.966);
+  backdrop-filter: blur(2px);
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 500px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.inputSocial {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px auto;
+}
+
+.socialIcon {
+  font-size: 50px;
+  background-color: rgb(240, 240, 240);
+  width: 200px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.spanText {
+  margin: 20px auto;
+  font-size: small;
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputItems {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputItem {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgb(240, 240, 240);
+  outline: none;
+  border: none;
+  border: 0px solid;
+  box-sizing: border-box;
+  color: black;
+}
+
+.inputText {
+  text-align: end;
+  font-weight: 500;
+  color: rgb(24, 130, 255);
+  margin: 10px 0 10px 0;
+}
+
+.inputButton {
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: rgb(24, 130, 255);
+}
+
+.inputButton:hover {
+  color: white;
+  background-color: rgb(51, 146, 253);
+}
+
+.bottomText {
+  text-align: center;
+  margin-top: 10px;
+}

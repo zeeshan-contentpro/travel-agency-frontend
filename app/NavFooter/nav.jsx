@@ -33,6 +33,9 @@ function Menu({ close }) {
         <Link href="/contact" onClick={() => close()}>
           Contact us
         </Link>
+        <Link href="/login" onClick={() => close()}>
+          Login
+        </Link>
       </div>
     </div>
   );
@@ -58,6 +61,7 @@ export default function Nav() {
           <Link href="/about">About us</Link>
           <Link href="/visa">Visa Info</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/login">Login</Link>
         </div>
         <div className={styles.rightMenuContainer}>
           {!viewMenu ? (
