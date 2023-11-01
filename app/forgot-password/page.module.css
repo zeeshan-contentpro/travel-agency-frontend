@@ -29,8 +29,8 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 10px;
-  width: 510px;
+  margin-top: 20px;
+  width: 500px;
 }
 
 .headerContainer {
@@ -50,41 +50,17 @@
   font-weight: 300;
 }
 
-.inputSocial {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  margin: 20px auto;
-  color: rgb(51, 146, 253);
-}
-
-.socialIcon {
-  font-size: 50px;
-  background-color: rgb(240, 240, 240);
-  width: 200px;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.socialIcon:hover {
-  background-color: rgb(235, 235, 235);
-}
-
-.spanText {
-  margin: 20px auto;
-  font-size: small;
-}
-
 .inputDiv {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 15px;
 }
 
 .inputItems {
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
   gap: 8px;
 }
 
@@ -107,7 +83,6 @@
 }
 
 .inputText {
-  text-align: end;
   font-weight: 500;
   color: rgb(24, 130, 255);
   margin: 10px 0 10px 0;
@@ -121,9 +96,9 @@
   outline: none;
   border: none;
   background-color: rgb(24, 130, 255);
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .inputButton:hover {

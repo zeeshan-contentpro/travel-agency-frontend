@@ -9,10 +9,13 @@ const Signup = () => {
   return (
     <div className={styles.main}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h1>Let’s Get Started</h1>
-          <p>Create an account and get the Deals & Promotions news</p>
+        <div className={styles.headerContainer}>
+          <h1 className={styles.header}>Let’s Get Started</h1>
+          <p className={styles.subheader}>
+            Create an account and get the Deals & Promotions news
+          </p>
         </div>
+
         <div className={styles.inputSocial}>
           <FcGoogle className={styles.socialIcon} />
           <FaFacebookF className={styles.socialIcon} />
@@ -22,7 +25,9 @@ const Signup = () => {
 
         <div className={styles.inputDiv}>
           <div className={styles.inputItems}>
-            <label htmlFor="">Email</label>
+            <label htmlFor="" className={styles.inputLabel}>
+              Email
+            </label>
             <input
               type="email"
               placeholder="example@gmail.com"
@@ -30,7 +35,9 @@ const Signup = () => {
             />
           </div>
           <div className={styles.inputItems}>
-            <label htmlFor="">Mobile</label>
+            <label htmlFor="" className={styles.inputLabel}>
+              Mobile
+            </label>
             <input
               type="text"
               placeholder="01XXXXXXXXX"
@@ -38,14 +45,18 @@ const Signup = () => {
             />
           </div>
           <div className={styles.inputItems}>
-            <label htmlFor="">Password</label>
+            <label htmlFor="" className={styles.inputLabel}>
+              Password
+            </label>
             <input
               type="password"
               placeholder="Your Password"
               className={styles.inputItem}
             />
           </div>
+
           <button className={styles.inputButton}>Sign Up</button>
+
           <p className={styles.bottomText}>
             Already have an account ?{" "}
             <Link href="/login" className={styles.inputText}>
