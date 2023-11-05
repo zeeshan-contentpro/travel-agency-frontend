@@ -1,0 +1,82 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  /* align-items: center; */
+}
+
+.cardMiddle,
+.cardLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardMiddle h2 {
+  margin-top: 18px;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+  gap: 5px;
+  align-items: center;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.cardRight {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: flex-end;
+  margin-left: 30px;
+}
+
+.pricePara {
+  margin: 10px 0 10px 0;
+}
+
+.price {
+  font-weight: bold;
+  font-size: large;
+}
+
+.discount {
+  font-weight: bold;
+  font-size: 10px;
+  color: red;
+}
+
+.vat {
+  font-size: small;
+}
+
+.inputButton {
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: rgb(24, 130, 255);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.inputButton:hover {
+  color: white;
+  background-color: rgb(51, 146, 253);
+}

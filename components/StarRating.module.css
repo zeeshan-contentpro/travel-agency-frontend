@@ -1,0 +1,12 @@
+.starContainer {
+  margin: 15px 0 10px 5px;
+}
+
+.input {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
