@@ -8,6 +8,7 @@ export default function PackageCard({
   duration = "n/a",
 }) {
   const router = useRouter();
+
   return (
     <div
       className={styles.main}

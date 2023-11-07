@@ -28,6 +28,10 @@
   margin: 50px 0px;
   padding: 12px;
   border-radius: 10px;
+  padding: 50px 10% 10% 10%;
+  align-items: start;
+  top: 15%;
+  left: 15%;
 }
 
 .container::-webkit-scrollbar {
@@ -36,4 +40,8 @@
 
 .title {
   font-family: var(--font-bold);
+}
+
+.headerPara {
+  margin-top: 15px;
 }

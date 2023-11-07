@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function page({
@@ -9,7 +10,7 @@ export default function page({
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <div className={styles.header}>
-        <img src={imageUrl} alt="destination" />
+        <Image src={imageUrl} alt="destination" width={1280} height={720} />
 
         <br />
 
@@ -90,10 +91,11 @@ export default function page({
             change anytime. <br /> Child supplement (02-11.99yrs): 50% of adult
             prices <br />
             <br />
-            Inclusions:
           </p>
+          <p>Inclusions:</p>
+          <br />
           <ul>
-            <li>3night Sunrise Water Villa with Plunge Pool & Jacuzzi </li>
+            <li>3-night Sunrise Water Villa with Plunge Pool & Jacuzzi </li>
             <li>
               All-Inclusive basis Meals (•All-inclusive: Buffet-style breakfast,
               lunch, and dinner in your allocated restaurant • Selected drinks
@@ -142,6 +144,9 @@ export default function page({
             <li>15 days to date of departure: 100%</li>
             <li>In case of no show: 100%</li>
           </ul>
+          <div>
+            <button className={styles.inputButton}>Book Now</button>
+          </div>
         </div>
       </div>
     </div>
