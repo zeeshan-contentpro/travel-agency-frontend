@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import StarRating from "@/components/StarRating";
 import styles from "./destinationCard.module.css";
 
-const DestinationCard = () => {
+const DestinationCard = ({ hotel_name, location, price_day, rating }) => {
   const router = useRouter();
 
   return (
@@ -12,7 +12,7 @@ const DestinationCard = () => {
       <div className={styles.card}>
         <div className={styles.cardLeft}>
           <Image
-            src="/images/thai-01.jpeg"
+            src="/images/pic.jpg"
             height={200}
             width={250}
             alt="Hotel Picture"
@@ -20,10 +20,10 @@ const DestinationCard = () => {
           />
         </div>
         <div className={styles.cardMiddle}>
-          <h2>Adaaran Club Rannalhi</h2>
+          <h2>{hotel_name}</h2>
           <div className={styles.location}>
             <ImLocation className={styles.icon} />
-            <span>MALDIVES ISLANDS MALE CITY AND AIRPORT</span>
+            <span>{location}</span>
           </div>
           <StarRating />
         </div>
@@ -31,7 +31,7 @@ const DestinationCard = () => {
           <span className={styles.cardRightSpan}>Starts from</span>
           <p className={styles.pricePara}>
             <span className={styles.discount}>50% OFF</span>{" "}
-            <span className={styles.price}>BDT4,800</span>
+            <span className={styles.price}>BDT{price_day}</span>
             /Night
           </p>
           <span className={styles.vat}>*Price includes VAT & Tax</span>

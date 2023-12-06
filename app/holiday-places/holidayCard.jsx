@@ -9,7 +9,7 @@ export default function HolidayCard({ imageUrl, title, name }) {
     <div
       className={styles.main}
       style={{ backgroundImage: `url(${imageUrl})` }}
-      onClick={() => router.push(`/holiday-places/{slug}`)}
+      onClick={() => router.push(`/holiday-places/slug01`)}
     >
       <div className={styles.container}>
         <h2>{title}</h2>

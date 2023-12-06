@@ -1,0 +1,32 @@
+export const package_data = [
+  {
+    id: 1,
+    country: "Bangladesh",
+    city: "Cox's Bazar",
+    hotel_name: "Cox Bay Resorts",
+    location: "Dolphin Mor",
+    price_day: 5000,
+    price_package: 100000,
+    rating: 4,
+  },
+  {
+    id: 2,
+    country: "Bangladesh",
+    city: "Cox's Bazar",
+    hotel_name: "Hotel Bay Inn",
+    location: "Shugondha Point",
+    price_day: 6000,
+    price_package: 110000,
+    rating: 4,
+  },
+  {
+    id: 3,
+    country: "Bangladesh",
+    city: "Cox's Bazar",
+    hotel_name: "Hotel The Palace Cox",
+    location: "Kolatoli Beach Point",
+    price_day: 5500,
+    price_package: 100000,
+    rating: 4,
+  },
+];
