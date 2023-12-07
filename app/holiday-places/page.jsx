@@ -2,7 +2,6 @@
 import styles from "./page.module.css";
 import HolidayCard from "./holidayCard";
 import { package_data } from "@/data";
-import { useEffect, useState } from "react";
 
 export const metadata = {
   title: "Holiday Places",
@@ -10,20 +9,9 @@ export const metadata = {
 };
 
 const Holiday = () => {
-  // const [data, setData] = useState();
+  const filteredData = package_data.filter((dt) => dt.country === "Bangladesh");
 
-  // const fetchData = () => {
-  //   const data = fetch(package_data);
-  //   const fetchedData = data.json();
-
-  //   setData(fetchedData);
-  // };
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // console.log(data);
+  console.log(filteredData);
 
   return (
     <main className={styles.main}>
@@ -82,7 +70,7 @@ const Holiday = () => {
           </article>
         </div>
         <div className={styles.cardContainer}>
-          {package_data.map((data) => (
+          {filteredData.map((data) => (
             <HolidayCard
               key={data.id}
               imageUrl={

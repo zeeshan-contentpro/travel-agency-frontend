@@ -1,13 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
+import { BsFilter } from "react-icons/bs";
 import styles from "./page.module.css";
 import DestinationCard from "./destinationCard";
-import { BsFilter } from "react-icons/bs";
 import HolidayCard from "../holidayCard";
 import { package_data } from "@/data";
 
-export default function HolidayCardItem({ params }) {
-  const [data, setData] = useState(package_data);
+export default function HolidayCardItem() {
+  const filteredData = package_data.filter((dt) => dt.country === "Bangladesh");
 
   return (
     <main className={styles.main}>
@@ -38,19 +38,19 @@ export default function HolidayCardItem({ params }) {
               <div className={styles.inputButtons}>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb1" />
-                  <label for="cb1">Checkbox 1</label>
+                  <label htmlFor="cb1">Checkbox 1</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb2" />
-                  <label for="cb2">Checkbox 2</label>
+                  <label htmlFor="cb2">Checkbox 2</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb3" />
-                  <label for="cb3">Checkbox 3</label>
+                  <label htmlFor="cb3">Checkbox 3</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb4" />
-                  <label for="cb4">Checkbox 4</label>
+                  <label htmlFor="cb4">Checkbox 4</label>
                 </div>
               </div>
             </div>
@@ -60,19 +60,19 @@ export default function HolidayCardItem({ params }) {
               <div className={styles.inputButtons}>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb5" />
-                  <label for="cb5">Checkbox 1</label>
+                  <label htmlFor="cb5">Checkbox 1</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb6" />
-                  <label for="cb6">Checkbox 2</label>
+                  <label htmlFor="cb6">Checkbox 2</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb7" />
-                  <label for="cb7">Checkbox 3</label>
+                  <label htmlFor="cb7">Checkbox 3</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb8" />
-                  <label for="cb8">Checkbox 4</label>
+                  <label htmlFor="cb8">Checkbox 4</label>
                 </div>
               </div>
             </div>
@@ -82,19 +82,19 @@ export default function HolidayCardItem({ params }) {
               <div className={styles.inputButtons}>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb9" />
-                  <label for="cb9">Checkbox 1</label>
+                  <label htmlFor="cb9">Checkbox 1</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb10" />
-                  <label for="cb10">Checkbox 2</label>
+                  <label htmlFor="cb10">Checkbox 2</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb11" />
-                  <label for="cb11">Checkbox 3</label>
+                  <label htmlFor="cb11">Checkbox 3</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb12" />
-                  <label for="cb12">Checkbox 4</label>
+                  <label htmlFor="cb12">Checkbox 4</label>
                 </div>
               </div>
             </div>
@@ -104,19 +104,19 @@ export default function HolidayCardItem({ params }) {
               <div className={styles.inputButtons}>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb13" />
-                  <label for="cb13">Checkbox 1</label>
+                  <label htmlFor="cb13">Checkbox 1</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb14" />
-                  <label for="cb14">Checkbox 2</label>
+                  <label htmlFor="cb14">Checkbox 2</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb15" />
-                  <label for="cb15">Checkbox 3</label>
+                  <label htmlFor="cb15">Checkbox 3</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb16" />
-                  <label for="cb16">Checkbox 4</label>
+                  <label htmlFor="cb16">Checkbox 4</label>
                 </div>
               </div>
             </div>
@@ -126,33 +126,35 @@ export default function HolidayCardItem({ params }) {
               <div className={styles.inputButtons}>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb17" />
-                  <label for="cb17">Checkbox 1</label>
+                  <label htmlFor="cb17">Checkbox 1</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb18" />
-                  <label for="cb18">Checkbox 2</label>
+                  <label htmlFor="cb18">Checkbox 2</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb19" />
-                  <label for="cb19">Checkbox 3</label>
+                  <label htmlFor="cb19">Checkbox 3</label>
                 </div>
                 <div className={styles.inputButton}>
                   <input type="checkbox" id="cb20" />
-                  <label for="cb20">Checkbox 4</label>
+                  <label htmlFor="cb20">Checkbox 4</label>
                 </div>
               </div>
             </div>
           </div>
           <div className={styles.middle}>
-            <h2>Packages in Jakarta</h2>
-            {data.map((data) => (
-              <DestinationCard
-                key={data.id}
-                hotel_name={data.hotel_name}
-                location={data.location}
-                price_day={data.price_day}
-                rating={data.rating}
-              />
+            {filteredData.map((data) => (
+              <>
+                <h2>Packages in {data.city}</h2>
+                <DestinationCard
+                  key={data.id}
+                  hotel_name={data.hotel_name}
+                  location={data.location}
+                  price_day={data.price_day}
+                  rating={data.rating}
+                />
+              </>
             ))}
 
             {/* <DestinationCard />

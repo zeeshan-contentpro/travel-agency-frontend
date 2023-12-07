@@ -29,4 +29,14 @@ export const package_data = [
     price_package: 100000,
     rating: 4,
   },
+  {
+    id: 4,
+    country: "Bangladesh",
+    city: "Sylhet",
+    hotel_name: "Grand Sylhet Hotel & Resort",
+    location: "Boroshala, Khadimnagar Union Parishad, Airport Road, Sylhet",
+    price_day: 5000,
+    price_package: 150000,
+    rating: 4,
+  },
 ];
