@@ -6,6 +6,33 @@ import DestinationCard from "./destinationCard";
 import HolidayCard from "../holidayCard";
 import { package_data } from "@/data/data";
 
+const renderSingleCity = (country) => {
+  const filteredCityData = package_data.filter((dt) => dt.country === country);
+  const uniqueCities = [...new Set(filteredCityData.map((item) => item.city))];
+  console.log(uniqueCities);
+
+  const cityCards = filteredCityData.map((dt, i) => (
+    <div key={i}>
+      <DestinationCard imageUrl={dt.url} title={dt.hotel_name} name={dt.city} />
+    </div>
+  ));
+
+  return (
+    <div className={styles.container}>
+      <div>
+        <h1 className={styles.subtitle}>Hotels in {city}</h1>
+        <article className={styles.para}>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
+          ipsam nobis distinctio ad nisi, totam itaque suscipit rem, neque
+          veritatis quas qui officia numquam ex enim est? Officia, accusantium.
+          Doloribus!
+        </article>
+      </div>
+      <div className={styles.cardContainer}>{cityCards}</div>
+    </div>
+  );
+};
+
 export default function HolidayCardItem() {
   const filteredData = package_data.filter(
     (dt) => dt.country === "Bangladesh" && dt.city === "Cox's Bazar"
@@ -19,7 +46,7 @@ export default function HolidayCardItem() {
 
       <div className={styles.container}>
         <div>
-          <h1 className={styles.subtitle}>Explore Maldives</h1>
+          <h1 className={styles.subtitle}>Hotels in Sylhet</h1>
           <article className={styles.para}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
             ipsam nobis distinctio ad nisi, totam itaque suscipit rem, neque
@@ -173,7 +200,7 @@ export default function HolidayCardItem() {
                 title="Ubud"
                 name="10 Hotels Available"
               />
-              <HolidayCard
+              {/* <HolidayCard
                 imageUrl={
                   "https://images.unsplash.com/photo-1621071437499-a6cbed2219d9?q=80&w=1935&auto=format&fit=crop&w=1035&q=80"
                 }
@@ -186,7 +213,7 @@ export default function HolidayCardItem() {
                 }
                 title="Kuta"
                 name="12 Hotels Available"
-              />
+              /> */}
             </div>
           </div>
         </div>
