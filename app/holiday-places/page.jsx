@@ -1,25 +1,59 @@
-"use client";
-import styles from "./page.module.css";
-import HolidayCard from "./holidayCard";
-import { package_data } from "@/data";
+'use client';
+import styles from './page.module.css';
+import HolidayCard from './holidayCard';
+import { package_data } from '@/data/data';
+import { countries, countriesArray } from '@/data/places';
 
 export const metadata = {
-  title: "Holiday Places",
-  description: "Escape to your dream destination",
+	title: 'Holiday Places',
+	description: 'Escape to your dream destination',
+};
+
+const getCountries = () => {};
+
+const renderCitiesOdASingleCountry = (country) => {
+	const filteredCityData = package_data.filter(
+		(dt) => dt.country === country
+	);
+  const uniqueCities = [...new Set(filteredCityData.map(item => item.city))]
+  console.log(uniqueCities)
+	const cityCards = filteredCityData.map((dt, i) => (
+		<div key={i}>
+      {/* <h1>{dt}</h1> */}
+			<HolidayCard
+				imageUrl={dt.url}
+				title={dt.hotel_name}
+				name={dt.city}
+			/>
+		</div>
+	));
+	return (
+		<div className={styles.container}>
+			<div className={styles.containerTitle}>
+				<h1>Explore {country}</h1>
+				<article>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+					Accusantium adipisci voluptate, quod quasi numquam iure
+					alias, ut corporis nam rem quo saepe voluptas odio.
+				</article>
+			</div>
+			<div className={styles.cardContainer}>{cityCards}</div>
+		</div>
+	);
 };
 
 const Holiday = () => {
-  const filteredData = package_data.filter((dt) => dt.country === "Bangladesh");
+	// const filteredCountryData = package_data.filter((dt) => dt.country === "Bangladesh");
 
-  console.log(filteredData);
+	// console.log(filteredCountryData);
 
-  return (
-    <main className={styles.main}>
-      <header>
-        <h1 className={styles.title}>Explore Your Destinations</h1>
-      </header>
+	return (
+		<main className={styles.main}>
+			<header>
+				<h1 className={styles.title}>Explore Your Destinations</h1>
+			</header>
 
-      <div className={styles.container}>
+			{/* <div className={styles.container}>
         <div className={styles.containerTitle}>
           <h1>Explore Indonesia</h1>
           <article>
@@ -29,6 +63,7 @@ const Holiday = () => {
           </article>
         </div>
         <div className={styles.cardContainer}>
+
           <HolidayCard
             imageUrl={
               "https://images.unsplash.com/photo-1590930754517-64d5fffa06ac?q=80&w=1974&auto=format&fit=crop&w=1035&q=80"
@@ -58,9 +93,9 @@ const Holiday = () => {
             name="12 Hotels Available"
           />
         </div>
-      </div>
+      </div> */}
 
-      <div className={styles.container}>
+			{/* <div className={styles.container}>
         <div className={styles.containerTitle}>
           <h1>Explore Bangladesh</h1>
           <article>
@@ -99,50 +134,56 @@ const Holiday = () => {
             name="9 Hotels Available"
           />
         </div>
-      </div>
+      </div> */}
 
-      <div className={styles.container}>
-        <div className={styles.containerTitle}>
-          <h1>Explore Thailand</h1>
-          <article>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Accusantium adipisci voluptate, quod quasi numquam iure alias, ut
-            corporis nam rem quo saepe voluptas odio.
-          </article>
-        </div>
-        <div className={styles.cardContainer}>
-          <HolidayCard
-            imageUrl={
-              "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
-            }
-            title="Bankok"
-            name="2 Hotels Available"
-          />
-          <HolidayCard
-            imageUrl={
-              "https://images.unsplash.com/photo-1559628233-eb1b1a45564b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
-            }
-            title="Pattaya"
-            name="16 Hotels Available"
-          />
-          <HolidayCard
-            imageUrl={
-              "https://images.unsplash.com/photo-1504203328729-b937e8e102f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80"
-            }
-            title="Phuket"
-            name="3 Hotels Available"
-          />
-          <HolidayCard
-            imageUrl={
-              "https://plus.unsplash.com/premium_photo-1669317354987-e786270c6230?q=80&w=1964&auto=format&fit=crop&w=1064&q=80"
-            }
-            title="Krabi"
-            name="13 Hotels Available"
-          />
-        </div>
-      </div>
-    </main>
-  );
+      {
+        countriesArray.map((country) => {
+          return renderCitiesOdASingleCountry(country);
+        })
+      }
+
+			{/* <div className={styles.container}>
+				<div className={styles.containerTitle}>
+					<h1>Explore Thailand</h1>
+					<article>
+						Lorem, ipsum dolor sit amet consectetur adipisicing
+						elit. Accusantium adipisci voluptate, quod quasi numquam
+						iure alias, ut corporis nam rem quo saepe voluptas odio.
+					</article>
+				</div>
+				<div className={styles.cardContainer}>
+					<HolidayCard
+						imageUrl={
+							'https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80'
+						}
+						title="Bankok"
+						name="2 Hotels Available"
+					/>
+					<HolidayCard
+						imageUrl={
+							'https://images.unsplash.com/photo-1559628233-eb1b1a45564b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80'
+						}
+						title="Pattaya"
+						name="16 Hotels Available"
+					/>
+					<HolidayCard
+						imageUrl={
+							'https://images.unsplash.com/photo-1504203328729-b937e8e102f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80'
+						}
+						title="Phuket"
+						name="3 Hotels Available"
+					/>
+					<HolidayCard
+						imageUrl={
+							'https://plus.unsplash.com/premium_photo-1669317354987-e786270c6230?q=80&w=1964&auto=format&fit=crop&w=1064&q=80'
+						}
+						title="Krabi"
+						name="13 Hotels Available"
+					/>
+				</div>
+			</div> */}
+		</main>
+	);
 };
 
 export default Holiday;

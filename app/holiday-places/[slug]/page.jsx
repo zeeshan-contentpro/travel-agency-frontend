@@ -4,7 +4,7 @@ import { BsFilter } from "react-icons/bs";
 import styles from "./page.module.css";
 import DestinationCard from "./destinationCard";
 import HolidayCard from "../holidayCard";
-import { package_data } from "@/data";
+import { package_data } from "@/data/data";
 
 export default function HolidayCardItem() {
   const filteredData = package_data.filter(
