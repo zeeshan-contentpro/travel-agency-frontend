@@ -70,18 +70,14 @@ const Holiday = () => {
           </article>
         </div>
         <div className={styles.cardContainer}>
-          {filteredData.map((data) => (
-            <HolidayCard
-              key={data.id}
-              imageUrl={
-                "https://images.unsplash.com/photo-1616432124087-1be7870c3aa9?q=80&w=1974&auto=format&fit=crop&w=1035&q=80"
-              }
-              title={data.city}
-              name="19 Hotels Available"
-            />
-          ))}
-
-          {/* <HolidayCard
+          <HolidayCard
+            imageUrl={
+              "https://images.unsplash.com/photo-1616432124087-1be7870c3aa9?q=80&w=1974&auto=format&fit=crop&w=1035&q=80"
+            }
+            title="Saint Martin"
+            name="19 Hotels Available"
+          />
+          <HolidayCard
             imageUrl={
               "https://images.unsplash.com/photo-1587222318667-31212ce2828d?q=80&w=2070&auto=format&fit=crop&w=1035&q=80"
             }
@@ -101,7 +97,7 @@ const Holiday = () => {
             }
             title="Chattagram"
             name="9 Hotels Available"
-          /> */}
+          />
         </div>
       </div>
 

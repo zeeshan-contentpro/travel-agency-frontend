@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import StarRating from "@/components/StarRating";
 import styles from "./destinationCard.module.css";
 
-const DestinationCard = ({ hotel_name, location, price_day, rating }) => {
+const DestinationCard = ({ hotel_name, city, location, price_day, rating }) => {
   const router = useRouter();
 
   return (

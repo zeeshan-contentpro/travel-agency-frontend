@@ -7,7 +7,9 @@ import HolidayCard from "../holidayCard";
 import { package_data } from "@/data";
 
 export default function HolidayCardItem() {
-  const filteredData = package_data.filter((dt) => dt.country === "Bangladesh");
+  const filteredData = package_data.filter(
+    (dt) => dt.country === "Bangladesh" && dt.city === "Cox's Bazar"
+  );
 
   return (
     <main className={styles.main}>
@@ -144,17 +146,16 @@ export default function HolidayCardItem() {
             </div>
           </div>
           <div className={styles.middle}>
+            {/* <h2>Packages in {data.city}</h2> */}
             {filteredData.map((data) => (
-              <>
-                <h2>Packages in {data.city}</h2>
-                <DestinationCard
-                  key={data.id}
-                  hotel_name={data.hotel_name}
-                  location={data.location}
-                  price_day={data.price_day}
-                  rating={data.rating}
-                />
-              </>
+              <DestinationCard
+                key={data.id}
+                hotel_name={data.hotel_name}
+                city={data.city}
+                location={data.location}
+                price_day={data.price_day}
+                rating={data.rating}
+              />
             ))}
 
             {/* <DestinationCard />
