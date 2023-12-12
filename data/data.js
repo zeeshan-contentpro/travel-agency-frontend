@@ -1,10 +1,11 @@
-import { countries } from "./places";
+import { countries } from "./countries";
+import { cities } from "./cities";
 
 export const package_data = [
   {
     id: 1,
     country: countries.bangladesh,
-    city: "Cox's Bazar",
+    city: cities.coxbazar,
     hotel_name: "Cox Bay Resorts",
     location: "Dolphin Mor, Cox's Bazar",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
@@ -15,7 +16,7 @@ export const package_data = [
   {
     id: 2,
     country: countries.bangladesh,
-    city: "Cox's Bazar",
+    city: cities.coxbazar,
     hotel_name: "Hotel Bay Inn",
     location: "Shugondha Point, Cox's Bazar",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
@@ -26,7 +27,7 @@ export const package_data = [
   {
     id: 3,
     country: countries.bangladesh,
-    city: "Cox's Bazar",
+    city: cities.coxbazar,
     hotel_name: "Hotel The Palace Cox",
     location: "Kolatoli Beach Point, Cox's Bazar",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
@@ -37,7 +38,7 @@ export const package_data = [
   {
     id: 4,
     country: countries.bangladesh,
-    city: "Sylhet",
+    city: cities.sylhet,
     hotel_name: "Grand Sylhet Hotel & Resort",
     location: "Boroshala, Khadimnagar Union Parishad, Airport Road, Sylhet",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
@@ -48,7 +49,7 @@ export const package_data = [
   {
     id: 5,
     country: countries.india,
-    city: "Mumbai",
+    city: cities.mumbai,
     hotel_name: "Taj hotel",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
     location: "Mumbai",
@@ -59,7 +60,7 @@ export const package_data = [
   {
     id: 6,
     country: countries.india,
-    city: "Kolkata",
+    city: cities.kolkata,
     hotel_name: "Kolkata Hotel",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
     location: "Park Street",
@@ -70,7 +71,7 @@ export const package_data = [
   {
     id: 7,
     country: countries.sriLanka,
-    city: "Colombo",
+    city: cities.colombo,
     hotel_name: "Colombo Hotel",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
     location: "Colombo central",
@@ -81,7 +82,7 @@ export const package_data = [
   {
     id: 8,
     country: countries.sriLanka,
-    city: "Gall",
+    city: cities.gall,
     hotel_name: "Gall Hotel",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
     location: "Gall Main Road",
@@ -92,7 +93,7 @@ export const package_data = [
   {
     id: 9,
     country: countries.thailand,
-    city: "Pattya",
+    city: cities.pattaya,
     hotel_name: "Pattya Hotel",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
     location: "Pattya Beach Road",
@@ -103,7 +104,7 @@ export const package_data = [
   {
     id: 10,
     country: countries.indonesia,
-    city: "Bali",
+    city: cities.bali,
     hotel_name: "Bali Hotel",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
     location: "Bali Beach Road",
@@ -111,15 +112,26 @@ export const package_data = [
     price_package: 150000,
     rating: 1,
   },
+  // {
+  //   id: 11,
+  //   country: countries.maldives,
+  //   city: "Maldives",
+  //   hotel_name: "Mafushi Hotel",
+  //   url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
+  //   location: "Mafushi Island Beach",
+  //   price_day: 5000,
+  //   price_package: 150000,
+  //   rating: 1,
+  // },
   {
-    id: 11,
-    country: countries.maldives,
-    city: "Maldives",
-    hotel_name: "Mafushi Hotel",
+    id: 12,
+    country: countries.bangladesh,
+    city: "Dhaka",
+    hotel_name: "The Westin",
+    location: "Gulshan",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
-    location: "Mafushi Island Beach",
-    price_day: 5000,
-    price_package: 150000,
-    rating: 1,
+    price_day: 6000,
+    price_package: 110000,
+    rating: 4,
   },
 ];

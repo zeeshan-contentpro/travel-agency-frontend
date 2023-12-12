@@ -4,7 +4,13 @@ import { useRouter } from "next/navigation";
 import StarRating from "@/components/StarRating";
 import styles from "./destinationCard.module.css";
 
-const DestinationCard = ({ hotel_name, city, location, price_day, rating }) => {
+const DestinationCard = ({
+  hotel_name,
+  imageUrl,
+  location,
+  price_day,
+  rating,
+}) => {
   const router = useRouter();
 
   return (
@@ -12,7 +18,7 @@ const DestinationCard = ({ hotel_name, city, location, price_day, rating }) => {
       <div className={styles.card}>
         <div className={styles.cardLeft}>
           <Image
-            src="/images/pic.jpg"
+            src={imageUrl}
             height={200}
             width={250}
             alt="Hotel Picture"

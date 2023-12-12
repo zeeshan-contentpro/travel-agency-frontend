@@ -1,5 +1,5 @@
 "use client";
-import styles from "./holidayCard.module.css";
+import styles from "./cityCard.module.css";
 import { useRouter } from "next/navigation";
 
 export default function CityCard({ imageUrl, name }) {

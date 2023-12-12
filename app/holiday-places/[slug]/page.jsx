@@ -3,17 +3,28 @@ import React from "react";
 import { BsFilter } from "react-icons/bs";
 import styles from "./page.module.css";
 import DestinationCard from "./destinationCard";
-import HolidayCard from "../holidayCard";
+// import HolidayCard from "../holidayCard";
 import { package_data } from "@/data/data";
+// import { countries, countriesArray } from "@/data/countries";
+import { citiesArray } from "@/data/cities";
 
-const renderSingleCity = (country) => {
-  const filteredCityData = package_data.filter((dt) => dt.country === country);
-  const uniqueCities = [...new Set(filteredCityData.map((item) => item.city))];
-  console.log(uniqueCities);
+const renderSingleCityHotels = (city) => {
+  const filteredCityData = package_data.filter((item) => item.city === city);
+  // const uniqueCities = [...new Set(filteredCityData.map((item) => item.city))];
+  // console.log(uniqueCities);
 
-  const cityCards = filteredCityData.map((dt, i) => (
+  // console.log(filteredCityData);
+
+  const cityCards = filteredCityData.map((item, i) => (
     <div key={i}>
-      <DestinationCard imageUrl={dt.url} title={dt.hotel_name} name={dt.city} />
+      <DestinationCard
+        imageUrl={item.url}
+        name={item.city}
+        hotel_name={item.hotel_name}
+        location={item.location}
+        price_day={item.price_day}
+        rating={item.rating}
+      />
     </div>
   ));
 
@@ -34,26 +45,24 @@ const renderSingleCity = (country) => {
 };
 
 export default function HolidayCardItem() {
-  const filteredData = package_data.filter(
-    (dt) => dt.country === "Bangladesh" && dt.city === "Cox's Bazar"
-  );
-
   return (
     <main className={styles.main}>
       <header>
         <h1 className={styles.title}>Make Your Holiday Special</h1>
       </header>
 
+      {renderSingleCityHotels("Dhaka")}
+
       <div className={styles.container}>
-        <div>
-          <h1 className={styles.subtitle}>Hotels in Sylhet</h1>
+        {/* <div>
+          {/* <h1 className={styles.subtitle}>Hotels in Sylhet</h1>
           <article className={styles.para}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
             ipsam nobis distinctio ad nisi, totam itaque suscipit rem, neque
             veritatis quas qui officia numquam ex enim est? Officia,
             accusantium. Doloribus!
           </article>
-        </div>
+        </div> */}
         <div className={styles.containerMain}>
           <div className={styles.left}>
             <div className={styles.filterHeader}>
@@ -149,7 +158,7 @@ export default function HolidayCardItem() {
                 </div>
               </div>
             </div>
-            <div className={styles.leftFilterItems}>
+            {/* <div className={styles.leftFilterItems}>
               <h3>Point Of Interest</h3>
               <hr />
               <div className={styles.inputButtons}>
@@ -170,11 +179,10 @@ export default function HolidayCardItem() {
                   <label htmlFor="cb20">Checkbox 4</label>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className={styles.middle}>
-            {/* <h2>Packages in {data.city}</h2> */}
-            {filteredData.map((data) => (
+            {/* {filteredData.map((data) => (
               <DestinationCard
                 key={data.id}
                 hotel_name={data.hotel_name}
@@ -183,7 +191,7 @@ export default function HolidayCardItem() {
                 price_day={data.price_day}
                 rating={data.rating}
               />
-            ))}
+            ))} */}
 
             {/* <DestinationCard />
             <DestinationCard />
@@ -191,15 +199,15 @@ export default function HolidayCardItem() {
             <DestinationCard /> */}
           </div>
           <div className={styles.right}>
-            <h3>Explore more in Indonesia</h3>
+            {/* <h3>Explore more in Indonesia</h3> */}
             <div className={styles.cardContainer}>
-              <HolidayCard
+              {/* <HolidayCard
                 imageUrl={
                   "https://images.unsplash.com/photo-1557093793-d149a38a1be8?q=80&w=1974&auto=format&fit=crop&w=1035&q=80"
                 }
                 title="Ubud"
                 name="10 Hotels Available"
-              />
+              /> */}
               {/* <HolidayCard
                 imageUrl={
                   "https://images.unsplash.com/photo-1621071437499-a6cbed2219d9?q=80&w=1935&auto=format&fit=crop&w=1035&q=80"
