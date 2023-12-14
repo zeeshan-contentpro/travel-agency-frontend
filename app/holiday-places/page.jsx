@@ -1,8 +1,7 @@
 "use client";
 import styles from "./page.module.css";
-import HolidayCard from "./holidayCard";
 import { package_data } from "@/data/data";
-import { countries, countriesArray } from "@/data/countries";
+import { countriesArray } from "@/data/countries";
 import CityCard from "./cityCard";
 
 export const metadata = {
@@ -21,16 +20,8 @@ const renderCitiesInASingleCountry = (country) => {
         imageUrl="https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
         name={city}
       />
-      {/* <li>{item}</li> */}
     </div>
   ));
-
-  // const cityCards = filteredCityData.map((dt, i) => (
-  //   <div key={i}>
-  //     {/* <h1>{dt}</h1> */}
-  //     <HolidayCard imageUrl={dt.url} title={dt.hotel_name} name={dt.city} />
-  //   </div>
-  // ));
 
   return (
     <div className={styles.container}>

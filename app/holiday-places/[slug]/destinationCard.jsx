@@ -42,7 +42,7 @@ const DestinationCard = ({
           </p>
           <span className={styles.vat}>*Price includes VAT & Tax</span>
           <button
-            onClick={() => router.push("/details")}
+            onClick={() => router.push(`/details`)}
             className={styles.inputButton}
           >
             View Details
