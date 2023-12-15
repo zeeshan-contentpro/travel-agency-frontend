@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { BsFilter } from "react-icons/bs";
-import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./page.module.css";
 import DestinationCard from "./destinationCard";
 import { package_data } from "@/data/data";
@@ -134,13 +133,13 @@ const renderSingleCityHotels = (city) => {
           <div className={styles.cardContainer}>{cityCards}</div>
         </div>
         <div className={styles.right}>
-          <h3>Explore more in {"{country}"}</h3>
+          <h3>Explore more in {city}</h3>
           <div className={styles.cardContainer}>
             <HolidayCard
               imageUrl={
                 "https://images.unsplash.com/photo-1557093793-d149a38a1be8?q=80&w=1974&auto=format&fit=crop&w=1035&q=80"
               }
-              title="Dhaka"
+              title={city}
               name="10 Hotels Available"
             />
             {/*  <HolidayCard
@@ -164,14 +163,16 @@ const renderSingleCityHotels = (city) => {
   );
 };
 
-export default function HolidayCardItem() {
+export default function HolidayCardItem({ params }) {
+// console.log(params?.slug)
+
   return (
     <main className={styles.main}>
       <header>
         <h1 className={styles.title}>Make Your Holiday Special</h1>
       </header>
 
-      {renderSingleCityHotels("Cox's Bazar")}
+      {renderSingleCityHotels(params?.slug)}
     </main>
   );
 }

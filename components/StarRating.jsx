@@ -11,10 +11,8 @@ export default function StarRating() {
     <div className={styles.starContainer}>
       {[...Array(5)].map((star, index) => {
         const ratingValue = index + 1;
-
         return (
-          <>
-            <label htmlFor="">
+            <label key={index}>
               <input
                 type="radio"
                 name="rating"
@@ -26,12 +24,12 @@ export default function StarRating() {
                 key={index}
                 size={20}
                 className={styles.star}
-                color={ratingValue <= (ratingColor || rating ? "red" : "grey")}
+                //color={ratingValue <= (ratingColor || rating ? "red" : "grey")}
+                color="gray"
                 onMouseOver={() => setRatingColor(ratingValue)}
                 onMouseOut={() => setRatingColor(null)}
               />
             </label>
-          </>
         );
       })}
     </div>

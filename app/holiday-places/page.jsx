@@ -14,8 +14,8 @@ const renderCitiesInASingleCountry = (country) => {
   const uniqueCities = [...new Set(filteredCityData.map((item) => item.city))];
   // console.log(filteredCityData);
 
-  const cityCards = uniqueCities.map((city) => (
-    <div key={city.id}>
+  const cityCards = uniqueCities.map((city, i) => (
+    <div key={i}>
       <CityCard
         imageUrl="https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
         name={city}
@@ -45,8 +45,12 @@ const Holiday = () => {
         <h1 className={styles.title}>Explore Your Destinations</h1>
       </header>
 
-      {countriesArray.map((country) => {
-        return renderCitiesInASingleCountry(country);
+      {countriesArray.map((country, i) => {
+        return(
+          <div key={i}>
+            {renderCitiesInASingleCountry(country)}
+          </div>
+          );
       })}
     </main>
   );
