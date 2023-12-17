@@ -76,7 +76,7 @@
   font-size: small;
 }
 
-.inputDiv {
+.inputForm {
   display: flex;
   flex-direction: column;
   gap: 15px;
