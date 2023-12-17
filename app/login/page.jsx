@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
+
 import React, { useState } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
-// import NextAuth from "next-auth";
 import { signIn } from "next-auth/react";
 import styles from "./page.module.css";
 
@@ -23,6 +23,7 @@ const Login = () => {
       });
 
       console.log(data);
+      return data;
     } catch (error) {
       console.log(error);
     }

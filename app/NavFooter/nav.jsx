@@ -1,11 +1,15 @@
 "use client";
 import { useState } from "react";
-import styles from "./nav.module.css";
+import { useSession, signOut } from "next-auth/react";
 import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
+import styles from "./nav.module.css";
 
 function Menu({ close }) {
+  const { data: session } = useSession();
+  console.log("Here: ", session);
+
   return (
     <div className={styles.menu}>
       <div className={styles.left} onClick={() => close()}></div>
@@ -61,6 +65,16 @@ export default function Nav() {
           <Link href="/about">About us</Link>
           <Link href="/visa">Visa Info</Link>
           <Link href="/contact">Contact</Link>
+          {/* {data?.user ? (
+            <>
+              <p>data?.user?.email</p>
+              <Link href="/login" onClick={() => signOut()}>
+                Logout
+              </Link>
+            </>
+          ) : (
+            <Link href="/login">Login</Link>
+          )} */}
           <Link href="/login">Login</Link>
         </div>
         <div className={styles.rightMenuContainer}>
