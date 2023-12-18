@@ -10,7 +10,6 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-//TODO: Need to check that
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();

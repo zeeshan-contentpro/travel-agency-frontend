@@ -5,6 +5,7 @@ import StarRating from "@/components/StarRating";
 import styles from "./destinationCard.module.css";
 
 const DestinationCard = ({
+  name,
   hotel_name,
   imageUrl,
   location,
@@ -42,7 +43,7 @@ const DestinationCard = ({
           </p>
           <span className={styles.vat}>*Price includes VAT & Tax</span>
           <button
-            onClick={() => router.push(`/details`)}
+            onClick={() => router.push(`/holiday-places/${name}`)}
             className={styles.inputButton}
           >
             View Details

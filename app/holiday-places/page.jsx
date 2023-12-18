@@ -30,7 +30,8 @@ const renderCitiesInASingleCountry = (country) => {
         <article>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium
           adipisci voluptate, quod quasi numquam iure alias, ut corporis nam rem
-          quo saepe voluptas odio.
+          quo saepe voluptas odio, ipsum dolor sit amet consectetur adipisicing
+          elit.
         </article>
       </div>
       <div className={styles.cardContainer}>{cityCards}</div>
@@ -46,11 +47,7 @@ const Holiday = () => {
       </header>
 
       {countriesArray.map((country, i) => {
-        return(
-          <div key={i}>
-            {renderCitiesInASingleCountry(country)}
-          </div>
-          );
+        return <div key={i}>{renderCitiesInASingleCountry(country)}</div>;
       })}
     </main>
   );

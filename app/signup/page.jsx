@@ -22,13 +22,19 @@ const Signup = () => {
     }
 
     try {
-      const { data } = await axios.post("/api/register", {
-        email,
-        mobile,
-        password,
-      });
+      const { data } = await axios
+        .post("/api/register", {
+          email,
+          mobile,
+          password,
+        })
+        .then((result) => {
+          if (result?.error) alert("Invalid Credentials!");
+          else window.location.replace("/login");
+        });
 
-      console.log(data);
+      // console.log(data);
+      return data;
     } catch (error) {
       console.log(error);
     }

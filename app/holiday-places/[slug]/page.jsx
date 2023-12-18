@@ -8,6 +8,7 @@ import HolidayCard from "../holidayCard";
 
 const renderSingleCityHotels = (city) => {
   const filteredCityData = package_data.filter((item) => item.city === city);
+  // console.log(filteredCityData);
 
   const cityCards = filteredCityData.map((item, i) => (
     <div key={i}>
@@ -164,7 +165,7 @@ const renderSingleCityHotels = (city) => {
 };
 
 export default function HolidayCardItem({ params }) {
-// console.log(params?.slug)
+  // console.log(params?.slug)
 
   return (
     <main className={styles.main}>

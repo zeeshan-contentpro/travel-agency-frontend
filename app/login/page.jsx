@@ -7,10 +7,13 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { signIn } from "next-auth/react";
 import styles from "./page.module.css";
+// import { useRouter } from "next/navigation";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // const router = useRouter();
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -18,16 +21,27 @@ const Login = () => {
     try {
       const data = await signIn("credentials", {
         redirect: false,
+        // redirectTo: '/holiday-places',
         email,
         password,
+      }).then((result) => {
+        if (result?.error) alert("Invalid Credentials!");
+        else window.location.replace("/holiday-places");
       });
 
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       console.log(error);
     }
   };
+
+  // const handleClickGoogle = async () => {
+  //   signIn("google").then((result) => {
+  //     if (result?.error) alert("Invalid Credentials!");
+  //     else window.location.replace("/holiday-places");
+  //   });
+  // };
 
   return (
     <div className={styles.main}>
@@ -44,7 +58,10 @@ const Login = () => {
             className={styles.socialIcon}
             onClick={() => signIn("google")}
           />
-          <FaFacebookF className={styles.socialIcon} />
+          <FaFacebookF
+            className={styles.socialIcon}
+            onClick={() => signIn("facebook")}
+          />
         </div>
 
         <span className={styles.spanText}>Or Sign In with</span>

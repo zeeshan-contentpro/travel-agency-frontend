@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import bcrypt from "bcryptjs";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
 
 import User from "@/models/user";
 import dbConnect from "@/config/dbConnect";
@@ -11,6 +12,14 @@ export default NextAuth({
     strategy: "jwt",
   },
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+    }),
     CredentialsProvider({
       async authorize(credentials, req) {
         dbConnect();
@@ -33,6 +42,7 @@ export default NextAuth({
       },
     }),
   ],
+  // database: process.env.MONGODB_URI,
   pages: {
     signIn: "/login",
   },

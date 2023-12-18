@@ -5,11 +5,9 @@ import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
 import styles from "./nav.module.css";
+import Image from "next/image";
 
 function Menu({ close }) {
-  const { data: session } = useSession();
-  console.log("Here: ", session);
-
   return (
     <div className={styles.menu}>
       <div className={styles.left} onClick={() => close()}></div>
@@ -48,6 +46,10 @@ function Menu({ close }) {
 export default function Nav() {
   const [viewMenu, setViewMenu] = useState(false);
 
+  const { data: session } = useSession();
+
+  // console.log(session);
+
   return (
     <>
       <div
@@ -55,7 +57,13 @@ export default function Nav() {
         style={viewMenu ? { background: "rgba(0, 0, 0, 0.9)" } : null}
       >
         <Link href="/" className={styles.logoContainer}>
-          <img className={styles.logo} src="./logo.svg" alt="logo" />
+          <Image
+            className={styles.logo}
+            src="./logo.svg"
+            alt="logo"
+            width={300}
+            height={50}
+          />
         </Link>
 
         <div className={styles.menuContainer}>
@@ -65,17 +73,17 @@ export default function Nav() {
           <Link href="/about">About us</Link>
           <Link href="/visa">Visa Info</Link>
           <Link href="/contact">Contact</Link>
-          {/* {data?.user ? (
+          {session?.user ? (
             <>
-              <p>data?.user?.email</p>
+              <p>Wellcome {session?.user?.email}</p>
               <Link href="/login" onClick={() => signOut()}>
                 Logout
               </Link>
             </>
           ) : (
             <Link href="/login">Login</Link>
-          )} */}
-          <Link href="/login">Login</Link>
+          )}
+          {/* <Link href="/login">Login</Link> */}
         </div>
         <div className={styles.rightMenuContainer}>
           {!viewMenu ? (
