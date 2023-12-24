@@ -5,6 +5,7 @@ export const countries = {
   indonesia: "Indonesia",
   thailand: "Thailand",
   maldives: "Maldives",
+  malaysia: "Malaysia",
 };
 
 export const countriesArray = Object.values(countries);

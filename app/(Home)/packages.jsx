@@ -21,7 +21,7 @@ export default function Packages() {
           imageUrl={
             "https://images.unsplash.com/photo-1559628233-eb1b1a45564b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
           }
-          name="Kuala lampur, Malaysia"
+          name="Kuala Lumpur, Malaysia"
           duration="7 days and 8 nights"
         />
         <PackageCard

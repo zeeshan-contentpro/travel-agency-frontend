@@ -8,6 +8,7 @@ import { FaFacebookF } from "react-icons/fa";
 import styles from "./page.module.css";
 
 const Signup = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +17,7 @@ const Signup = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (!email || !mobile || !password) {
+    if ((!name, !email || !mobile || !password)) {
       setError("All fields are required");
       return;
     }
@@ -24,6 +25,7 @@ const Signup = () => {
     try {
       const { data } = await axios
         .post("/api/register", {
+          name,
           email,
           mobile,
           password,
@@ -50,14 +52,27 @@ const Signup = () => {
           </p>
         </div>
 
-        <div className={styles.inputSocial}>
+        {/* <div className={styles.inputSocial}>
           <FcGoogle className={styles.socialIcon} />
           <FaFacebookF className={styles.socialIcon} />
         </div>
 
-        <span className={styles.spanText}>Or Sign Up with</span>
+        <span className={styles.spanText}>Or Sign Up with</span> */}
 
         <form onSubmit={submitHandler} className={styles.inputForm}>
+          <div className={styles.inputItems}>
+            <label htmlFor="name_field" className={styles.inputLabel}>
+              Name
+            </label>
+            <input
+              type="text"
+              id="name_field"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="John Doe"
+              className={styles.inputItem}
+            />
+          </div>
           <div className={styles.inputItems}>
             <label htmlFor="email_field" className={styles.inputLabel}>
               Email

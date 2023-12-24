@@ -7,7 +7,7 @@ export default function page({
   imageUrl = "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
   params,
 }) {
-  //   console.log(params);
+  console.log(params);
   return (
     <div
       className={styles.main}

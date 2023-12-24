@@ -5,11 +5,11 @@ import StarRating from "@/components/StarRating";
 import styles from "./destinationCard.module.css";
 
 const DestinationCard = ({
-  name,
-  hotel_name,
+  cityName,
+  hotelName,
   imageUrl,
   location,
-  price_day,
+  pricePerDay,
   rating,
 }) => {
   const router = useRouter();
@@ -27,7 +27,7 @@ const DestinationCard = ({
           />
         </div>
         <div className={styles.cardMiddle}>
-          <h2>{hotel_name}</h2>
+          <h2>{hotelName}</h2>
           <div className={styles.location}>
             <ImLocation className={styles.icon} />
             <span>{location}</span>
@@ -38,12 +38,14 @@ const DestinationCard = ({
           <span className={styles.cardRightSpan}>Starts from</span>
           <p className={styles.pricePara}>
             <span className={styles.discount}>50% OFF</span>{" "}
-            <span className={styles.price}>BDT{price_day}</span>
+            <span className={styles.price}>BDT{pricePerDay}</span>
             /Night
           </p>
           <span className={styles.vat}>*Price includes VAT & Tax</span>
           <button
-            onClick={() => router.push(`/holiday-places/${name}`)}
+            onClick={() =>
+              router.push(`/holiday-places/${cityName}/${hotelName}`)
+            }
             className={styles.inputButton}
           >
             View Details

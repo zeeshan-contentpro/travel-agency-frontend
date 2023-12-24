@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 
 export default function HolidayCard({ imageUrl, title, name }) {
   const router = useRouter();
+  // console.log(title);
 
   return (
     <div

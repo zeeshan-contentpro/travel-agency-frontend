@@ -8,16 +8,15 @@ import HolidayCard from "../holidayCard";
 
 const renderSingleCityHotels = (city) => {
   const filteredCityData = package_data.filter((item) => item.city === city);
-  // console.log(filteredCityData);
 
   const cityCards = filteredCityData.map((item, i) => (
     <div key={i}>
       <DestinationCard
         imageUrl={item.url}
-        name={item.city}
-        hotel_name={item.hotel_name}
+        cityName={item.city}
+        hotelName={item.hotel_name}
         location={item.location}
-        price_day={item.price_day}
+        pricePerDay={item.price_day}
         rating={item.rating}
       />
     </div>
@@ -165,15 +164,13 @@ const renderSingleCityHotels = (city) => {
 };
 
 export default function HolidayCardItem({ params }) {
-  // console.log(params?.slug)
-
   return (
     <main className={styles.main}>
       <header>
         <h1 className={styles.title}>Make Your Holiday Special</h1>
       </header>
 
-      {renderSingleCityHotels(params?.slug)}
+      {renderSingleCityHotels(params?.slug.replace("%20", " "))}
     </main>
   );
 }

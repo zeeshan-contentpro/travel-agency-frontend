@@ -51,7 +51,7 @@
   padding: 12px;
   border-radius: 10px;
 }
-.container::-webkit-scrollbar {
+.cardContainer::-webkit-scrollbar {
   display: none;
 }
 .containerTitle {
