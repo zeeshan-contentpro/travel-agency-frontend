@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ImLocation } from "react-icons/im";
 import { useRouter } from "next/navigation";
@@ -5,7 +7,7 @@ import StarRating from "@/components/StarRating";
 import styles from "./destinationCard.module.css";
 
 const DestinationCard = ({
-  cityName,
+  city,
   hotelName,
   imageUrl,
   location,
@@ -13,6 +15,9 @@ const DestinationCard = ({
   rating,
 }) => {
   const router = useRouter();
+
+  const cityInUrl = city.toLowerCase().replace(/\s+/g, "-");
+  const hotelNameInUrl = hotelName.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <div className={styles.main}>
@@ -44,7 +49,7 @@ const DestinationCard = ({
           <span className={styles.vat}>*Price includes VAT & Tax</span>
           <button
             onClick={() =>
-              router.push(`/holiday-places/${cityName}/${hotelName}`)
+              router.push(`/holiday-places/${cityInUrl}/${hotelNameInUrl}`)
             }
             className={styles.inputButton}
           >

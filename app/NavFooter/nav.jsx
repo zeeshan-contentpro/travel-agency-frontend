@@ -75,7 +75,7 @@ export default function Nav() {
           <Link href="/contact">Contact</Link>
           {session?.user ? (
             <>
-              <p>Welcome {session?.user?.name}</p>
+              <p>{session?.user?.name}</p>
               <Link href="/login" onClick={() => signOut()}>
                 Logout
               </Link>

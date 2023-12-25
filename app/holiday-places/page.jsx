@@ -4,10 +4,10 @@ import { package_data } from "@/data/data";
 import { countriesArray } from "@/data/countries";
 import CityCard from "./cityCard";
 
-export const metadata = {
-  title: "Holiday Places",
-  description: "Escape to your dream destination",
-};
+// export const metadata = {
+//   title: "Holiday Places",
+//   description: "Escape to your dream destination",
+// };
 
 const renderCitiesInASingleCountry = (country) => {
   const filteredCountryData = package_data.filter(
@@ -16,7 +16,6 @@ const renderCitiesInASingleCountry = (country) => {
   const uniqueCities = [
     ...new Set(filteredCountryData.map((item) => item.city)),
   ];
-  // console.log(uniqueCities);
 
   const cityCards = uniqueCities.map((city, i) => (
     <div key={i}>

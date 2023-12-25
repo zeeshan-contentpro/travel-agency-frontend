@@ -12,7 +12,7 @@ export default function HoneymoonPackageCard({
   return (
     <div className={styles.main}>
       {/* //TODO: need to fix the height and width */}
-      <Image src={imageUrl} alt="" width={250} height={300} />
+      <Image src={imageUrl} alt="" width={200} height={100} />
       <div className={styles.container}>
         <h3>
           {city}, {country}

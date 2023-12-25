@@ -1,10 +1,26 @@
 "use client";
 import React from "react";
 import { BsFilter } from "react-icons/bs";
+import { IoSearch } from "react-icons/io5";
 import styles from "./page.module.css";
 import DestinationCard from "./destinationCard";
 import { package_data } from "@/data/data";
-import HolidayCard from "../holidayCard";
+import HolidayCard from "./holidayCard";
+
+function capitalizeFirstLetter(str) {
+  // Split the string into an array of words
+  const words = str.split(" ");
+
+  // Capitalize the first letter of each word
+  const capitalizedWords = words.map(
+    (word) => word.charAt(0).toUpperCase() + word.slice(1)
+  );
+
+  // Join the capitalized words back into a string
+  const capitalizedString = capitalizedWords.join(" ");
+
+  return capitalizedString;
+}
 
 const renderSingleCityHotels = (city) => {
   const filteredCityData = package_data.filter((item) => item.city === city);
@@ -13,7 +29,7 @@ const renderSingleCityHotels = (city) => {
     <div key={i}>
       <DestinationCard
         imageUrl={item.url}
-        cityName={item.city}
+        city={item.city}
         hotelName={item.hotel_name}
         location={item.location}
         pricePerDay={item.price_day}
@@ -21,6 +37,8 @@ const renderSingleCityHotels = (city) => {
       />
     </div>
   ));
+
+  const totalHolidaysFound = filteredCityData.length;
 
   return (
     <div className={styles.container}>
@@ -35,6 +53,10 @@ const renderSingleCityHotels = (city) => {
       </div>
       <div className={styles.containerMain}>
         <div className={styles.left}>
+          <div className={styles.totalHolidaysFound}>
+            <IoSearch />
+            <h2>{totalHolidaysFound} holidays found </h2>
+          </div>
           <div className={styles.filterHeader}>
             <BsFilter />
             <h2>Filter</h2>
@@ -130,11 +152,14 @@ const renderSingleCityHotels = (city) => {
           </div>
         </div>
         <div className={styles.middle}>
+          <div className={styles.sorting}>
+            <h2>Sort results by</h2>
+          </div>
           <div className={styles.cardContainer}>{cityCards}</div>
         </div>
         <div className={styles.right}>
           <h3>Explore more in {city}</h3>
-          <div className={styles.cardContainer}>
+          <div className={styles.cardContainer2}>
             <HolidayCard
               imageUrl={
                 "https://images.unsplash.com/photo-1557093793-d149a38a1be8?q=80&w=1974&auto=format&fit=crop&w=1035&q=80"
@@ -142,20 +167,6 @@ const renderSingleCityHotels = (city) => {
               title={city}
               name="10 Hotels Available"
             />
-            {/*  <HolidayCard
-                imageUrl={
-                  "https://images.unsplash.com/photo-1621071437499-a6cbed2219d9?q=80&w=1935&auto=format&fit=crop&w=1035&q=80"
-                }
-                title="Malang"
-                name="3 Hotels Available"
-              />
-              <HolidayCard
-                imageUrl={
-                  "https://images.unsplash.com/photo-1523539693385-e5e891eb4465?q=80&w=1978&auto=format&fit=crop&w=1035&q=80"
-                }
-                title="Kuta"
-                name="12 Hotels Available"
-              /> */}
           </div>
         </div>
       </div>
@@ -164,13 +175,17 @@ const renderSingleCityHotels = (city) => {
 };
 
 export default function HolidayCardItem({ params }) {
+  const str = params?.slug;
+  const str2 = str.replaceAll("-", " ");
+  const city = capitalizeFirstLetter(str2);
+
   return (
     <main className={styles.main}>
       <header>
         <h1 className={styles.title}>Make Your Holiday Special</h1>
       </header>
 
-      {renderSingleCityHotels(params?.slug.replace("%20", " "))}
+      {renderSingleCityHotels(city)}
     </main>
   );
 }

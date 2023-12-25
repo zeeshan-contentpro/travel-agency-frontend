@@ -1,3 +1,4 @@
+import { package_data } from "@/data/data";
 import PackageCard from "./packageCard";
 import styles from "./packages.module.css";
 
@@ -10,14 +11,16 @@ export default function Packages() {
         id facilisis convallis tincidunt neque.
       </p>
       <div className={styles.container}>
-        <PackageCard
-          imageUrl={
-            "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
-          }
-          name="Bali, Indonesia"
-          duration="3 days and 4 nights"
-        />
-        <PackageCard
+        {package_data.map((item) => (
+          <PackageCard
+            key={item.id}
+            imageUrl={item.url}
+            city={item.city}
+            country={item.country}
+            duration="3 days and 4 nights"
+          />
+        ))}
+        {/* <PackageCard
           imageUrl={
             "https://images.unsplash.com/photo-1559628233-eb1b1a45564b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
           }
@@ -65,7 +68,7 @@ export default function Packages() {
           }
           name="Male, Maldives"
           duration="4 days and 5 nights"
-        />
+        /> */}
       </div>
     </div>
   );

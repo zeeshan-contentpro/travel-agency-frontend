@@ -12,6 +12,9 @@ export const package_data = [
     price_day: 5000,
     price_package: 100000,
     rating: 4,
+    duration: "",
+    description:
+      "Bangladesh, nestled in South Asia, is a country defined by its lush landscapes and rich cultural heritage. The Sundarbans, the world's largest mangrove forest, is a UNESCO World Heritage Site and home to the elusive Bengal tiger. Dhaka, the bustling capital, reflects a dynamic fusion of ancient traditions and modern development. With its welcoming people, vibrant festivals, and the mighty rivers that crisscross the land, Bangladesh offers a tapestry of experiences for those seeking both natural wonders and cultural immersion.",
   },
   {
     id: 2,
@@ -23,6 +26,9 @@ export const package_data = [
     price_day: 6000,
     price_package: 110000,
     rating: 4,
+    duration: "",
+    description:
+      "Bangladesh, nestled in South Asia, is a country defined by its lush landscapes and rich cultural heritage. The Sundarbans, the world's largest mangrove forest, is a UNESCO World Heritage Site and home to the elusive Bengal tiger. Dhaka, the bustling capital, reflects a dynamic fusion of ancient traditions and modern development. With its welcoming people, vibrant festivals, and the mighty rivers that crisscross the land, Bangladesh offers a tapestry of experiences for those seeking both natural wonders and cultural immersion.",
   },
   {
     id: 3,
@@ -35,17 +41,24 @@ export const package_data = [
     price_package: 100000,
     rating: 4,
     offerCategory: "Honeymoon",
+    duration: "",
+    description:
+      "Bangladesh, nestled in South Asia, is a country defined by its lush landscapes and rich cultural heritage. The Sundarbans, the world's largest mangrove forest, is a UNESCO World Heritage Site and home to the elusive Bengal tiger. Dhaka, the bustling capital, reflects a dynamic fusion of ancient traditions and modern development. With its welcoming people, vibrant festivals, and the mighty rivers that crisscross the land, Bangladesh offers a tapestry of experiences for those seeking both natural wonders and cultural immersion.",
   },
   {
     id: 4,
     country: countries.bangladesh,
     city: cities.sylhet,
-    hotel_name: "Grand Sylhet Hotel & Resort",
-    location: "Boroshala, Khadimnagar Union Parishad, Airport Road, Sylhet",
+    hotel_name: "Grand Sylhet Resort",
+    location: "Boroshala, Khadimnagar, Airport Road, Sylhet",
     url: "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80",
     price_day: 5000,
     price_package: 150000,
     rating: 4,
+    offerCategory: "Honeymoon",
+    duration: "",
+    description:
+      "Bangladesh, nestled in South Asia, is a country defined by its lush landscapes and rich cultural heritage. The Sundarbans, the world's largest mangrove forest, is a UNESCO World Heritage Site and home to the elusive Bengal tiger. Dhaka, the bustling capital, reflects a dynamic fusion of ancient traditions and modern development. With its welcoming people, vibrant festivals, and the mighty rivers that crisscross the land, Bangladesh offers a tapestry of experiences for those seeking both natural wonders and cultural immersion.",
   },
   {
     id: 5,
@@ -57,6 +70,9 @@ export const package_data = [
     price_day: 5000,
     price_package: 150000,
     rating: 1,
+    duration: "",
+    description:
+      "India, a vast and diverse nation, captivates with its kaleidoscope of cultures, landscapes, and traditions. From the iconic Taj Mahal in Agra to the vibrant chaos of Mumbai's markets, the country is a tapestry of historical wonders and modern dynamism. The flavors of Indian cuisine, renowned globally, vary from the spicy street foods of Delhi to the aromatic curries of the south. With a rich history, spiritual landmarks like Varanasi, and breathtaking natural beauty from the Himalayas to Goa's beaches, India beckons as a land of contrasts and endless exploration.",
   },
   {
     id: 6,
@@ -68,6 +84,9 @@ export const package_data = [
     price_day: 5000,
     price_package: 150000,
     rating: 1,
+    duration: "",
+    description:
+      "India, a vast and diverse nation, captivates with its kaleidoscope of cultures, landscapes, and traditions. From the iconic Taj Mahal in Agra to the vibrant chaos of Mumbai's markets, the country is a tapestry of historical wonders and modern dynamism. The flavors of Indian cuisine, renowned globally, vary from the spicy street foods of Delhi to the aromatic curries of the south. With a rich history, spiritual landmarks like Varanasi, and breathtaking natural beauty from the Himalayas to Goa's beaches, India beckons as a land of contrasts and endless exploration.",
   },
   {
     id: 7,
@@ -79,6 +98,9 @@ export const package_data = [
     price_day: 5000,
     price_package: 150000,
     rating: 1,
+    duration: "",
+    description:
+      "Sri Lanka, an island jewel in the Indian Ocean, boasts a rich heritage and scenic wonders. Ancient cities like Anuradhapura and Polonnaruwa showcase the country's historical grandeur, while the Sigiriya rock fortress stands as a marvel of ancient engineering. Surrounded by pristine beaches, including those in Mirissa and Arugam Bay, Sri Lanka offers a paradise for sun-seekers and surf enthusiasts. The lush tea plantations of the central highlands and the wildlife sanctuaries, like Yala National Park, add to the country's allure as a captivating destination.",
   },
   {
     id: 8,
@@ -90,6 +112,9 @@ export const package_data = [
     price_day: 5000,
     price_package: 150000,
     rating: 1,
+    duration: "",
+    description:
+      "Sri Lanka, an island jewel in the Indian Ocean, boasts a rich heritage and scenic wonders. Ancient cities like Anuradhapura and Polonnaruwa showcase the country's historical grandeur, while the Sigiriya rock fortress stands as a marvel of ancient engineering. Surrounded by pristine beaches, including those in Mirissa and Arugam Bay, Sri Lanka offers a paradise for sun-seekers and surf enthusiasts. The lush tea plantations of the central highlands and the wildlife sanctuaries, like Yala National Park, add to the country's allure as a captivating destination.",
   },
   {
     id: 9,
@@ -102,6 +127,9 @@ export const package_data = [
     price_package: 150000,
     rating: 1,
     offerCategory: "Honeymoon",
+    duration: "",
+    description:
+      "Thailand, a vibrant Southeast Asian nation, is renowned for its rich cultural tapestry and breathtaking landscapes. From the bustling street markets of Bangkok to the tranquil beaches of Phuket, the country offers a diverse range of experiences. Home to ornate temples, spicy street food, and warm hospitality, Thailand captivates visitors with its unique blend of tradition and modernity. The Land of Smiles continues to be a top destination, attracting travelers with its colorful festivals, historical wonders, and the allure of tropical paradise.",
   },
   {
     id: 10,
@@ -114,6 +142,9 @@ export const package_data = [
     price_package: 150000,
     rating: 3,
     offerCategory: "Honeymoon",
+    duration: "",
+    description:
+      "Indonesia, an archipelago of over 17,000 islands, is a tapestry of diverse cultures, landscapes, and traditions. From the ancient temples of Java, such as Borobudur, to the pristine beaches of Bali, the country offers a mosaic of natural beauty. Its vibrant cities, like Jakarta, pulse with modern energy, while rural villages maintain traditional ways of life. Indonesia's warm hospitality, exotic cuisine, and lush rainforests make it a captivating destination for those seeking both adventure and cultural exploration.",
   },
   {
     id: 11,
@@ -125,6 +156,10 @@ export const package_data = [
     price_day: 5000,
     price_package: 150000,
     rating: 1,
+    offerCategory: "Honeymoon",
+    duration: "4 DAYS & 3 NIGHTS",
+    description:
+      "The Maldives consists of 1,190 islands located in the Indian Ocean, southwest of India. They offer seclusion, breathtaking ocean views, and the most luxurious overwater villas in the World. Amazing scuba diving, snorkeling, and surfing help make the Maldives a unique and fantastic beach destination.",
   },
   {
     id: 12,
@@ -136,6 +171,9 @@ export const package_data = [
     price_day: 6000,
     price_package: 110000,
     rating: 4,
+    duration: "",
+    description:
+      "Bangladesh, nestled in South Asia, is a country defined by its lush landscapes and rich cultural heritage. The Sundarbans, the world's largest mangrove forest, is a UNESCO World Heritage Site and home to the elusive Bengal tiger. Dhaka, the bustling capital, reflects a dynamic fusion of ancient traditions and modern development. With its welcoming people, vibrant festivals, and the mighty rivers that crisscross the land, Bangladesh offers a tapestry of experiences for those seeking both natural wonders and cultural immersion.",
   },
   {
     id: 13,
@@ -148,5 +186,8 @@ export const package_data = [
     price_package: 110000,
     rating: 4,
     offerCategory: "Honeymoon",
+    duration: "",
+    description:
+      "Malaysia, a captivating Southeast Asian nation, boasts a harmonious blend of modernity and cultural heritage. Kuala Lumpur's iconic skyline is a testament to its dynamic urban development, while UNESCO-listed sites like George Town showcase the country's historical richness. Malaysia's diverse population contributes to a vibrant culinary scene, featuring flavors from Malay, Chinese, Indian, and indigenous traditions. With lush rainforests, pristine islands, and a warm tropical climate, Malaysia beckons travelers with its natural beauty and cultural allure.",
   },
 ];

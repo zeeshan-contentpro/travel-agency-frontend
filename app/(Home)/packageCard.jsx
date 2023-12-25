@@ -4,7 +4,8 @@ import { useRouter } from "next/navigation";
 
 export default function PackageCard({
   imageUrl,
-  name = "n/a",
+  city = "n/a",
+  country = "n/a",
   duration = "n/a",
 }) {
   const router = useRouter();
@@ -16,7 +17,9 @@ export default function PackageCard({
       onClick={() => router.push("/details")}
     >
       <div className={styles.container}>
-        <h3>{name}</h3>
+        <h3>
+          {city}, {country}
+        </h3>
         <p>{duration}</p>
       </div>
     </div>

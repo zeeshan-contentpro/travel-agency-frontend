@@ -20,10 +20,6 @@
   .main header {
     background-attachment: fixed;
   }
-
-  .left {
-    display: none;
-  }
 }
 
 .container {
@@ -72,19 +68,38 @@
 }
 
 .left {
-  width: 25%;
+  width: 30%;
   float: left;
-  margin-top: 22px;
-  padding-right: 20px;
+  margin-top: 28px;
+  padding-right: 5px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 
 .left h2 {
   font-size: 15px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .left {
+    display: none;
+  }
+}
+
+.totalHolidaysFound {
+  height: 40px;
+  width: 180px;
+  background-color: white;
+  padding: 10px 10px;
+  display: flex;
+  gap: 4px;
+}
+
+.totalHolidaysFound h2 {
+  font-size: 16px;
 }
 
 .leftFilterItems h3 {
@@ -99,16 +114,29 @@
 }
 
 .middle {
-  width: 75%;
+  width: 70%;
   float: left;
-  padding: 30px;
-  /* border: 1px solid black; */
+  /* padding: 20px; */
+  /* margin-top: 0; */
+  border: 1px solid black;
 }
 
 .middle h2 {
-  /* margin-top: 0; */
   margin-bottom: 15px;
 }
+
+.sorting {
+  height: 100px;
+  width: 900px;
+  background-color: white;
+  margin-left: 8px;
+}
+
+/* .sorting h2 {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+} */
 
 .inputButtons {
   margin: 10px 0 10px 0;
@@ -173,6 +201,24 @@
   padding: 12px;
   border-radius: 10px;
 }
-/*
+
 .right {
-} */
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 800px) {
+  .right {
+    display: none;
+  }
+}
+
+.right h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.cardContainer2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
