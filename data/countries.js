@@ -1,11 +1,11 @@
 export const countries = {
-  bangladesh: "Bangladesh",
-  sriLanka: "Sri Lanka",
-  india: "India",
   indonesia: "Indonesia",
   thailand: "Thailand",
   maldives: "Maldives",
   malaysia: "Malaysia",
+  bangladesh: "Bangladesh",
+  sriLanka: "Sri Lanka",
+  india: "India",
 };
 
 export const countriesArray = Object.values(countries);

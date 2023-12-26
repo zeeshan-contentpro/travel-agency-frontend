@@ -5,6 +5,7 @@ import HowWorks from "./(Home)/howWorks";
 import Offers from "./(Home)/offers";
 import Packages from "./(Home)/packages";
 import WhyUs from "./(Home)/whyUs";
+import CityCard from "./holiday-places/cityCard";
 import styles from "./page.module.css";
 
 export default function Home() {

@@ -25,6 +25,12 @@ function capitalizeFirstLetter(str) {
 const renderSingleCityHotels = (city) => {
   const filteredCityData = package_data.filter((item) => item.city === city);
 
+  const country = filteredCityData.map((item) => item.country);
+
+  const filteredCountryData = package_data.filter(
+    (item) => item.country == country
+  );
+
   const cityCards = filteredCityData.map((item, i) => (
     <div key={i}>
       <DestinationCard
@@ -34,6 +40,7 @@ const renderSingleCityHotels = (city) => {
         location={item.location}
         pricePerDay={item.price_day}
         rating={item.rating}
+        packagePrice={item.price_package}
       />
     </div>
   ));
@@ -54,59 +61,59 @@ const renderSingleCityHotels = (city) => {
       <div className={styles.containerMain}>
         <div className={styles.left}>
           <div className={styles.totalHolidaysFound}>
-            <IoSearch />
+            <IoSearch className={styles.icon} />
             <h2>{totalHolidaysFound} holidays found </h2>
           </div>
           <div className={styles.filterHeader}>
-            <BsFilter />
-            <h2>Filter</h2>
+            <BsFilter className={styles.icon} />
+            <h2 className={styles.filterHead}>Filter</h2>
           </div>
 
           <div className={styles.leftFilterItems}>
-            <h3>Property Rating</h3>
+            <h3>View</h3>
             <hr />
             <div className={styles.inputButtons}>
               <div className={styles.inputButton}>
                 <input type="checkbox" id="cb1" />
-                <label htmlFor="cb1">Checkbox 1</label>
+                <label htmlFor="cb1">Beach</label>
               </div>
               <div className={styles.inputButton}>
                 <input type="checkbox" id="cb2" />
-                <label htmlFor="cb2">Checkbox 2</label>
+                <label htmlFor="cb2">City Tours</label>
               </div>
               <div className={styles.inputButton}>
                 <input type="checkbox" id="cb3" />
-                <label htmlFor="cb3">Checkbox 3</label>
+                <label htmlFor="cb3">Hill Station</label>
               </div>
               <div className={styles.inputButton}>
                 <input type="checkbox" id="cb4" />
-                <label htmlFor="cb4">Checkbox 4</label>
+                <label htmlFor="cb4">Heritage</label>
               </div>
             </div>
           </div>
           <div className={styles.leftFilterItems}>
-            <h3>Meal</h3>
+            <h3>Type</h3>
             <hr />
             <div className={styles.inputButtons}>
               <div className={styles.inputButton}>
                 <input type="checkbox" id="cb5" />
-                <label htmlFor="cb5">Checkbox 1</label>
+                <label htmlFor="cb5">Honeymoon</label>
               </div>
               <div className={styles.inputButton}>
                 <input type="checkbox" id="cb6" />
-                <label htmlFor="cb6">Checkbox 2</label>
+                <label htmlFor="cb6">Adventure</label>
               </div>
               <div className={styles.inputButton}>
                 <input type="checkbox" id="cb7" />
-                <label htmlFor="cb7">Checkbox 3</label>
+                <label htmlFor="cb7">Romantic</label>
               </div>
               <div className={styles.inputButton}>
                 <input type="checkbox" id="cb8" />
-                <label htmlFor="cb8">Checkbox 4</label>
+                <label htmlFor="cb8">Relax</label>
               </div>
             </div>
           </div>
-          <div className={styles.leftFilterItems}>
+          {/* <div className={styles.leftFilterItems}>
             <h3>Property Type</h3>
             <hr />
             <div className={styles.inputButtons}>
@@ -149,8 +156,9 @@ const renderSingleCityHotels = (city) => {
                 <label htmlFor="cb16">Checkbox 4</label>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
+
         <div className={styles.middle}>
           <div className={styles.sorting}>
             <h2>Sort results by</h2>
@@ -158,15 +166,16 @@ const renderSingleCityHotels = (city) => {
           <div className={styles.cardContainer}>{cityCards}</div>
         </div>
         <div className={styles.right}>
-          <h3>Explore more in {city}</h3>
+          <h3>Explore more in {country}</h3>
           <div className={styles.cardContainer2}>
-            <HolidayCard
-              imageUrl={
-                "https://images.unsplash.com/photo-1557093793-d149a38a1be8?q=80&w=1974&auto=format&fit=crop&w=1035&q=80"
-              }
-              title={city}
-              name="10 Hotels Available"
-            />
+            {filteredCountryData.map((item, index) => (
+              <HolidayCard
+                key={index}
+                imageUrl={item.url}
+                city={item.city}
+                availability={`${totalHolidaysFound} Hotels Available`}
+              />
+            ))}
           </div>
         </div>
       </div>

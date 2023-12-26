@@ -30,13 +30,13 @@ const renderCitiesInASingleCountry = (country) => {
   return (
     <div className={styles.container}>
       <div className={styles.containerTitle}>
-        <h1>Explore {country}</h1>
-        <article>
+        <h1 className={styles.title}>Explore {country}</h1>
+        <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium
           adipisci voluptate, quod quasi numquam iure alias, ut corporis nam rem
           quo saepe voluptas odio, ipsum dolor sit amet consectetur adipisicing
           elit.
-        </article>
+        </p>
       </div>
       <div className={styles.cardContainer}>{cityCards}</div>
     </div>

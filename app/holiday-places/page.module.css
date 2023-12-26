@@ -36,11 +36,6 @@
 .container::-webkit-scrollbar {
   display: none;
 }
-.title {
-  color: white;
-  font-family: var(--font-bold);
-  text-shadow: var(--text-shadow);
-}
 .cardContainer {
   display: flex;
   justify-content: flex-start;
@@ -54,10 +49,7 @@
 .cardContainer::-webkit-scrollbar {
   display: none;
 }
-.containerTitle {
+.title {
   font-family: var(--font-bold);
-  margin-top: 20px;
-}
-.containerTitle article {
-  margin-top: 10px;
+  margin-bottom: 10px;
 }

@@ -97,3 +97,9 @@
   color: white;
   background-color: rgb(51, 146, 253);
 }
+
+.card2 {
+  display: flex;
+  /* justify-items: center; */
+  justify-content: space-between;
+}

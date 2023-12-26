@@ -4,11 +4,13 @@ import { useRouter } from "next/navigation";
 
 export default function PackageCard({
   imageUrl,
-  city = "n/a",
-  country = "n/a",
-  duration = "n/a",
+  city,
+  country,
+  duration,
+  params,
 }) {
   const router = useRouter();
+  // console.log(params);
 
   return (
     <div
