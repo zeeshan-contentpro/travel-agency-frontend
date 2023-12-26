@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export default function HoneymoonPackageCard({
   imageUrl,
-  city = "n/a",
-  country = "n/a",
-  duration = "n/a",
+  city,
+  country,
+  duration,
 }) {
   return (
     <div className={styles.main}>

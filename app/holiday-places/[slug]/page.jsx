@@ -25,10 +25,10 @@ function capitalizeFirstLetter(str) {
 const renderSingleCityHotels = (city) => {
   const filteredCityData = package_data.filter((item) => item.city === city);
 
-  const country = filteredCityData.map((item) => item.country);
+  const country = [...new Set(filteredCityData.map((item) => item.country))];
 
   const filteredCountryData = package_data.filter(
-    (item) => item.country == country
+    (item) => item.country == country && item.rating >= 4.5
   );
 
   const cityCards = filteredCityData.map((item, i) => (
@@ -45,7 +45,8 @@ const renderSingleCityHotels = (city) => {
     </div>
   ));
 
-  const totalHolidaysFound = filteredCityData.length;
+  const totalHolidaysFound = 5;
+  // const totalHolidaysFound = filteredCityData.length;
 
   return (
     <div className={styles.container}>
@@ -113,50 +114,6 @@ const renderSingleCityHotels = (city) => {
               </div>
             </div>
           </div>
-          {/* <div className={styles.leftFilterItems}>
-            <h3>Property Type</h3>
-            <hr />
-            <div className={styles.inputButtons}>
-              <div className={styles.inputButton}>
-                <input type="checkbox" id="cb9" />
-                <label htmlFor="cb9">Checkbox 1</label>
-              </div>
-              <div className={styles.inputButton}>
-                <input type="checkbox" id="cb10" />
-                <label htmlFor="cb10">Checkbox 2</label>
-              </div>
-              <div className={styles.inputButton}>
-                <input type="checkbox" id="cb11" />
-                <label htmlFor="cb11">Checkbox 3</label>
-              </div>
-              <div className={styles.inputButton}>
-                <input type="checkbox" id="cb12" />
-                <label htmlFor="cb12">Checkbox 4</label>
-              </div>
-            </div>
-          </div>
-          <div className={styles.leftFilterItems}>
-            <h3>Facilities & Amenities</h3>
-            <hr />
-            <div className={styles.inputButtons}>
-              <div className={styles.inputButton}>
-                <input type="checkbox" id="cb13" />
-                <label htmlFor="cb13">Checkbox 1</label>
-              </div>
-              <div className={styles.inputButton}>
-                <input type="checkbox" id="cb14" />
-                <label htmlFor="cb14">Checkbox 2</label>
-              </div>
-              <div className={styles.inputButton}>
-                <input type="checkbox" id="cb15" />
-                <label htmlFor="cb15">Checkbox 3</label>
-              </div>
-              <div className={styles.inputButton}>
-                <input type="checkbox" id="cb16" />
-                <label htmlFor="cb16">Checkbox 4</label>
-              </div>
-            </div>
-          </div> */}
         </div>
 
         <div className={styles.middle}>

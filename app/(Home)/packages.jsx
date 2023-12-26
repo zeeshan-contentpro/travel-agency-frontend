@@ -5,7 +5,7 @@ import styles from "./packages.module.css";
 
 export default function Packages() {
   const filteredPackages = package_data.filter((item) => item.rating >= 4.5);
-  console.log(filteredPackages);
+  // console.log(filteredPackages);
 
   return (
     <div className={styles.main}>

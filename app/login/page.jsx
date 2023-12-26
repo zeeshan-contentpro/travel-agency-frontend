@@ -26,7 +26,7 @@ const Login = () => {
         password,
       }).then((result) => {
         if (result?.error) alert("Invalid Credentials!");
-        else window.location.replace("/holiday-places");
+        else window.location.replace("/");
       });
 
       // console.log(data);
@@ -36,12 +36,31 @@ const Login = () => {
     }
   };
 
-  // const handleClickGoogle = async () => {
-  //   signIn("google").then((result) => {
-  //     if (result?.error) alert("Invalid Credentials!");
-  //     else window.location.replace("/holiday-places");
-  //   });
+  // const handleClickGoogle = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const data = await signIn("google", { redirect: false }).then(
+  //       (result) => {
+  //         if (result?.error) alert("Invalid Credentials!");
+  //         else window.location.replace("/login");
+  //       }
+  //     );
+
+  //     console.log("Hello", data);
+  //     return data;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
   // };
+
+  const handleClickGoogle = async () => {
+    await signIn("google");
+  };
+
+  const handleClickFacebook = async () => {
+    await signIn("facebook");
+  };
 
   return (
     <div className={styles.main}>
@@ -54,13 +73,10 @@ const Login = () => {
         </div>
 
         <div className={styles.inputSocial}>
-          <FcGoogle
-            className={styles.socialIcon}
-            onClick={() => signIn("google")}
-          />
+          <FcGoogle className={styles.socialIcon} onClick={handleClickGoogle} />
           <FaFacebookF
             className={styles.socialIcon}
-            onClick={() => signIn("facebook")}
+            onClick={handleClickFacebook}
           />
         </div>
 
