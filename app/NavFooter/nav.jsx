@@ -57,6 +57,8 @@ export default function Nav() {
 
   // console.log(session);
 
+  localStorage.setItem("userId", JSON.stringify(session?.user?.id));
+
   function onLogOutClick() {
     if (confirm("Do you want to logout?")) {
       signOut();

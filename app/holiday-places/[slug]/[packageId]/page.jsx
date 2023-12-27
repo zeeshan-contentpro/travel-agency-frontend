@@ -25,9 +25,12 @@ const renderSingleHotel = (hotelName) => {
     (item) => item.hotel_name === hotelName
   );
 
+  // console.log(filteredHotelData);
+
   const hotelDetailsCards = filteredHotelData.map((item, i) => (
     <div key={i}>
       <HotelDetailsCard
+        id={item.id}
         hotelName={item.hotel_name}
         city={item.city}
         country={item.country}
@@ -49,6 +52,8 @@ export default function page({
   const str = params?.packageId;
   const str2 = str.replaceAll("-", " ");
   const hotelName = capitalizeFirstLetter(str2);
+
+  // console.log(hotelName);
 
   return (
     <div

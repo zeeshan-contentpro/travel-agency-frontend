@@ -7,6 +7,12 @@ import styles from "./page.module.css";
 const Dashboard = () => {
   const { data: session } = useSession();
 
+  const data = localStorage.getItem("hotelInfo");
+
+  // const res = Object.values(hotelInfos);
+
+  console.log("Data ", data);
+
   return (
     <div className={styles.main}>
       <h1>Dashboard</h1>
@@ -22,6 +28,7 @@ const Dashboard = () => {
       <hr />
       <>
         <p>No package booked yet</p>
+        <p>Hello </p>
       </>
     </div>
   );

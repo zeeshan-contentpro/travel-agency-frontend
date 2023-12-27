@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import styles from "./hotelDetailsCard.module.css";
 
 const HotelDetailsCard = ({
+  id,
   hotelName,
   city,
   country,
@@ -10,6 +12,21 @@ const HotelDetailsCard = ({
   duration,
   description,
 }) => {
+  function handleClick() {
+    const hotelInfo = {
+      id,
+      hotelName,
+      city,
+      country,
+      location,
+      pricePackage,
+      duration,
+    };
+    console.log(hotelInfo);
+
+    localStorage.setItem("hotelInfo", JSON.stringify(hotelInfo));
+  }
+
   return (
     <div className={styles.main}>
       <div className={styles.topContainer}>
@@ -134,7 +151,9 @@ const HotelDetailsCard = ({
           <li>In case of no show: 100%</li>
         </ul>
         <div>
-          <button className={styles.inputButton}>Book Now</button>
+          <button className={styles.inputButton} onClick={handleClick}>
+            Book Now
+          </button>
         </div>
       </div>
     </div>
