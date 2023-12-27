@@ -14,7 +14,7 @@
 .card {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
+  justify-content: space-between;
   gap: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -30,6 +30,12 @@
 .cardLeft {
   display: flex;
   flex-direction: column;
+}
+.cardLeft{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
 .cardMiddle h2 {
@@ -102,4 +108,6 @@
   display: flex;
   /* justify-items: center; */
   justify-content: space-between;
+  flex: 2;
+  padding:10px 20px 10px 0px;
 }
