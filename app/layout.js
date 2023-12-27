@@ -1,7 +1,7 @@
 import "./globals.css";
 import Footer from "./NavFooter/footer";
 import Nav from "./NavFooter/nav";
-import Provider from "@/components/Provider";
+import Provider from "@/context/Provider";
 
 export const metadata = {
   title: {

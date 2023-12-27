@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
-import { useSession, signOut } from "next-auth/react";
+import { useSession, signOut, signIn } from "next-auth/react";
 import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
+import { IoPersonCircleOutline } from "react-icons/io5";
 import Link from "next/link";
 import styles from "./nav.module.css";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 function Menu({ close }) {
   return (
@@ -46,9 +48,24 @@ function Menu({ close }) {
 export default function Nav() {
   const [viewMenu, setViewMenu] = useState(false);
 
-  const { data: session } = useSession();
+  const { data: session } = useSession({
+    required: false,
+    // onUnauthenticated() {
+    //   redirect("/api/auth/signin?callbackUrl=/");
+    // },
+  });
 
-  // console.log(session);
+  console.log(session);
+
+  function onLogOutClick() {
+    if (confirm("Do you want to logout?")) {
+      signOut();
+      localStorage.clear();
+      redirect("/login");
+    } else {
+      return;
+    }
+  }
 
   return (
     <>
@@ -75,13 +92,19 @@ export default function Nav() {
           <Link href="/contact">Contact</Link>
           {session?.user ? (
             <>
-              <p>{session?.user?.name}</p>
-              <Link href="/login" onClick={() => signOut()}>
+              <div className={styles.icon}>
+                <IoPersonCircleOutline />
+                <Link href="/dashboard">{session?.user?.name}</Link>
+              </div>
+              {/* <Link href="/dashboard">Dashboard</Link> */}
+              <div className={styles.auth} onClick={onLogOutClick}>
                 Logout
-              </Link>
+              </div>
             </>
           ) : (
-            <Link href="/login">Login</Link>
+            <div className={styles.auth} onClick={() => signIn()}>
+              Login
+            </div>
           )}
           {/* <Link href="/login">Login</Link> */}
         </div>

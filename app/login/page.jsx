@@ -1,36 +1,44 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter, redirect } from "next/navigation";
+import { getServerSession } from "next-auth";
+import { options } from "../api/auth/[...nextauth]/options";
 import styles from "./page.module.css";
-// import { useRouter } from "next/navigation";
 
-const Login = () => {
+const Login = async () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  // const router = useRouter();
+  const router = useRouter();
 
-  const submitHandler = async (e) => {
+  const isSession = await getServerSession(options);
+
+  if (isSession) {
+    redirect("/dashboard");
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const data = await signIn("credentials", {
-        redirect: false,
-        // redirectTo: '/holiday-places',
+      const res = await signIn("credentials", {
         email,
         password,
-      }).then((result) => {
-        if (result?.error) alert("Invalid Credentials!");
-        else window.location.replace("/");
+        redirect: false,
       });
 
-      // console.log(data);
-      return data;
+      if (res.error) {
+        setError("Invalid credentials");
+        return;
+      }
+      router.replace("/dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -62,6 +70,17 @@ const Login = () => {
     await signIn("facebook");
   };
 
+  const { data: session } = useSession({
+    required: false,
+  });
+
+  // console.log(session?.accessToken);
+  // useEffect(() => {
+  //   if (session?.accessToken) {
+  //     localStorage.setItem("token", session?.accessToken);
+  //   }
+  // }, [session?.accessToken]);
+
   return (
     <div className={styles.main}>
       <div className={styles.container}>
@@ -82,7 +101,7 @@ const Login = () => {
 
         <span className={styles.spanText}>Or Sign In with</span>
 
-        <form onSubmit={submitHandler} className={styles.inputForm}>
+        <form onSubmit={handleSubmit} className={styles.inputForm}>
           <div className={styles.inputItems}>
             <label htmlFor="email_field" className={styles.inputLabel}>
               Email
@@ -117,6 +136,12 @@ const Login = () => {
           <button type="submit" className={styles.inputButton}>
             Sign In
           </button>
+
+          {error && (
+            <div className={styles.error}>
+              <p>{error}</p>
+            </div>
+          )}
 
           <p className={styles.bottomText}>
             Don't have an account ?{" "}

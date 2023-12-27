@@ -22,6 +22,16 @@
   gap: 20px;
   margin-right: 10%;
 }
+.auth {
+  cursor: pointer;
+}
+.menuContainer .icon {
+  display: flex;
+  gap: 2px;
+  font-size: 17px;
+  cursor: pointer;
+  align-items: center;
+}
 .rightMenuContainer {
   margin-right: 10%;
 }

@@ -1,13 +1,36 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  // experimental: {
+  //   appDir: true,
+  // },
   images: {
-    protocol: "https",
-    hostname: "unsplash.com",
-    port: "",
-    domains: ["images.unsplash.com", "unsplash.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "unsplash.com",
+        port: "",
+        pathname: "",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        port: "",
+        pathname: "platform-lookaside.fbsbx.com",
+      },
+    ],
+
     formats: ["image/avif", "image/webp"],
   },
   env: {

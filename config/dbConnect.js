@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const dbConnect = async () => {
+export const dbConnect = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
     console.log("Connected to MongoDB");
@@ -8,5 +8,3 @@ const dbConnect = async () => {
     console.log("Error connecting to MongoDB: ", error);
   }
 };
-
-export default dbConnect;

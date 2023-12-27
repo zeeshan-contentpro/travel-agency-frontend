@@ -1,20 +1,30 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebookF } from "react-icons/fa";
 import styles from "./page.module.css";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { options } from "../api/auth/[...nextauth]/options";
 
-const Signup = () => {
+const Signup = async () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const submitHandler = async (e) => {
+  const router = useRouter();
+
+  const isSession = await getServerSession(options);
+
+  if (isSession) {
+    redirect("/dashboard");
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if ((!name, !email || !mobile || !password)) {
@@ -23,22 +33,43 @@ const Signup = () => {
     }
 
     try {
-      const { data } = await axios
-        .post("/api/register", {
+      const resUserExists = await fetch("api/userExists", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const { user } = await resUserExists.json();
+
+      if (user) {
+        setError("User already exists.");
+        return;
+      }
+
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           name,
           email,
           mobile,
           password,
-        })
-        .then((result) => {
-          if (result?.error) alert("Invalid Credentials!");
-          else window.location.replace("/login");
-        });
+        }),
+      });
 
-      // console.log(data);
-      return data;
+      if (res.ok) {
+        const form = e.target;
+        form.reset();
+        router.push("/login");
+      } else {
+        console.log("User registration failed");
+      }
     } catch (error) {
-      console.log(error);
+      console.log("Error during registration", error);
     }
   };
 
@@ -52,14 +83,7 @@ const Signup = () => {
           </p>
         </div>
 
-        {/* <div className={styles.inputSocial}>
-          <FcGoogle className={styles.socialIcon} />
-          <FaFacebookF className={styles.socialIcon} />
-        </div>
-
-        <span className={styles.spanText}>Or Sign Up with</span> */}
-
-        <form onSubmit={submitHandler} className={styles.inputForm}>
+        <form onSubmit={handleSubmit} className={styles.inputForm}>
           <div className={styles.inputItems}>
             <label htmlFor="name_field" className={styles.inputLabel}>
               Name
@@ -119,7 +143,7 @@ const Signup = () => {
 
           {error && (
             <div className={styles.error}>
-              <p>Error message</p>
+              <p>{error}</p>
             </div>
           )}
 
