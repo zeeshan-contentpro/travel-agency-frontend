@@ -60,7 +60,7 @@ const renderSingleCityHotels = (city) => {
         </article>
       </div>
       <div className={styles.containerMain}>
-        <div className={styles.left}>
+        {/* <div className={styles.left}>
           <div className={styles.totalHolidaysFound}>
             <IoSearch className={styles.icon} />
             <h2>{totalHolidaysFound} holidays found </h2>
@@ -114,15 +114,15 @@ const renderSingleCityHotels = (city) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.middle}>
-          <div className={styles.sorting}>
+          {/* <div className={styles.sorting}>
             <h2>Sort results by</h2>
-          </div>
+          </div> */}
           <div className={styles.cardContainer}>{cityCards}</div>
         </div>
-        <div className={styles.right}>
+        {/* <div className={styles.right}>
           <h3>Explore more in {country}</h3>
           <div className={styles.cardContainer2}>
             {filteredCountryData.map((item, index) => (
@@ -134,7 +134,7 @@ const renderSingleCityHotels = (city) => {
               />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
