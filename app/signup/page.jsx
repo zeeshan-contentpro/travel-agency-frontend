@@ -1,15 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useState } from "react";
-// import axios from "axios";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "./page.module.css";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import { options } from "../api/auth/[...nextauth]/options";
+// import { getServerSession } from "next-auth";
+// import { redirect } from "next/navigation";
+// import { options } from "../api/auth/[...nextauth]/options";
 
-const Signup = async () => {
+const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
@@ -18,11 +17,11 @@ const Signup = async () => {
 
   const router = useRouter();
 
-  const isSession = await getServerSession(options);
+  // const isSession = await getServerSession(options);
 
-  if (isSession) {
-    redirect("/dashboard");
-  }
+  // if (isSession) {
+  //   redirect("/dashboard");
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

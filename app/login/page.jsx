@@ -7,22 +7,22 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter, redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
-import { options } from "../api/auth/[...nextauth]/options";
+// import { getServerSession } from "next-auth";
+// import { options } from "../api/auth/[...nextauth]/options";
 import styles from "./page.module.css";
 
-const Login = async () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
   const router = useRouter();
 
-  const isSession = await getServerSession(options);
+  // const isSession = await getServerSession(options);
 
-  if (isSession) {
-    redirect("/dashboard");
-  }
+  // if (isSession) {
+  //   redirect("/dashboard");
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,11 +63,13 @@ const Login = async () => {
   // };
 
   const handleClickGoogle = async () => {
-    await signIn("google");
+    await signIn("google", { callbackUrl: "http://localhost:3000/dashboard" });
   };
 
   const handleClickFacebook = async () => {
-    await signIn("facebook");
+    await signIn("facebook", {
+      callbackUrl: "http://localhost:3000/dashboard",
+    });
   };
 
   const { data: session } = useSession({
@@ -75,11 +77,11 @@ const Login = async () => {
   });
 
   // console.log(session?.accessToken);
-  // useEffect(() => {
-  //   if (session?.accessToken) {
-  //     localStorage.setItem("token", session?.accessToken);
-  //   }
-  // }, [session?.accessToken]);
+  useEffect(() => {
+    if (session?.accessToken) {
+      localStorage.setItem("token", session?.accessToken);
+    }
+  }, [session?.accessToken]);
 
   return (
     <div className={styles.main}>

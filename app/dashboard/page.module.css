@@ -1,0 +1,16 @@
+.main {
+  min-height: 50vh;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+
+.profileImage {
+  border-radius: 50%;
+  margin-top: 20px;
+  border: 5px solid rgb(11, 92, 168);
+}

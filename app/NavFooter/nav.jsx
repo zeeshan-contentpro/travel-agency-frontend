@@ -55,7 +55,7 @@ export default function Nav() {
     // },
   });
 
-  console.log(session);
+  // console.log(session);
 
   function onLogOutClick() {
     if (confirm("Do you want to logout?")) {
