@@ -21,6 +21,7 @@ export default function HoneymoonPackages() {
               key={item.id}
               imageUrl={item.url}
               city={item.city}
+              hotel={item.hotel_name}
               country={item.country}
               duration="3 days and 4 nights"
             />

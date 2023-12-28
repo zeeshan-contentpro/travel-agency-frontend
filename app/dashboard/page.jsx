@@ -1,35 +1,54 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import styles from "./page.module.css";
+import HotelInfo from "./hotelInfo";
 
 const Dashboard = () => {
   const { data: session } = useSession();
+  const [hotelData, setHotelData] = useState(null);
 
-  const data = localStorage.getItem("hotelInfo");
-
-  // const res = Object.values(hotelInfos);
-
-  console.log("Data ", data);
+  useEffect(() => {
+    // Retrieve data from localStorage
+    const dataFromLocalStorage = localStorage.getItem("hotelInfo");
+    if (dataFromLocalStorage) {
+      const parsedData = JSON.parse(dataFromLocalStorage);
+      setHotelData(parsedData);
+    }
+  }, []);
 
   return (
     <div className={styles.main}>
       <h1>Dashboard</h1>
-      <h3>Hello {session?.user.name}</h3>
-      <p>{session?.user.email}</p>
-      <Image
-        src={session?.user.image}
-        alt=""
-        height={250}
-        width={250}
-        className={styles.profileImage}
-      />
-      <hr />
-      <>
-        <p>No package booked yet</p>
-        <p>Hello </p>
-      </>
+      <div className={styles.profile}>
+        <div>
+          <Image
+            src={session?.user.image}
+            alt=""
+            height={100}
+            width={100}
+            className={styles.profileImage}
+          />
+        </div>
+        <div>
+          <h3>Hello {session?.user?.name}</h3>
+          <p>{session?.user?.email}</p>
+          {/* <p>{session?.user?.phone}</p> */}
+        </div>
+      </div>
+
+      <div className={styles.bookedContainer}>
+        <h2>Your Booked Package Details</h2>
+        <hr />
+        <div className={styles.bookedData}>
+          {hotelData ? (
+            <HotelInfo hotel={hotelData} />
+          ) : (
+            <p>No Package booked yet.</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

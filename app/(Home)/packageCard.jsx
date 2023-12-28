@@ -6,17 +6,19 @@ export default function PackageCard({
   imageUrl,
   city,
   country,
+  hotel,
   duration,
-  params,
 }) {
   const router = useRouter();
-  // console.log(params);
+
+  const cityName = city.toLowerCase().replace(/\s+/g, "-");
+  const hotelName = hotel.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <div
       className={styles.main}
       style={{ backgroundImage: `url(${imageUrl})` }}
-      onClick={() => router.push("/details")}
+      onClick={() => router.push(`/holiday-places/${cityName}/${hotelName}`)}
     >
       <div className={styles.container}>
         <h3>

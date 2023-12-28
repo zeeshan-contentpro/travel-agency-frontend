@@ -7,6 +7,7 @@ import StarRating from "@/components/StarRating";
 import styles from "./destinationCard.module.css";
 
 const DestinationCard = ({
+  id,
   city,
   hotelName,
   imageUrl,
@@ -39,7 +40,8 @@ const DestinationCard = ({
               <ImLocation className={styles.icon} />
               <span>{location}</span>
             </div>
-            <StarRating />
+
+            <StarRating key={id} value={rating} />
           </div>
           <div className={styles.cardRight}>
             <span className={styles.cardRightSpan}>Starts from</span>

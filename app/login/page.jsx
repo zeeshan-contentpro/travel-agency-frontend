@@ -6,9 +6,7 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import { signIn, useSession } from "next-auth/react";
-import { useRouter, redirect } from "next/navigation";
-// import { getServerSession } from "next-auth";
-// import { options } from "../api/auth/[...nextauth]/options";
+import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
 
 const Login = () => {
@@ -17,12 +15,6 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const router = useRouter();
-
-  // const isSession = await getServerSession(options);
-
-  // if (isSession) {
-  //   redirect("/dashboard");
-  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,37 +30,21 @@ const Login = () => {
         setError("Invalid credentials");
         return;
       }
-      router.replace("/dashboard");
+      router.replace("/holiday-places");
     } catch (error) {
       console.log(error);
     }
   };
 
-  // const handleClickGoogle = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const data = await signIn("google", { redirect: false }).then(
-  //       (result) => {
-  //         if (result?.error) alert("Invalid Credentials!");
-  //         else window.location.replace("/login");
-  //       }
-  //     );
-
-  //     console.log("Hello", data);
-  //     return data;
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const handleClickGoogle = async () => {
-    await signIn("google", { callbackUrl: "http://localhost:3000/dashboard" });
+    await signIn("google", {
+      callbackUrl: "http://localhost:3000/holiday-places",
+    });
   };
 
   const handleClickFacebook = async () => {
     await signIn("facebook", {
-      callbackUrl: "http://localhost:3000/dashboard",
+      callbackUrl: "http://localhost:3000/holiday-places",
     });
   };
 
@@ -131,9 +107,10 @@ const Login = () => {
             />
           </div>
 
-          <p className={styles.inputText}>
+          {/* <p className={styles.inputText}>
             <Link href="/forgot-password">Forgot Password?</Link>
-          </p>
+          </p> */}
+          <div className={styles.inputText}></div>
 
           <button type="submit" className={styles.inputButton}>
             Sign In

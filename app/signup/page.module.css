@@ -21,7 +21,6 @@
 
 .container {
   background-color: rgba(255, 255, 255, 0.966);
-  backdrop-filter: blur(2px);
   padding: 50px;
   border-radius: 10px;
   display: flex;
@@ -29,8 +28,14 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 60px 60px;
   width: 510px;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin: 100px 100px;
+  }
 }
 
 .headerContainer {

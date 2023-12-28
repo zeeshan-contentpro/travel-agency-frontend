@@ -9,7 +9,7 @@ import styles from "./nav.module.css";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
-function Menu({ close }) {
+function Menu({ close, logout, user }) {
   return (
     <div className={styles.menu}>
       <div className={styles.left} onClick={() => close()}></div>
@@ -37,9 +37,12 @@ function Menu({ close }) {
         <Link href="/contact" onClick={() => close()}>
           Contact us
         </Link>
-        <Link href="/login" onClick={() => close()}>
-          Login
-        </Link>
+        <hr className={styles.line} />
+        {user ? (
+          <div onClick={logout}>Logout</div>
+        ) : (
+          <div onClick={() => signIn()}>Login</div>
+        )}
       </div>
     </div>
   );
@@ -50,12 +53,7 @@ export default function Nav() {
 
   const { data: session } = useSession({
     required: false,
-    // onUnauthenticated() {
-    //   redirect("/api/auth/signin?callbackUrl=/");
-    // },
   });
-
-  // console.log(session);
 
   localStorage.setItem("userId", JSON.stringify(session?.user?.id));
 
@@ -98,7 +96,6 @@ export default function Nav() {
                 <IoPersonCircleOutline />
                 <Link href="/dashboard">{session?.user?.name}</Link>
               </div>
-              {/* <Link href="/dashboard">Dashboard</Link> */}
               <div className={styles.auth} onClick={onLogOutClick}>
                 Logout
               </div>
@@ -108,7 +105,6 @@ export default function Nav() {
               Login
             </div>
           )}
-          {/* <Link href="/login">Login</Link> */}
         </div>
         <div className={styles.rightMenuContainer}>
           {!viewMenu ? (
@@ -126,6 +122,8 @@ export default function Nav() {
           close={() => {
             setViewMenu(close);
           }}
+          logout={onLogOutClick}
+          user={session?.user}
         />
       )}
     </>

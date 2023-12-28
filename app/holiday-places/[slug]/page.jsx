@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { BsFilter } from "react-icons/bs";
-import { IoSearch } from "react-icons/io5";
+// import { BsFilter } from "react-icons/bs";
+// import { IoSearch } from "react-icons/io5";
 import styles from "./page.module.css";
 import DestinationCard from "./destinationCard";
 import { package_data } from "@/data/data";
-import HolidayCard from "./holidayCard";
+// import HolidayCard from "./holidayCard";
 
 function capitalizeFirstLetter(str) {
   // Split the string into an array of words
@@ -25,15 +25,16 @@ function capitalizeFirstLetter(str) {
 const renderSingleCityHotels = (city) => {
   const filteredCityData = package_data.filter((item) => item.city === city);
 
-  const country = [...new Set(filteredCityData.map((item) => item.country))];
+  // const country = [...new Set(filteredCityData.map((item) => item.country))];
 
-  const filteredCountryData = package_data.filter(
-    (item) => item.country == country && item.rating >= 4.5
-  );
+  // const filteredCountryData = package_data.filter(
+  //   (item) => item.country == country && item.rating >= 4.5
+  // );
 
   const cityCards = filteredCityData.map((item, i) => (
     <div key={i}>
       <DestinationCard
+        id={item.id}
         imageUrl={item.url}
         city={item.city}
         hotelName={item.hotel_name}
@@ -45,7 +46,7 @@ const renderSingleCityHotels = (city) => {
     </div>
   ));
 
-  const totalHolidaysFound = 5;
+  // const totalHolidaysFound = 5;
   // const totalHolidaysFound = filteredCityData.length;
 
   return (

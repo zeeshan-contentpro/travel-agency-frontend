@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./hotelDetailsCard.module.css";
+import { useRouter } from "next/navigation";
 
 const HotelDetailsCard = ({
   id,
@@ -10,8 +11,11 @@ const HotelDetailsCard = ({
   location,
   pricePackage,
   duration,
+  person,
   description,
 }) => {
+  const router = useRouter();
+
   function handleClick() {
     const hotelInfo = {
       id,
@@ -21,10 +25,39 @@ const HotelDetailsCard = ({
       location,
       pricePackage,
       duration,
+      person,
     };
-    console.log(hotelInfo);
 
-    localStorage.setItem("hotelInfo", JSON.stringify(hotelInfo));
+    // function checkIfLoggedIn() {
+    //   const userId = localStorage.getItem("userId", JSON.stringify(userId));
+    //   if (userId) {
+    //     console.log(userId);
+    //   } else {
+    //     console.log(" No userId found");
+    //   }
+    // }
+
+    // checkIfLoggedIn();
+
+    // console.log("has userId? ", checkIfLoggedIn());
+
+    function showAlertBeforeSave() {
+      const shouldSave = confirm("Are you sure you want to book the package?");
+
+      if (shouldSave) {
+        saveDataToLocalStorage();
+      } else {
+        console.log("User cancelled booking the package.");
+      }
+    }
+
+    function saveDataToLocalStorage() {
+      localStorage.setItem("hotelInfo", JSON.stringify(hotelInfo));
+    }
+
+    showAlertBeforeSave();
+
+    router.push("/dashboard");
   }
 
   return (
@@ -42,7 +75,7 @@ const HotelDetailsCard = ({
 
           <div className={styles.right}>
             <small>from</small>
-            <h2>৳{pricePackage}</h2>
+            <h2>৳{pricePackage.toFixed(2)}</h2>
           </div>
         </div>
       </div>
@@ -52,8 +85,9 @@ const HotelDetailsCard = ({
         </h1>{" "}
         <br />
         <p>DURATION : {duration}</p>
+        <p>PERSON : {person}</p>
         <p>AIRFARE : NO</p>
-        <p>COUNTRY : {country}</p>
+        <p>COUNTRY : {country.toUpperCase()}</p>
         <br />
         <p>{description}</p>
         <br />
@@ -82,11 +116,12 @@ const HotelDetailsCard = ({
         <br />
         <p>
           <b>
-            Remarks: *Booking Window: Till 31 Jan 2024 <br /> Travel Window: 11
-            March-30 April 2024 (Subject to Availability) <br /> *Minimum Stay
-            3Nights Required* <br /> Minimum 2 Adults Required <br />
-            3N Sunrise Water Villa with Plunge Pool & Jacuzzi: 161,457/- per
-            Adult with AI (Breakfast, Lunch, dinner, snacks, drinks, and
+            Remarks: <br />
+            *Booking Window: Till 31 Jan 2024 <br /> *Travel Window: 11 March-30
+            April 2024 (Subject to Availability) <br /> *Minimum Stay 3 Nights
+            Required <br /> *Minimum 2 Adults Required <br />
+            *3N Sunrise Water Villa with Plunge Pool & Jacuzzi: 161,457/- per
+            Adult with All (Breakfast, Lunch, dinner, snacks, drinks, and
             non-motorized water sports)
           </b>
           <br />

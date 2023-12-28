@@ -37,6 +37,7 @@ const renderSingleHotel = (hotelName) => {
         location={item.location}
         pricePackage={item.price_package}
         duration={item.duration}
+        person={item.person}
         description={item.description}
       />
     </div>

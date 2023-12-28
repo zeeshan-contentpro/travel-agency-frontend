@@ -21,7 +21,6 @@
 
 .container {
   background-color: rgba(255, 255, 255, 0.966);
-  backdrop-filter: blur(2px);
   padding: 50px;
   border-radius: 10px;
   display: flex;
@@ -29,8 +28,14 @@
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin-top: 10px;
+  margin: 60px 60px;
   width: 510px;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin: 100px 100px;
+  }
 }
 
 .headerContainer {
@@ -71,9 +76,34 @@
   background-color: rgb(235, 235, 235);
 }
 
+.spanText:before {
+  content: " ";
+  display: block;
+  height: 1px;
+  width: 160px;
+  position: absolute;
+  top: 50%;
+  left: -170px;
+  background: rgb(180, 180, 180);
+}
+
 .spanText {
   margin: 20px auto;
   font-size: small;
+  position: relative;
+  max-width: 500px;
+  text-align: center;
+}
+
+.spanText:after {
+  content: " ";
+  height: 1px;
+  width: 155px;
+  background: rgb(180, 180, 180);
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -165px;
 }
 
 .inputForm {

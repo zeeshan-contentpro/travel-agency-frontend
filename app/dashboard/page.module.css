@@ -5,12 +5,49 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   padding: 10%;
+}
+
+.profile {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 20px;
+  height: 150px;
+  width: 100%;
+  background-color: white;
+  padding: 5% 2%;
+  text-align: left;
+}
+
+.main h1 {
+  margin-bottom: 20px;
+}
+
+.profile h3 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+
+.profile p {
+  font-size: 18px;
 }
 
 .profileImage {
   border-radius: 50%;
   margin-top: 20px;
   border: 5px solid rgb(11, 92, 168);
+}
+
+.bookedData p {
+  margin-top: 15px;
+}
+
+.bookedContainer {
+  margin-top: 40px;
+}
+
+.bookedContainer h2 {
+  margin-bottom: 5px;
 }

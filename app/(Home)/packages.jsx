@@ -21,6 +21,7 @@ export default function Packages() {
             imageUrl={item.url}
             city={item.city}
             country={item.country}
+            hotel={item.hotel_name}
             duration={item.duration}
           />
         ))}
