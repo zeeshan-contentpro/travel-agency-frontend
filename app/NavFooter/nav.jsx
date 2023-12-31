@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSession, signOut, signIn } from "next-auth/react";
 import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
@@ -55,7 +55,9 @@ export default function Nav() {
     required: false,
   });
 
-  localStorage.setItem("userId", JSON.stringify(session?.user?.id));
+  useEffect(() => {
+    localStorage.setItem("userId", JSON.stringify(session?.user?.id));
+  }, [session?.user?.id]);
 
   function onLogOutClick() {
     if (confirm("Do you want to logout?")) {
