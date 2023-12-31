@@ -4,6 +4,8 @@ import { useSession, signOut, signIn } from "next-auth/react";
 import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { IoPersonCircleOutline } from "react-icons/io5";
+import { MdLogout, MdDashboardCustomize } from "react-icons/md";
+import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import styles from "./nav.module.css";
 import Image from "next/image";
@@ -69,6 +71,8 @@ export default function Nav() {
     }
   }
 
+  function toggleMenu() {}
+
   return (
     <>
       <div
@@ -94,16 +98,49 @@ export default function Nav() {
           <Link href="/contact">Contact</Link>
           {session?.user ? (
             <>
-              <div className={styles.icon}>
-                <IoPersonCircleOutline />
-                <Link href="/dashboard">{session?.user?.name}</Link>
-              </div>
-              <div className={styles.auth} onClick={onLogOutClick}>
-                Logout
+              <Image
+                className={styles.icon}
+                src={"/images/profile.png"}
+                width={25}
+                height={25}
+                alt=""
+                onClick={toggleMenu()}
+              />
+
+              <div className={styles.subMenuWrapper} id="subMenu">
+                <div className={styles.subMenu}>
+                  <div className={styles.userInfo}>
+                    <Image
+                      src={session?.user?.image}
+                      alt="User Image"
+                      width={35}
+                      height={70}
+                      className={styles.userImage}
+                    />
+                    <h3>{session?.user?.name}</h3>
+                  </div>
+                  <hr />
+                  <div className={styles.auth}>
+                    <div className={styles.auth2} onClick={onLogOutClick}>
+                      <MdDashboardCustomize className={styles.dashIcon} />
+                      <p>Dashboard</p>
+                      <span>
+                        <IoIosArrowForward />
+                      </span>
+                    </div>
+                    <div className={styles.auth2} onClick={onLogOutClick}>
+                      <MdLogout className={styles.dashIcon} />
+                      <p>Logout</p>
+                      <span>
+                        <IoIosArrowForward />
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </>
           ) : (
-            <div className={styles.auth} onClick={() => signIn()}>
+            <div className={styles.auth3} onClick={() => signIn()}>
               Login
             </div>
           )}
