@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './FlightBookingModal.module.css';
+import styles from './flightBookingModal.module.css';
 import Image from 'next/image';
 import { airlinesImagesLinks } from '@/data/flight';
 import { useRouter } from 'next/navigation';
