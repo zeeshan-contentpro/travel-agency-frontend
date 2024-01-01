@@ -53,11 +53,12 @@
 }
 .left {
   display: flex;
+  flex-wrap: wrap;
   /* background-color: rgb(7, 68, 68); */
   gap: 5px;
   flex: 1;
   >.input {
-    flex: 1;
+    flex: 1 100px;
     padding: 10px;
     background-color: white;
     border: solid gray 1px;

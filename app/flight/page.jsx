@@ -5,17 +5,14 @@ import styles from './page.module.css';
 import FlightResultCard from './flightResultCard';
 import { citiesArray } from '@/data/cities';
 import { randomNumberGenerator } from '@/utility/utility';
-// import Tab from "@/components/Tab";
-// import Panel from "@/components/Panel";
-
-const tabs = ['One Way', 'Round Trip', 'Multi City'];
-const panels = ['Panel One', 'Panel Two', 'Panel Three'];
+import FlightBookingModal from './flightBookingModal';
 
 const Flight = ({
 	imageUrl = 'https://images.unsplash.com/photo-1532364158125-02d75a0f7fb9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 }) => {
 	const [data, setData] = useState();
 	const [showFlightData, setShowFlightData] = useState(false);
+	const [showModal, setShowModal] = useState(false);
 	function handleChange(event) {
 		const { name, value } = event.target;
 		setData({ ...data, [name]: value });
@@ -58,14 +55,21 @@ const Flight = ({
 		}
 	}
 
-	function renderSearchResultFor() {
+	function renderSearchResultForRandomNumberOfTime() {
 		const randomCount = randomNumberGenerator(1, 15);
 		const renderArray = Array.from({ length: randomCount });
 		return (
 			<>
 				{renderArray.map((_, index) => (
 					<div key={index}>
-						<FlightResultCard from={data?.from} to={data?.to} />
+						<FlightResultCard
+							from={data?.from}
+							to={data?.to}
+							passenger={data?.passenger}
+							departing={data?.departing}
+							returning={data?.returning}
+              showModal={setShowModal}
+						/>
 					</div>
 				))}
 			</>
@@ -74,6 +78,7 @@ const Flight = ({
 
 	return (
 		<>
+			{showModal && <FlightBookingModal />}
 			<div
 				className={styles.main}
 				style={{ backgroundImage: `url(${imageUrl})` }}
@@ -162,13 +167,7 @@ const Flight = ({
 						className={styles.container}
 						style={!showFlightData ? { display: 'none' } : {}}
 					>
-						{/* <FlightResultCard from={data?.from} to={data?.to} />
-						<FlightResultCard from={data?.from} to={data?.to} />
-						<FlightResultCard from={data?.from} to={data?.to} />
-						<FlightResultCard from={data?.from} to={data?.to} />
-						<FlightResultCard from={data?.from} to={data?.to} />
-						<FlightResultCard from={data?.from} to={data?.to} /> */}
-						{renderSearchResultFor()}
+						{renderSearchResultForRandomNumberOfTime()}
 					</div>
 				</div>
 			</div>
