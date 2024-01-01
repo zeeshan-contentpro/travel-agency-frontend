@@ -54,7 +54,7 @@ const Login = () => {
 
 	useEffect(() => {
 		if (session?.accessToken) {
-			localStorage.setItem('token', session?.accessToken);
+			//localStorage.setItem('token', session?.accessToken);
 			localStorage.setItem('userId', session?.accessToken);
 		} else {
 			if (session?.user?.id){
