@@ -62,16 +62,10 @@ export default function Nav() {
     required: false,
   });
 
-
-
   function onLogOutClick() {
     if (confirm("Do you want to logout?")) {
-
-      router.push('/')
       localStorage.clear();
       signOut();
-      //redirect("/login");
-
     } else {
       return;
     }

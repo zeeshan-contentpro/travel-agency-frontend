@@ -30,7 +30,7 @@ const Login = () => {
 				setError('Invalid credentials');
 				return;
 			}
-			router.replace('/holiday-places');
+			router.replace('/dashboard');
 		} catch (error) {
 			console.log(error);
 		}
@@ -38,13 +38,13 @@ const Login = () => {
 
 	const handleClickGoogle = async () => {
 		await signIn('google', {
-			callbackUrl: 'http://localhost:3000/holiday-places',
+			callbackUrl: '/dashboard',
 		});
 	};
 
 	const handleClickFacebook = async () => {
 		await signIn('facebook', {
-			callbackUrl: 'http://localhost:3000/holiday-places',
+			callbackUrl: '/dashboard',
 		});
 	};
 
@@ -54,7 +54,6 @@ const Login = () => {
 
 	useEffect(() => {
 		if (session?.accessToken) {
-			//localStorage.setItem('token', session?.accessToken);
 			localStorage.setItem('userId', session?.accessToken);
 		} else {
 			if (session?.user?.id){
@@ -62,6 +61,12 @@ const Login = () => {
 			}
 		}
 	}, [session?.user?.id, session?.accessToken]);
+
+	useEffect(() => {
+		if (localStorage.getItem('userId')) {
+			router.push('/dashboard');
+		}
+	},[])
 
 	return (
 		<div className={styles.main}>
@@ -119,12 +124,7 @@ const Login = () => {
 							className={styles.inputItem}
 						/>
 					</div>
-
-					{/* <p className={styles.inputText}>
-            <Link href="/forgot-password">Forgot Password?</Link>
-          </p> */}
 					<div className={styles.inputText}></div>
-
 					<button type="submit" className={styles.inputButton}>
 						Sign In
 					</button>
