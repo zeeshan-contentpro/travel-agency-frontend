@@ -3,11 +3,14 @@ import { useEffect, useState } from "react";
 import { useSession, signOut, signIn } from "next-auth/react";
 import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
-import { IoPersonCircleOutline } from "react-icons/io5";
+// import { IoPersonCircleOutline } from "react-icons/io5";
+import { MdLogout, MdDashboardCustomize } from "react-icons/md";
+import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import styles from "./nav.module.css";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { useRef } from "react";
 
 function Menu({ close, logout, user }) {
   return (
@@ -50,6 +53,8 @@ function Menu({ close, logout, user }) {
 
 export default function Nav() {
   const [viewMenu, setViewMenu] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const { data: session } = useSession({
     required: false,
@@ -68,6 +73,23 @@ export default function Nav() {
       return;
     }
   }
+
+  function toggleMenu() {
+    setIsOpen(!isOpen);
+  }
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -94,16 +116,54 @@ export default function Nav() {
           <Link href="/contact">Contact</Link>
           {session?.user ? (
             <>
-              <div className={styles.icon}>
-                <IoPersonCircleOutline />
-                <Link href="/dashboard">{session?.user?.name}</Link>
+              <div onClick={toggleMenu}>
+                <Image
+                  className={styles.icon}
+                  src={"/images/profile.png"}
+                  width={25}
+                  height={25}
+                  alt=""
+                  onClick={toggleMenu}
+                />
               </div>
-              <div className={styles.auth} onClick={onLogOutClick}>
-                Logout
-              </div>
+              {isOpen && (
+                <div className={styles.subMenuWrapper} ref={dropdownRef}>
+                  <div className={styles.subMenu}>
+                    <div className={styles.userInfo}>
+                      <Image
+                        src={"/images/profile.png"}
+                        width={25}
+                        height={25}
+                        alt=""
+                        className={styles.userImage}
+                      />
+                      <h4>{session?.user?.name}</h4>
+                    </div>
+                    <hr />
+                    <div className={styles.auth}>
+                      <div className={styles.auth2}>
+                        <MdDashboardCustomize className={styles.dashIcon} />
+                        <Link href="/dashboard" className={styles.link}>
+                          Dashboard
+                        </Link>
+                        <span>
+                          <IoIosArrowForward />
+                        </span>
+                      </div>
+                      <div className={styles.auth2} onClick={onLogOutClick}>
+                        <MdLogout className={styles.dashIcon} />
+                        <p>Logout</p>
+                        <span>
+                          <IoIosArrowForward />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </>
           ) : (
-            <div className={styles.auth} onClick={() => signIn()}>
+            <div className={styles.auth3} onClick={() => signIn()}>
               Login
             </div>
           )}

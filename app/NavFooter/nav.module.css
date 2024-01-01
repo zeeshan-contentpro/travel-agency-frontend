@@ -22,8 +22,50 @@
   gap: 20px;
   margin-right: 10%;
 }
-.auth {
+.icon {
+  /* font-size: 2rem; */
+  width: 25px;
+  background: #fff;
+  border-radius: 50%;
   cursor: pointer;
+}
+.auth {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  text-decoration: none;
+  color: #525252;
+  margin: 12px 0;
+  gap: 10px;
+}
+.auth2 {
+  display: flex;
+  cursor: pointer;
+}
+.auth2 p {
+  width: 100%;
+}
+.auth2 .link {
+  width: 100%;
+}
+.auth2:hover p {
+  font-weight: 600;
+}
+.auth2:hover .link {
+  font-weight: 600;
+}
+.auth2 span {
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+.auth2:hover span {
+  transform: translateX(5px);
+}
+.auth3 {
+  cursor: pointer;
+}
+.dashIcon {
+  width: 40px;
 }
 .menuContainer .icon {
   display: flex;
@@ -53,9 +95,46 @@
   height: auto;
 }
 
-.icon {
-  font-size: 2rem;
-  cursor: pointer;
+.subMenuWrapper {
+  position: absolute;
+  top: 100%;
+  right: 9%;
+  width: 300px;
+  /* max-height: 0px; */
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.subMenu {
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.userInfo h4 {
+  font-weight: 500;
+  color: black;
+}
+
+.userImage {
+  background: #ccc;
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 15px;
+  padding: 3px;
+}
+
+.subMenu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 30px;
 }
 
 .cancelContainer {
