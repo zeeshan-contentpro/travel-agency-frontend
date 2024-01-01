@@ -2,14 +2,23 @@ import React from 'react';
 import styles from './FlightBookingModal.module.css';
 import Image from 'next/image';
 import { airlinesImagesLinks } from '@/data/flight';
+import { useRouter } from 'next/navigation';
 export default function FlightBookingModal() {
+  const router = useRouter();
 	if (!localStorage.getItem('flightBookingStatus')) {
 		return null;
 	}
   const flightInfo = JSON.parse(
     localStorage.getItem('flightBookingStatus')
   );
-
+  const onConfirmHandler = () => {
+    if (localStorage.getItem('userId')){
+      console.log('first')
+      router.push('/dashboard');
+    } else {
+      router.push('/login');
+    }
+  }
 	return (
 		<div className={styles.main}>
 			<div className={styles.container}>
@@ -35,7 +44,7 @@ export default function FlightBookingModal() {
 				<p>Returning: <b>{flightInfo?.returning}</b> </p>
 				<p>Passengers: <b>{flightInfo?.passenger}</b> </p>
 				<br />
-				<button className={styles.button}>Confirm</button>
+				<button className={styles.button} onClick={onConfirmHandler}>Confirm</button>
 			</div>
 		</div>
 	);

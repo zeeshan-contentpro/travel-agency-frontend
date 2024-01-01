@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import styles from "./page.module.css";
 import HotelInfo from "./hotelInfo";
+import FlightInfo from "./flightInfo";
 
 const Dashboard = () => {
   const { data: session } = useSession();
@@ -49,6 +50,19 @@ const Dashboard = () => {
           )}
         </div>
       </div>
+
+      <div className={styles.bookedContainer}>
+        <h2>Your Booked Flight Details</h2>
+        <hr />
+        <div className={styles.bookedData}>
+          {localStorage.getItem('flightBookingStatus') ? (
+            <FlightInfo flight={JSON.parse(localStorage.getItem('flightBookingStatus'))}/>
+          ) : (
+            <p>No Flight booked yet.</p>
+          )}
+        </div>
+      </div>
+
     </div>
   );
 };
