@@ -10,6 +10,7 @@ import Link from "next/link";
 import styles from "./nav.module.css";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { useRef } from "react";
 
 function Menu({ close, logout, user }) {
   return (
@@ -53,6 +54,7 @@ function Menu({ close, logout, user }) {
 export default function Nav() {
   const [viewMenu, setViewMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const { data: session } = useSession({
     required: false,
@@ -75,6 +77,19 @@ export default function Nav() {
   function toggleMenu() {
     setIsOpen(!isOpen);
   }
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -112,7 +127,7 @@ export default function Nav() {
                 />
               </div>
               {isOpen && (
-                <div className={styles.subMenuWrapper}>
+                <div className={styles.subMenuWrapper} ref={dropdownRef}>
                   <div className={styles.subMenu}>
                     <div className={styles.userInfo}>
                       <Image
