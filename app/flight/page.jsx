@@ -68,7 +68,7 @@ const Flight = ({
 							passenger={data?.passenger}
 							departing={data?.departing}
 							returning={data?.returning}
-              showModal={setShowModal}
+							showModal={setShowModal}
 						/>
 					</div>
 				))}
@@ -98,51 +98,74 @@ const Flight = ({
 						<div className={styles.flightContainer}>
 							<div className={styles.top}>
 								<div className={styles.left}>
-									<select
-										name="from"
-										className={styles.input}
-										onChange={handleChange}
-									>
-										<option disabled selected hidden>
-											Departure
-										</option>
-										{renderDestinationFrom()}
-									</select>
-									<select
-										name="to"
-										className={styles.input}
-										onChange={handleChange}
-									>
-										<option disabled selected hidden>
-											Destination
-										</option>
-										{renderDestinationFrom()}
-									</select>
-									<input
-										className={styles.input}
-										type="date"
-										name="departing"
-										onChange={handleChange}
-									/>
-									<input
-										className={styles.input}
-										type="date"
-										name="returning"
-										onChange={handleChange}
-									/>
-									<select
-										name="passenger"
-										className={styles.input}
-										onChange={handleChange}
-									>
-										<option disabled selected hidden>
-											Passenger
-										</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-									</select>
+									<div className={styles.inputContainer}>
+										<label className={styles.inputLabel} htmlFor="from">Departure</label>
+										<select
+											name="from"
+											className={styles.input}
+											onChange={handleChange}
+										>
+											<option disabled selected hidden>
+												Departure
+											</option>
+											{renderDestinationFrom()}
+										</select>
+									</div>
+									<div className={styles.inputContainer}>
+										<label className={styles.inputLabel} htmlFor="to">Destination</label>
+										<select
+											name="to"
+											className={styles.input}
+											onChange={handleChange}
+										>
+											<option disabled selected hidden>
+												Destination
+											</option>
+											{renderDestinationFrom()}
+										</select>
+									</div>
+									<div className={styles.inputContainer}>
+										<label className={styles.inputLabel} htmlFor="departing">
+											Departing Date
+										</label>
+										<input
+											className={styles.input}
+											type="date"
+											name="departing"
+											onChange={handleChange}
+										/>
+									</div>
+									<div className={styles.inputContainer}>
+										<label className={styles.inputLabel} htmlFor="departing">
+											Returning Date
+										</label>
+										<input
+											className={styles.input}
+											type="date"
+											name="returning"
+											onChange={handleChange}
+										/>
+									</div>
+
+									<div className={styles.inputContainer}>
+										<label className={styles.inputLabel} htmlFor="passenger">
+											Passengers
+										</label>
+										<select
+											name="passenger"
+											className={styles.input}
+											onChange={handleChange}
+										>
+											<option disabled selected hidden>
+												Passenger
+											</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									</div>
 								</div>
 
 								<div className={styles.right}>
