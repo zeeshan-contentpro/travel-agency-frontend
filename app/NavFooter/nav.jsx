@@ -20,10 +20,10 @@ function Menu({ close, logout, user }) {
         <Link href="/" onClick={() => close()}>
           Home
         </Link>
-        {/* <hr className={styles.line} />
+        <hr className={styles.line} />
         <Link href="/flight" onClick={() => close()}>
-          Flghts
-        </Link> */}
+          Flights
+        </Link>
         <hr className={styles.line} />
         <Link href="/holiday-places" onClick={() => close()}>
           Holiday
@@ -109,7 +109,7 @@ export default function Nav() {
 
         <div className={styles.menuContainer}>
           <Link href="/">Home</Link>
-          {/* <Link href="/flight">Flights</Link> */}
+          <Link href="/flight">Flights</Link>
           <Link href="/holiday-places">Holiday</Link>
           <Link href="/about">About us</Link>
           <Link href="/visa">Visa Info</Link>
