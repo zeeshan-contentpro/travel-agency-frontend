@@ -28,19 +28,6 @@ const HotelDetailsCard = ({
       person,
     };
 
-    // function checkIfLoggedIn() {
-    //   const userId = localStorage.getItem("userId", JSON.stringify(userId));
-    //   if (userId) {
-    //     console.log(userId);
-    //   } else {
-    //     console.log(" No userId found");
-    //   }
-    // }
-
-    // checkIfLoggedIn();
-
-    // console.log("has userId? ", checkIfLoggedIn());
-
     function showAlertBeforeSave() {
       const shouldSave = confirm("Are you sure you want to book the package?");
 
@@ -56,8 +43,12 @@ const HotelDetailsCard = ({
     }
 
     showAlertBeforeSave();
-
-    router.push("/dashboard");
+    if (localStorage.getItem('userId')){
+      router.push('/dashboard');
+    } else {
+      router.push('/login');
+    }
+    //router.push("/dashboard");
   }
 
   return (

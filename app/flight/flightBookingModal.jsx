@@ -13,7 +13,6 @@ export default function FlightBookingModal() {
   );
   const onConfirmHandler = () => {
     if (localStorage.getItem('userId')){
-      console.log('first')
       router.push('/dashboard');
     } else {
       router.push('/login');

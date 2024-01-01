@@ -5,12 +5,20 @@ import { useSession } from 'next-auth/react';
 import styles from './page.module.css';
 import HotelInfo from './hotelInfo';
 import FlightInfo from './flightInfo';
+import { useRouter } from 'next/navigation';
 
 const Dashboard = () => {
 	const { data: session } = useSession();
 	const [hotelData, setHotelData] = useState(null);
-
 	const [flightData, setFlightData] = useState(null);
+	const router = useRouter();
+
+	useEffect(() => {
+		const user = localStorage.getItem('userId');
+		if (!user) {
+			router.push('/login');
+		}
+	}, []);
 
 	useEffect(() => {
 		// Retrieve data from localStorage
@@ -34,7 +42,7 @@ const Dashboard = () => {
 			<div className={styles.profile}>
 				<div>
 					<Image
-						src={session?.user.image}
+						src={session?.user.image || '/logo.svg'}
 						alt=""
 						height={100}
 						width={100}

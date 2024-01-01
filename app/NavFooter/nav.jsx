@@ -10,6 +10,7 @@ import Link from "next/link";
 import styles from "./nav.module.css";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
 function Menu({ close, logout, user }) {
@@ -55,20 +56,22 @@ export default function Nav() {
   const [viewMenu, setViewMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const router = useRouter();
 
   const { data: session } = useSession({
     required: false,
   });
 
-  useEffect(() => {
-    localStorage.setItem("userId", JSON.stringify(session?.user?.id));
-  }, [session?.user?.id]);
+
 
   function onLogOutClick() {
     if (confirm("Do you want to logout?")) {
-      signOut();
+
+      router.push('/')
       localStorage.clear();
-      redirect("/login");
+      signOut();
+      //redirect("/login");
+
     } else {
       return;
     }

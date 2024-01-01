@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './flightResultCard.module.css';
 import Image from 'next/image';
 import { randomNumberGenerator } from '../../utility/utility';
 import { IoAirplaneSharp } from 'react-icons/io5';
 import { airlinesImagesLinks } from '@/data/flight';
-import FlightBookingModal from './flightBookingModal';
+
 export default function FlightResultCard({
 	from,
 	to,
