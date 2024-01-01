@@ -52,18 +52,15 @@ const Login = () => {
 		required: false,
 	});
 
-	// console.log(session?.accessToken);
 	useEffect(() => {
 		if (session?.accessToken) {
 			localStorage.setItem('token', session?.accessToken);
-		}
-	}, [session?.accessToken]);
-
-	useEffect(() => {
-		if (session?.accessToken && !session?.user?.id) {
 			localStorage.setItem('userId', session?.accessToken);
+		} else {
+			if (session?.user?.id){
+				localStorage.setItem('userId', session?.user?.id);
+			}
 		}
-		session?.user?.id && localStorage.setItem('userId', session?.user?.id);
 	}, [session?.user?.id, session?.accessToken]);
 
 	return (
