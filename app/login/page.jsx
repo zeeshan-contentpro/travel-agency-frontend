@@ -60,9 +60,11 @@ const Login = () => {
 	}, [session?.accessToken]);
 
 	useEffect(() => {
-		session?.user?.id &&
-			localStorage.setItem('userId', session?.user?.id);
-	}, [session?.user?.id]);
+		if (session?.accessToken && !session?.user?.id) {
+			localStorage.setItem('userId', session?.accessToken);
+		}
+		session?.user?.id && localStorage.setItem('userId', session?.user?.id);
+	}, [session?.user?.id, session?.accessToken]);
 
 	return (
 		<div className={styles.main}>
