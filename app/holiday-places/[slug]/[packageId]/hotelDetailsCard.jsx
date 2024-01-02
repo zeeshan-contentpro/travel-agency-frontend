@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./hotelDetailsCard.module.css";
 import { useRouter } from "next/navigation";
-import { useSession } from 'next-auth/react';
+import { useSession } from "next-auth/react";
 const HotelDetailsCard = ({
   id,
   hotelName,
@@ -16,6 +16,7 @@ const HotelDetailsCard = ({
 }) => {
   const router = useRouter();
   const { data: session } = useSession();
+
   function handleClick() {
     const hotelInfo = {
       id,
@@ -43,21 +44,20 @@ const HotelDetailsCard = ({
     }
 
     showAlertBeforeSave();
-    if (session){
-      router.push('/dashboard');
+    if (session) {
+      router.push("/dashboard");
     } else {
-      router.push('/login');
+      router.push("/login");
     }
-
   }
 
   return (
     <div className={styles.main}>
       <div className={styles.topContainer}>
-        <div className={styles.gallery}>
+        {/* <div className={styles.gallery}>
           <p>All photos</p>
           <p>Map</p>
-        </div>
+        </div> */}
         <div className={styles.priceContainer}>
           <div className={styles.left}>
             <h2>{hotelName}</h2>
