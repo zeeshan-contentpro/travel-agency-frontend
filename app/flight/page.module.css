@@ -38,11 +38,11 @@
 }
 .topContainer {
 	margin: 0px 10%;
-	margin-top: -80px;
+	margin-top: -90px;
 }
 .flightContainer {
 	background: white;
-	padding: 40px 20px;
+	padding: 30px;
 	position: relative;
 	border-radius: 10px;
 	/* display: flex; */
@@ -50,6 +50,7 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 10px;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.404);
 }
 .left {
 	display: flex;
@@ -70,7 +71,7 @@
 			flex: 1;
 			padding: 10px;
 			background-color: white;
-			border: solid gray 1px;
+			border: solid rgb(199, 198, 198) 1px;
 			border-radius: 5px;
 			color: black;
       outline: none;
@@ -81,14 +82,17 @@
 	text-align: right;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 	> .button {
+		margin-top: 10px;
 		background-color: var(--color-action);
 		color: white;
 		border: solid;
 		padding: 10px 30px;
 		border-radius: 5px;
 		cursor: pointer;
+		width: 180px;
+		text-align: center;
 	}
 }
 .gallery {
@@ -136,9 +140,8 @@
 
 .top {
 	display: flex;
-	flex-direction: row;
-	margin-bottom: 20px;
-	gap: 20px;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .bottom {

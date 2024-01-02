@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSession, signOut, signIn } from "next-auth/react";
 import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
+import { HiUser } from "react-icons/hi2";
 // import { IoPersonCircleOutline } from "react-icons/io5";
 import { MdLogout, MdDashboardCustomize } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
@@ -15,6 +16,7 @@ import { useRef } from "react";
 
 function Menu({ close, logout, user }) {
   return (
+    //this section is for mobile menu
     <div className={styles.menu}>
       <div className={styles.left} onClick={() => close()}></div>
       <div className={styles.right}>
@@ -66,8 +68,6 @@ export default function Nav() {
     if (confirm("Do you want to logout?")) {
       localStorage.clear();
       signOut();
-    } else {
-      return;
     }
   }
 
@@ -114,14 +114,7 @@ export default function Nav() {
           {session?.user ? (
             <>
               <div onClick={toggleMenu}>
-                <Image
-                  className={styles.icon}
-                  src={"/images/profile.png"}
-                  width={25}
-                  height={25}
-                  alt=""
-                  onClick={toggleMenu}
-                />
+                <HiUser className={styles.icon} onClick={toggleMenu}/>
               </div>
               {isOpen && (
                 <div className={styles.subMenuWrapper} ref={dropdownRef}>

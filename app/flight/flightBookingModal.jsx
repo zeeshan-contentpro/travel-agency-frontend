@@ -3,7 +3,7 @@ import styles from './flightBookingModal.module.css';
 import Image from 'next/image';
 import { airlinesImagesLinks } from '@/data/flight';
 import { useRouter } from 'next/navigation';
-export default function FlightBookingModal() {
+export default function FlightBookingModal({showModal}) {
   const router = useRouter();
 	if (!localStorage.getItem('flightBookingStatus')) {
 		return null;
@@ -43,7 +43,11 @@ export default function FlightBookingModal() {
 				<p>Returning: <b>{flightInfo?.returning}</b> </p>
 				<p>Passengers: <b>{flightInfo?.passenger}</b> </p>
 				<br />
-				<button className={styles.button} onClick={onConfirmHandler}>Confirm</button>
+				<div className={styles.btnContainer}>
+					<button className={styles.button} onClick={onConfirmHandler}>Confirm</button>
+					<button className={styles.buttonCancel} onClick={()=>showModal(false)}>Cancel</button>
+				</div>
+
 			</div>
 		</div>
 	);

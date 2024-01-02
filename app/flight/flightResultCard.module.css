@@ -3,13 +3,14 @@
 	border-radius: 5px;
 	padding: 10px;
 	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
 	> .box {
-		flex: 1;
+		flex: 1 220px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		text-align: center;
-		padding: 0px 10px;
 		> .info {
 			flex: 1;
 			background-color: rgba(128, 128, 128, 0.1);
@@ -32,9 +33,9 @@
 	> .box1 {
 		display: flex;
 		justify-content: center;
-		flex: 1;
+		flex: 1 220px;
 		flex-direction: column;
-		padding: 0px 10px;
+		padding: 10px 10px;
     >.logo{
       width: auto;
       height: 30px;

@@ -110,7 +110,7 @@ export default function FlightResultCard({
 						<h5>Economy</h5>
 						{renderPrice(economyPrice)}
 
-						<p>Handbag: Not more than 7 kg</p>
+						<p>Handbag: 7 kg</p>
 						<p>Sky star mile</p>
 						<p>Non smoking cabin</p>
 						<small className={styles.small}>
@@ -126,7 +126,7 @@ export default function FlightResultCard({
 						<h5>Business</h5>
 						{renderPrice(businessPrice)}
 
-						<p>Handbag: Not more than 8 kg</p>
+						<p>Handbag: 8 kg</p>
 						<p>Sky star mile</p>
 						<p>Non smoking cabin</p>
 						<small className={styles.small}>
@@ -142,7 +142,7 @@ export default function FlightResultCard({
 						<h5>First class</h5>
 						{renderPrice(firstClassPrice)}
 
-						<p>Handbag: Not more than 10 kg</p>
+						<p>Handbag: 10 kg</p>
 						<p>Sky star mile</p>
 						<p>Non smoking cabin</p>
 						<small className={styles.small}>

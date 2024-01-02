@@ -78,7 +78,7 @@ const Flight = ({
 
 	return (
 		<>
-			{showModal && <FlightBookingModal />}
+			{showModal && <FlightBookingModal showModal={setShowModal}/>}
 			<div
 				className={styles.main}
 				style={{ backgroundImage: `url(${imageUrl})` }}
@@ -93,8 +93,9 @@ const Flight = ({
 					<br />
 					<div className={styles.topContainer}>
 						<div className={styles.title}>
-							<h1 style={{ color: 'white' }}>Where to Fly?</h1>
+							<h2 style={{ color: 'white' }}>Where to Fly?</h2>
 						</div>
+						<br />
 						<div className={styles.flightContainer}>
 							<div className={styles.top}>
 								<div className={styles.left}>

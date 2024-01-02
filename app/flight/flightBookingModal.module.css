@@ -6,28 +6,42 @@
 	bottom: 0;
 	width: 100vw;
 	height: 100vh;
-	z-index: 100;
+	z-index: 10;
 	background-color: rgba(255, 255, 255, 0.9);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	> .container {
+		width: clamp(200px , 90vw, 600px);
 		background-color: white;
 		padding: 40px;
-		width: fit-content;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 		> .logo {
 			width: auto;
 			height: 30px;
 		}
-		> .button {
-			cursor: pointer;
-			background-color: var(--color-action);
-			color: white;
-			padding: 10px 20px;
-			border-radius: 5px;
-      border: none;
+		>.btnContainer{
+			display: flex;
+			gap: 20px;
+			justify-content: space-between;
+			> .button {
+				cursor: pointer;
+				background-color: var(--color-action);
+				color: white;
+				padding: 10px 20px;
+				border-radius: 5px;
+				border: none;
+			}
+			> .buttonCancel {
+				cursor: pointer;
+				background-color: black;
+				color: white;
+				padding: 10px 20px;
+				border-radius: 5px;
+				border: none;
+			}
 		}
+
 	}
 }
