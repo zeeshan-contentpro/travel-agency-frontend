@@ -38,13 +38,13 @@ const Login = () => {
 
 	const handleClickGoogle = async () => {
 		await signIn('google', {
-			callbackUrl: '/dashboard',
+			callbackUrl: '/holiday-places',
 		});
 	};
 
 	const handleClickFacebook = async () => {
 		await signIn('facebook', {
-			callbackUrl: '/dashboard',
+			callbackUrl: '/holiday-places',
 		});
 	};
 
@@ -53,20 +53,10 @@ const Login = () => {
 	});
 
 	useEffect(() => {
-		if (session?.accessToken) {
-			localStorage.setItem('userId', session?.accessToken);
-		} else {
-			if (session?.user?.id){
-				localStorage.setItem('userId', session?.user?.id);
-			}
-		}
-	}, [session?.user?.id, session?.accessToken]);
-
-	useEffect(() => {
-		if (localStorage.getItem('userId')) {
+		if (session) {
 			router.push('/dashboard');
 		}
-	},[])
+	},[session])
 
 	return (
 		<div className={styles.main}>

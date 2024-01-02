@@ -3,16 +3,20 @@ import styles from './flightBookingModal.module.css';
 import Image from 'next/image';
 import { airlinesImagesLinks } from '@/data/flight';
 import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 export default function FlightBookingModal({showModal}) {
   const router = useRouter();
+	const { data: session } = useSession();
+
 	if (!localStorage.getItem('flightBookingStatus')) {
 		return null;
 	}
   const flightInfo = JSON.parse(
     localStorage.getItem('flightBookingStatus')
   );
+
   const onConfirmHandler = () => {
-    if (localStorage.getItem('userId')){
+    if (session){
       router.push('/dashboard');
     } else {
       router.push('/login');

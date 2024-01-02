@@ -4,14 +4,11 @@ import { useSession, signOut, signIn } from "next-auth/react";
 import { BiMenu } from "react-icons/bi";
 import { IoClose } from "react-icons/io5";
 import { HiUser } from "react-icons/hi2";
-// import { IoPersonCircleOutline } from "react-icons/io5";
 import { MdLogout, MdDashboardCustomize } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import styles from "./nav.module.css";
 import Image from "next/image";
-import { redirect } from "next/navigation";
-import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
 function Menu({ close, logout, user }) {
@@ -58,7 +55,6 @@ export default function Nav() {
   const [viewMenu, setViewMenu] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const router = useRouter();
 
   const { data: session } = useSession({
     required: false,

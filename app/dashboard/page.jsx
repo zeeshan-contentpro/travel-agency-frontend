@@ -14,11 +14,10 @@ const Dashboard = () => {
 	const router = useRouter();
 
 	useEffect(() => {
-		const user = localStorage.getItem('userId');
-		if (!user) {
+		if (!session) {
 			router.push('/login');
 		}
-	}, []);
+	}, [session]);
 
 	useEffect(() => {
 		// Retrieve data from localStorage
