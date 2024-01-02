@@ -8,7 +8,7 @@ export default function StarRating({ value }) {
   const filledStars = Math.floor(value);
   const hasHalfStar = value - filledStars >= 0.5;
 
-  console.log(hasHalfStar);
+  //console.log(hasHalfStar);
 
   const stars = [];
   let i = 0;

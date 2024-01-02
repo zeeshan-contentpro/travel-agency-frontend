@@ -21,7 +21,7 @@ const renderCitiesInASingleCountry = (country) => {
     // Find the first item matching the city in the filtered data
     const cityData = filteredCountryData.find((item) => item.city === city);
 
-    console.log(cityData.url);
+   //console.log(cityData.url);
 
     return (
       <div key={i}>
