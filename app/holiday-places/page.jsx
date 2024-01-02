@@ -17,15 +17,22 @@ const renderCitiesInASingleCountry = (country) => {
     ...new Set(filteredCountryData.map((item) => item.city)),
   ];
 
-  const cityCards = uniqueCities.map((city, i) => (
-    <div key={i}>
-      <CityCard
-        imageUrl="https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
-        cityName={city}
-        // hotelsAvailable={city.length}
-      />
-    </div>
-  ));
+  const cityCards = uniqueCities.map((city, i) => {
+    // Find the first item matching the city in the filtered data
+    const cityData = filteredCountryData.find((item) => item.city === city);
+
+    console.log(cityData.url);
+
+    return (
+      <div key={i}>
+        <CityCard
+          imageUrl={cityData ? cityData.url : ""}
+          cityName={city}
+          // hotelsAvailable={city.length}
+        />
+      </div>
+    );
+  });
 
   return (
     <div className={styles.container}>
