@@ -1,116 +1,103 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+	padding: 10px;
+	border-radius: 10px;
+	flex-wrap: wrap;
+	max-width: 1000px;
 }
 
-.card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  width: 900px;
+.cardPic {
+	width: 100%;
+	height: 200px;
 }
-
-@media screen and (max-width: 700px) {
-  .card {
-    /* background-attachment: fixed; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
-/* .picture {
-  width: fit-content;
-  height: fit-content;
-} */
 
 .cardMiddle,
 .cardLeft {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+}
+
+.cardMiddle {
+	flex: 1;
 }
 
 .cardLeft {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 250px;
 }
 
 .cardMiddle h2 {
-  margin-top: 18px;
+	margin-top: 18px;
 }
 
 .location {
-  display: flex;
-  flex-direction: row;
-  margin-top: 12px;
-  gap: 5px;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	margin-top: 12px;
+	gap: 5px;
+	align-items: center;
 }
 
 .icon {
-  font-size: 22px;
+	font-size: 22px;
 }
 
 .cardRight {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: flex-end;
-  margin-left: 30px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+	justify-content: flex-end;
+	margin-left: 30px;
 }
 
 .cardRightSpan {
-  color: var(--color-action);
+	color: var(--color-action);
 }
 
 .pricePara {
-  margin: 10px 0 10px 0;
+	margin: 10px 0 10px 0;
 }
 
 .price {
-  font-weight: bold;
-  font-size: large;
+	font-weight: bold;
+	font-size: large;
 }
 
 .discount {
-  font-weight: bold;
-  font-size: 10px;
-  color: rgb(240, 33, 33);
+	font-weight: bold;
+	font-size: 10px;
+	color: rgb(240, 33, 33);
 }
 
 .vat {
-  font-size: small;
+	font-size: small;
 }
 
 .inputButton {
-  padding: 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  color: white;
-  outline: none;
-  border: none;
-  background-color: rgb(24, 130, 255);
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.inputButton:hover {
-  color: white;
-  background-color: rgb(51, 146, 253);
+	border-radius: 5px;
+	cursor: pointer;
+	color: white;
+	outline: none;
+	border: none;
+	background-color: var(--color-action);
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	font-size: 14px;
+	padding: 10px 40px;
 }
 
 .card2 {
-  display: flex;
-  justify-content: space-between;
-  flex: 2;
-  padding: 10px 20px 10px 0px;
+	display: flex;
+	justify-content: space-between;
+	flex: 4 400px;
+	padding: 10px 20px 10px 0px;
 }

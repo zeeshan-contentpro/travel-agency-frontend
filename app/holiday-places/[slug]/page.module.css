@@ -54,11 +54,13 @@
 }
 
 .containerMain {
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   gap: 30px;
   box-sizing: border-box;
   margin-top: 28px;
+  padding: 10px;
 }
 
 .filterHeader {
@@ -73,7 +75,7 @@
 }
 
 .left {
-  width: 30%;
+  /* width: 30%; */
   float: left;
   padding-right: 5px;
   display: flex;
@@ -122,8 +124,8 @@
 }
 
 .middle {
-  width: 70%;
-  float: left;
+  /* width: 70%; */
+  width: 100%;
   /* padding: 20px; */
   /* margin-top: 0; */
   /* border: 1px solid black; */

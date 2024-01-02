@@ -23,14 +23,13 @@ const DestinationCard = ({
 
   return (
     <div className={styles.main}>
-      <div className={styles.card}>
         <div className={styles.cardLeft}>
           <Image
             src={imageUrl}
             height={200}
             width={250}
             alt="Hotel Picture"
-            // className={styles.picture}
+            className={styles.cardPic}
           />
         </div>
         <div className={styles.card2}>
@@ -50,7 +49,6 @@ const DestinationCard = ({
               <span className={styles.price}>BDT{pricePerDay}</span>
               /Night
             </p>
-            <p>or</p>
             <p className={styles.pricePara}>
               <span className={styles.price}>BDT{packagePrice}</span>/Package
             </p>
@@ -65,7 +63,6 @@ const DestinationCard = ({
             </button>
           </div>
         </div>
-      </div>
     </div>
   );
 };

@@ -65,8 +65,10 @@ const HotelDetailsCard = ({
           </div>
 
           <div className={styles.right}>
-            <small>from</small>
-            <h2>৳{pricePackage.toFixed(2)}</h2>
+            <h2 className={styles.price}>৳{pricePackage.toFixed(2)}</h2>
+            <button className={styles.bookButton} onClick={handleClick}>
+              Book Now
+            </button>
           </div>
         </div>
       </div>
@@ -176,11 +178,11 @@ const HotelDetailsCard = ({
           <li>15 days to date of departure: 100%</li>
           <li>In case of no show: 100%</li>
         </ul>
-        <div>
-          <button className={styles.inputButton} onClick={handleClick}>
-            Book Now
-          </button>
-        </div>
+        <br />
+        <br />
+        <button className={styles.inputButton} onClick={handleClick}>
+          Book Now
+        </button>
       </div>
     </div>
   );
