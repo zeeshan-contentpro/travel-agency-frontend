@@ -30,7 +30,6 @@ const Dashboard = () => {
 	}, []);
 
 	useEffect(() => {
-		console.log(session)
 		if (!session) {
 			router.push('/login');
 		}
