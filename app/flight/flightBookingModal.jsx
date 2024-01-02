@@ -16,7 +16,7 @@ export default function FlightBookingModal({showModal}) {
   );
 
   const onConfirmHandler = () => {
-    if (session){
+    if (session?.user){
       router.push('/dashboard');
     } else {
       router.push('/login');

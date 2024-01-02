@@ -30,7 +30,7 @@ const Login = () => {
 				setError('Invalid credentials');
 				return;
 			}
-			router.replace('/dashboard');
+			router.push('/dashboard');
 		} catch (error) {
 			console.log(error);
 		}
@@ -38,13 +38,13 @@ const Login = () => {
 
 	const handleClickGoogle = async () => {
 		await signIn('google', {
-			callbackUrl: '/holiday-places',
+			callbackUrl: '/dashboard',
 		});
 	};
 
 	const handleClickFacebook = async () => {
 		await signIn('facebook', {
-			callbackUrl: '/holiday-places',
+			callbackUrl: '/dashboard',
 		});
 	};
 
@@ -53,10 +53,11 @@ const Login = () => {
 	});
 
 	useEffect(() => {
-		if (session) {
+		if (session?.user) {
+			console.log('login pg')
 			router.push('/dashboard');
 		}
-	},[session])
+	},[])
 
 	return (
 		<div className={styles.main}>

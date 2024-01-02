@@ -17,12 +17,6 @@ const Signup = () => {
 
   const router = useRouter();
 
-  // const isSession = await getServerSession(options);
-
-  // if (isSession) {
-  //   redirect("/dashboard");
-  // }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 

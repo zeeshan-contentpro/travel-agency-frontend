@@ -14,12 +14,6 @@ const Dashboard = () => {
 	const router = useRouter();
 
 	useEffect(() => {
-		if (!session) {
-			router.push('/login');
-		}
-	}, [session]);
-
-	useEffect(() => {
 		// Retrieve data from localStorage
 		const dataFromLocalStorage = localStorage.getItem('hotelInfo');
 		if (dataFromLocalStorage) {
@@ -32,6 +26,13 @@ const Dashboard = () => {
 		if (dataFromLocalStorage2) {
 			const parsedData = JSON.parse(dataFromLocalStorage2);
 			setFlightData(parsedData);
+		}
+	}, []);
+
+	useEffect(() => {
+		console.log(session)
+		if (!session) {
+			router.push('/login');
 		}
 	}, []);
 
