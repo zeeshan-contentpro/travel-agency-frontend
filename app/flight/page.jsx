@@ -106,7 +106,7 @@ const Flight = ({
 											className={styles.input}
 											onChange={handleChange}
 										>
-											<option disabled selected hidden>
+											<option disabled defaultValue hidden>
 												Departure
 											</option>
 											{renderDestinationFrom()}
@@ -119,7 +119,7 @@ const Flight = ({
 											className={styles.input}
 											onChange={handleChange}
 										>
-											<option disabled selected hidden>
+											<option disabled defaultValue hidden>
 												Destination
 											</option>
 											{renderDestinationFrom()}
@@ -157,7 +157,7 @@ const Flight = ({
 											className={styles.input}
 											onChange={handleChange}
 										>
-											<option disabled selected hidden>
+											<option disabled defaultValue hidden>
 												Passenger
 											</option>
 											<option value="1">1</option>

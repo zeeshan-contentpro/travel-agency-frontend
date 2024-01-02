@@ -54,7 +54,6 @@ const Login = () => {
 
 	useEffect(() => {
 		if (session?.user) {
-			console.log('login pg')
 			router.push('/dashboard');
 		}
 	},[])
