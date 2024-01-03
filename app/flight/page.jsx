@@ -7,9 +7,7 @@ import { citiesArray } from '@/data/cities';
 import { randomNumberGenerator } from '@/utility/utility';
 import FlightBookingModal from './flightBookingModal';
 
-const Flight = ({
-	imageUrl = 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-}) => {
+const Flight = () => {
 	const [data, setData] = useState();
 	const [showFlightData, setShowFlightData] = useState(false);
 	const [showModal, setShowModal] = useState(false);
@@ -78,18 +76,10 @@ const Flight = ({
 
 	return (
 		<>
-			{showModal && <FlightBookingModal showModal={setShowModal}/>}
-			<div
-				className={styles.main}
-				style={{ backgroundImage: `url(${imageUrl})` }}
-			>
+			{showModal && <FlightBookingModal showModal={setShowModal} />}
+			<div className={styles.main}>
 				<div className={styles.header}>
-					<Image
-						src={imageUrl}
-						alt="destination"
-						width={1280}
-						height={720}
-					/>
+					<div className={styles.overlay}></div>
 					<br />
 					<div className={styles.topContainer}>
 						<div className={styles.title}>
@@ -100,35 +90,56 @@ const Flight = ({
 							<div className={styles.top}>
 								<div className={styles.left}>
 									<div className={styles.inputContainer}>
-										<label className={styles.inputLabel} htmlFor="from">Departure</label>
+										<label
+											className={styles.inputLabel}
+											htmlFor="from"
+										>
+											Departure
+										</label>
 										<select
 											name="from"
 											className={styles.input}
 											onChange={handleChange}
 											defaultValue={'departure'}
 										>
-											<option disabled hidden value={'departure'}>
+											<option
+												disabled
+												hidden
+												value={'departure'}
+											>
 												Departure
 											</option>
 											{renderDestinationFrom()}
 										</select>
 									</div>
 									<div className={styles.inputContainer}>
-										<label className={styles.inputLabel} htmlFor="to">Destination</label>
+										<label
+											className={styles.inputLabel}
+											htmlFor="to"
+										>
+											Destination
+										</label>
 										<select
 											name="to"
 											className={styles.input}
 											onChange={handleChange}
 											defaultValue={'destination'}
 										>
-											<option disabled hidden value={'destination'}>
+											<option
+												disabled
+												hidden
+												value={'destination'}
+											>
 												Destination
 											</option>
 											{renderDestinationFrom()}
 										</select>
 									</div>
 									<div className={styles.inputContainer}>
-										<label className={styles.inputLabel} htmlFor="departing">
+										<label
+											className={styles.inputLabel}
+											htmlFor="departing"
+										>
 											Departing Date
 										</label>
 										<input
@@ -139,7 +150,10 @@ const Flight = ({
 										/>
 									</div>
 									<div className={styles.inputContainer}>
-										<label className={styles.inputLabel} htmlFor="departing">
+										<label
+											className={styles.inputLabel}
+											htmlFor="departing"
+										>
 											Returning Date
 										</label>
 										<input
@@ -151,7 +165,10 @@ const Flight = ({
 									</div>
 
 									<div className={styles.inputContainer}>
-										<label className={styles.inputLabel} htmlFor="passenger">
+										<label
+											className={styles.inputLabel}
+											htmlFor="passenger"
+										>
 											Passengers
 										</label>
 										<select
@@ -160,7 +177,11 @@ const Flight = ({
 											onChange={handleChange}
 											defaultValue={'passenger'}
 										>
-											<option disabled hidden value={'passenger'}>
+											<option
+												disabled
+												hidden
+												value={'passenger'}
+											>
 												Passenger
 											</option>
 											<option value="1">1</option>

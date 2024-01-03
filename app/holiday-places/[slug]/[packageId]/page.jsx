@@ -47,7 +47,6 @@ const renderSingleHotel = (hotelName) => {
 };
 
 export default function page({
-  imageUrl = "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80",
   params,
 }) {
   const str = params?.packageId;
@@ -59,10 +58,9 @@ export default function page({
   return (
     <div
       className={styles.main}
-      style={{ backgroundImage: `url(${imageUrl})` }}
     >
       <div className={styles.header}>
-        <Image src={imageUrl} alt="destination" width={1280} height={720} />
+        <div className={styles.overlay}></div>
         {renderSingleHotel(hotelName)}
       </div>
     </div>

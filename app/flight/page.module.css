@@ -1,4 +1,5 @@
 .main {
+	background-image: url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -10,13 +11,25 @@
 	flex-direction: column;
 	justify-content: center;
 	gap: 20px;
+
+	border: solid;
 }
 @media screen and (min-width: 479px) {
 	.main {
 		background-attachment: fixed;
 	}
+	.overlay {
+		background-attachment: fixed;
+	}
 }
 .header {
+	>.overlay{
+		background-image: url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 300px;
+	}
 	backdrop-filter: blur(5px);
 	background: linear-gradient(
 		180deg,
@@ -25,6 +38,11 @@
 		rgba(255, 255, 255, 0.71) 100%
 	);
 	min-height: 100vh;
+}
+@media screen and (min-width: 479px) {
+	.main {
+		background-attachment: fixed;
+	}
 }
 .header img {
 	width: 100%;
