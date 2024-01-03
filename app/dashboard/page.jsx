@@ -29,12 +29,6 @@ const Dashboard = () => {
 		}
 	}, []);
 
-	useEffect(() => {
-		if (!localStorage.getItem(user)) {
-			router.push('/login');
-		}
-	}, []);
-
 	return (
 		<div className={styles.main}>
 			<h1>Dashboard</h1>
