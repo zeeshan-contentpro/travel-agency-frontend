@@ -8,10 +8,11 @@ export default function Footer() {
         <Image src="./logo.svg" alt="logo" height={40} width={300} />
         <br />
         <small className={styles.article}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-          repudiandae cumque aut laboriosam suscipit deserunt excepturi nulla
-          consequuntur debitis accusamus animi vero, doloremque quaerat ad eum
-          nostrum voluptatibus impedit culpa! Nam esse aperiam quas deleniti.
+          With access to an extensive network of partners and exclusive deals,
+          Travel Buddy brings forth unique travel opportunities at competitive
+          prices. Our dedicated support team remains available throughout the
+          journey, providing assistance and guidance, ensuring a hassle-free and
+          memorable adventure for every traveler.
         </small>
         <br />
         <div className={styles.container}>

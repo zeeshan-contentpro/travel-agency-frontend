@@ -21,7 +21,7 @@ const renderCitiesInASingleCountry = (country) => {
     // Find the first item matching the city in the filtered data
     const cityData = filteredCountryData.find((item) => item.city === city);
 
-   //console.log(cityData.url);
+    //console.log(cityData.url);
 
     return (
       <div key={i}>
@@ -39,10 +39,10 @@ const renderCitiesInASingleCountry = (country) => {
       <div className={styles.containerTitle}>
         <h1 className={styles.title}>Explore {country}</h1>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-          adipisci voluptate, quod quasi numquam iure alias, ut corporis nam rem
-          quo saepe voluptas odio, ipsum dolor sit amet consectetur adipisicing
-          elit.
+          Exploring is an immersive journey through diverse landscapes, rich
+          history, and vibrant cultures. From the breathtaking natural wonders
+          to the bustling cities teeming with life, every corner reveals a
+          unique story waiting to be discovered.
         </p>
       </div>
       <div className={styles.cardContainer}>{cityCards}</div>

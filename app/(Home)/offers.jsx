@@ -6,8 +6,8 @@ export default function Offers() {
     <div className={styles.main}>
       <h1 className={styles.title}>Current offers</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur. Adipiscing metus felis et cursus
-        id facilisis convallis tincidunt neque.
+        Book now and save 20% on your next luxurious stay! Limited time offer,
+        don&apos;t miss out!
       </p>
       <div className={styles.container}>
         <div className={styles.left}>
