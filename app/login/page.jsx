@@ -54,7 +54,7 @@ const Login = () => {
 
 	useEffect(() => {
 		const user = localStorage.getItem('user');
-		if (!user) {
+		if (user) {
 			router.push('/dashboard');
 		}
 	},[])
