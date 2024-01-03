@@ -19,7 +19,7 @@
 }
 .dropdown {
   background-color: rgba(255, 255, 255, 0.335);
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
   padding: 30px;
   border-radius: 10px;
   display: flex;
@@ -45,6 +45,7 @@
   cursor: pointer;
   height: 40px;
   border-radius: 5px;
+  color: white;
 }
 .info {
   color: gray;
