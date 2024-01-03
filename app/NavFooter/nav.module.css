@@ -8,7 +8,6 @@
     rgba(0, 0, 0, 0.05) 100%
   );
   backdrop-filter: blur(2px);
-
   height: 70px;
   display: flex;
   align-items: center;
