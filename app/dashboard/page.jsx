@@ -30,7 +30,7 @@ const Dashboard = () => {
 	}, []);
 
 	useEffect(() => {
-		if (!session) {
+		if (!localStorage.getItem(user)) {
 			router.push('/login');
 		}
 	}, []);

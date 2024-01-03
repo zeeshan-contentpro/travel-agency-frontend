@@ -8,7 +8,7 @@ import { randomNumberGenerator } from '@/utility/utility';
 import FlightBookingModal from './flightBookingModal';
 
 const Flight = ({
-	imageUrl = 'https://images.unsplash.com/photo-1532364158125-02d75a0f7fb9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+	imageUrl = 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
 }) => {
 	const [data, setData] = useState();
 	const [showFlightData, setShowFlightData] = useState(false);
@@ -105,8 +105,9 @@ const Flight = ({
 											name="from"
 											className={styles.input}
 											onChange={handleChange}
+											defaultValue={'departure'}
 										>
-											<option disabled defaultValue hidden>
+											<option disabled hidden value={'departure'}>
 												Departure
 											</option>
 											{renderDestinationFrom()}
@@ -118,8 +119,9 @@ const Flight = ({
 											name="to"
 											className={styles.input}
 											onChange={handleChange}
+											defaultValue={'destination'}
 										>
-											<option disabled defaultValue hidden>
+											<option disabled hidden value={'destination'}>
 												Destination
 											</option>
 											{renderDestinationFrom()}
@@ -156,8 +158,9 @@ const Flight = ({
 											name="passenger"
 											className={styles.input}
 											onChange={handleChange}
+											defaultValue={'passenger'}
 										>
-											<option disabled defaultValue hidden>
+											<option disabled hidden value={'passenger'}>
 												Passenger
 											</option>
 											<option value="1">1</option>

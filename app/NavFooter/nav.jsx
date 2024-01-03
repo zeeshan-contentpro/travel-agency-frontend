@@ -78,6 +78,12 @@ export default function Nav() {
   };
 
   useEffect(() => {
+    if (session){
+      localStorage.setItem("user", JSON.stringify(session.expires));
+    }
+  },[])
+  
+  useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
