@@ -78,11 +78,11 @@ export default function Nav() {
   };
 
   useEffect(() => {
-    if (session){
+    if (session?.user){
       localStorage.setItem("user", JSON.stringify(session.expires));
     }
-  },[])
-  
+  },[session])
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {

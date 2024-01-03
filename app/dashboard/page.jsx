@@ -14,6 +14,13 @@ const Dashboard = () => {
 	const router = useRouter();
 
 	useEffect(() => {
+		const user = localStorage.getItem('user');
+		if (!user) {
+			router.push('/login');
+		}
+	}, []);
+
+	useEffect(() => {
 		// Retrieve data from localStorage
 		const dataFromLocalStorage = localStorage.getItem('hotelInfo');
 		if (dataFromLocalStorage) {
