@@ -97,7 +97,7 @@ export default function VisaInfo() {
               </div>
             </div>
             <div className={styles.visaDetailsRight}>
-              <div className={styles.visaDetailsRightTop}>
+              {/* <div className={styles.visaDetailsRightTop}>
                 <PackageCard
                   imageUrl={
                     "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
@@ -105,7 +105,7 @@ export default function VisaInfo() {
                   name="Bali, Indonesia"
                   duration="3 days and 4 nights"
                 />
-              </div>
+              </div> */}
               <div className={styles.visaDetailsRightBottom}>
                 <h4>Need Travel buddy Help?</h4>
                 <p>
