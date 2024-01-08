@@ -2,16 +2,20 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import styles from "./page.module.css";
-import HotelInfo from "./hotelInfo";
-import FlightInfo from "./flightInfo";
 import { useRouter } from "next/navigation";
+import styles from "./page.module.css";
+// import HotelInfo from "./hotelInfo";
+// import FlightInfo from "./flightInfo";
 import BookedHotel from "./bookedHotel";
+import BookedFlight from "./bookedFlight";
 
 const Dashboard = () => {
   const { data: session } = useSession();
   const [hotelData, setHotelData] = useState(null);
   const [flightData, setFlightData] = useState(null);
+  const [showHotelData, setShowHotelData] = useState(false);
+  const [showFlightData, setShowFlightData] = useState(false);
+  const [activeButton, setActiveButton] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -35,48 +39,71 @@ const Dashboard = () => {
     }
   }, []);
 
+  const handleButtonClick = (type) => {
+    setActiveButton(type);
+    if (type === "package") {
+      setShowHotelData(true);
+      setShowFlightData(false);
+    } else if (type === "flight") {
+      setShowFlightData(true);
+      setShowHotelData(false);
+    }
+  };
+
   return (
     <div className={styles.main}>
       <h1>Dashboard</h1>
+      <hr />
       <div className={styles.profile}>
         <div>
           <Image
             src={session?.user.image || "/logo.svg"}
             alt=""
-            height={100}
-            width={100}
+            height={80}
+            width={80}
             className={styles.profileImage}
           />
         </div>
         <div>
-          <h3>Hello {session?.user?.name}</h3>
+          <h3>Welcome {session?.user?.name}</h3>
           <p>{session?.user?.email}</p>
           {/* <p>{session?.user?.phone}</p> */}
         </div>
       </div>
 
-      <div className={styles.bookedContainer}>
-        <h2>Your Booked Package Details</h2>
-        <hr />
-        <div className={styles.bookedData}>
-          {hotelData ? (
-            <BookedHotel hotelData={hotelData} />
-          ) : (
-            <p>No Package booked yet.</p>
-          )}
-        </div>
+      <div className={styles.btnGroup}>
+        <button
+          onClick={() => handleButtonClick("package")}
+          className={activeButton === "package" ? styles.activeButton : ""}
+        >
+          Package
+        </button>
+        <button
+          onClick={() => handleButtonClick("flight")}
+          className={activeButton === "flight" ? styles.activeButton : ""}
+        >
+          Flight
+        </button>
       </div>
 
       <div className={styles.bookedContainer}>
-        <h2>Your Booked Flight Details</h2>
-        <hr />
-        <div className={styles.bookedData}>
-          {flightData ? (
-            <FlightInfo flight={flightData} />
+        {showHotelData ? (
+          hotelData ? (
+            <BookedHotel hotelData={hotelData} />
+          ) : (
+            <p>No Package booked yet.</p>
+          )
+        ) : null}
+      </div>
+
+      <div className={styles.bookedContainer}>
+        {showFlightData ? (
+          flightData ? (
+            <BookedFlight flight={flightData} />
           ) : (
             <p>No Flight booked yet.</p>
-          )}
-        </div>
+          )
+        ) : null}
       </div>
     </div>
   );

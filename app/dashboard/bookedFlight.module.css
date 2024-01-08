@@ -37,6 +37,12 @@
   margin-bottom: 8px;
 }
 
+.toFrom {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 .inner3 {
   flex: 0.5;
   display: flex;

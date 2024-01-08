@@ -9,9 +9,12 @@
   padding: 10%;
 }
 
+.main h1 {
+  margin-bottom: 20px;
+}
+
 .profile {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   gap: 20px;
   height: 150px;
@@ -19,19 +22,16 @@
   background-color: white;
   padding: 5% 2%;
   text-align: left;
-}
-
-.main h1 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .profile h3 {
-  font-size: 25px;
+  font-size: 22px;
   margin-bottom: 8px;
 }
 
 .profile p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .profileImage {
@@ -40,14 +40,33 @@
   border: 5px solid rgb(11, 92, 168);
 }
 
-.bookedData p {
-  margin-top: 15px;
+.btnGroup button {
+  background-color: #04aa6d;
+  border: 1px solid green;
+  color: white;
+  padding: 10px 24px;
+  cursor: pointer;
+  float: left;
+}
+
+.btnGroup::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btnGroup button:not(:last-child) {
+  border-right: none;
+}
+
+.btnGroup button:hover {
+  background-color: #3e8e41;
+}
+
+.btnGroup .activeButton {
+  background-color: #3e8e41;
 }
 
 .bookedContainer {
-  margin-top: 40px;
-}
-
-.bookedContainer h2 {
-  margin-bottom: 5px;
+  margin-top: 50px;
 }
