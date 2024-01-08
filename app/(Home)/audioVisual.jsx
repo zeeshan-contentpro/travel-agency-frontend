@@ -1,15 +1,15 @@
 import styles from "./audioVisual.module.css";
 
 export default function AudioVisual() {
-    return (
-        <div className={styles.main}>
-            <h3>Lorem ipsum dolor</h3>
-            <h1 className={styles.title}>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deserunt voluptas illum accusantium!
-            </p>
-        </div>
-    );
+  return (
+    <div className={styles.main}>
+      <h3>Embrace the Globe</h3>
+      <h1 className={styles.title}>Unveiling Wonders, One Journey at a Time</h1>
+      <br />
+      <p>
+        Uniting Cultures, Igniting Wanderlust. Embark on a global odyssey, where
+        every destination tells a tale of its own!
+      </p>
+    </div>
+  );
 }

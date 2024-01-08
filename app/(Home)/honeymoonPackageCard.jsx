@@ -24,8 +24,8 @@ export default function HoneymoonPackageCard({
           {city}, {country}
         </h3>
         <small>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-          doloremque libero temporibus porro.
+          Vibrant city, pulse with modern energy, while rural villages maintain
+          traditional ways of life.
         </small>
         <p>{duration}</p>
 

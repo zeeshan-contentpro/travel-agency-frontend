@@ -1,0 +1,95 @@
+.wrapper {
+  height: 250px;
+  width: 840px;
+  background: rgb(243, 243, 243);
+  display: flex;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.inner1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 220px;
+}
+
+.inner1 h3 {
+  margin-bottom: 10px;
+}
+
+.inner1 h4 {
+  margin-bottom: 7px;
+}
+
+.inner2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 220px;
+}
+
+.inner2 h4 {
+  margin-bottom: 8px;
+}
+
+.toFrom {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.inner3 {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: center;
+  height: 220px;
+}
+
+.inner4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  gap: 20px;
+}
+
+.detailsButton {
+  width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: var(--color-action);
+  margin-top: 10px;
+}
+
+.cancelButton {
+  width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: red;
+  margin-top: 10px;
+}

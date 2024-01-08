@@ -82,10 +82,6 @@ const Flight = () => {
 					<div className={styles.overlay}></div>
 					<br />
 					<div className={styles.topContainer}>
-						<div className={styles.title}>
-							<h2 style={{ color: 'white' }}>Where to Fly?</h2>
-						</div>
-						<br />
 						<div className={styles.flightContainer}>
 							<div className={styles.top}>
 								<div className={styles.left}>
@@ -208,6 +204,7 @@ const Flight = () => {
 									</p>
 								</div>
 							</div>
+
 						</div>
 					</div>
 

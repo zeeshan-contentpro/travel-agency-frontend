@@ -11,8 +11,11 @@ export default function Packages() {
     <div className={styles.main}>
       <h1 className={styles.title}>Our popular packages</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur. Adipiscing metus felis et cursus
-        id facilisis convallis tincidunt neque.
+        Travel Buddy packages cater to diverse travel styles and preferences,
+        offering a range of options from adventurous escapades to luxurious
+        getaways. Each package is meticulously curated to include
+        accommodations, activities, and unique experiences tailored to the
+        client&apos;s desires, ensuring an unforgettable journey.
       </p>
       <div className={styles.container}>
         {filteredPackages.map((item) => (

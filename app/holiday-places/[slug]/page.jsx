@@ -54,15 +54,13 @@ const renderSingleCityHotels = (city) => {
       <div>
         <h1 className={styles.subtitle}>Hotels in {city}</h1>
         <article className={styles.para}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem,
-          ipsam nobis distinctio ad nisi, totam itaque suscipit rem, neque
-          veritatis quas qui officia numquam ex enim est? Officia, accusantium.
-          Doloribus!
+          The city beckons with its enchanting mix of lush landscapes, from
+          serene rice terraces to cascading waterfalls, inviting travelers to
+          discover a paradise where spirituality and natural beauty converge
+          seamlessly.
         </article>
       </div>
-      <div className={styles.containerMain}>
-          {cityCards}
-      </div>
+      <div className={styles.containerMain}>{cityCards}</div>
     </div>
   );
 };
