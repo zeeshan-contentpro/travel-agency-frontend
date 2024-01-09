@@ -1,34 +1,30 @@
-"use client";
+import React from "react";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
-import { FaStar } from "react-icons/fa";
-import styles from "./StarRating.module.css";
+const StarRating = ({ rating }) => {
+  const totalStars = 5;
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+  const emptyStars = totalStars - fullStars - (hasHalfStar ? 1 : 0);
 
-export default function StarRating({ value }) {
-  const maxRating = 5;
-  const filledStars = Math.floor(value);
-  const hasHalfStar = value - filledStars >= 0.5;
+  const starArray = [];
 
-  //console.log(hasHalfStar);
-
-  const stars = [];
-  let i = 0;
-
-  // Push filled icons
-  for (i = 0; i < filledStars; i++) {
-    stars.push(<FaStar key={i} size={20} className={styles.star} />);
+  // Add full stars
+  for (let i = 0; i < fullStars; i++) {
+    starArray.push(<FaStar key={i} />);
   }
 
-  // Push half-filled icon if needed
+  // Add half star if needed
   if (hasHalfStar) {
-    stars.push(<FaStar key={i} size={20} className={styles.star} />);
-    i++;
+    starArray.push(<FaStar key={"half"} />);
   }
 
-  // Push empty icons to fill remaining space
-  while (i < maxRating) {
-    stars.push(<FaStar key={i} size={20} className={styles.star} />);
-    i++;
+  // Add empty stars
+  for (let i = 0; i < emptyStars; i++) {
+    starArray.push(<FaRegStar key={`empty-${i}`} />);
   }
 
-  return <div className={styles.starContainer}>{stars}</div>;
-}
+  return <div>{starArray}</div>;
+};
+
+export default StarRating;

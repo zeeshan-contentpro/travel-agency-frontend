@@ -1,9 +1,14 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation";
 import styles from "./bookedHotel.module.css";
 
 export default function BookedHotel({ hotelData }) {
-  const handleClick = () => {};
+  const router = useRouter();
+
+  const onHandleClick = () => {
+    router.push(`/dashboard/my-hotel`);
+  };
 
   function onCancelClick() {
     if (confirm("You are cancelling the booking")) {
@@ -30,7 +35,7 @@ export default function BookedHotel({ hotelData }) {
       </div>
       <div className={styles.inner4}>
         <div className={styles.btnContainer}>
-          <button className={styles.detailsButton} onClick={handleClick}>
+          <button className={styles.detailsButton} onClick={onHandleClick}>
             View Details
           </button>
           <button className={styles.cancelButton} onClick={onCancelClick}>

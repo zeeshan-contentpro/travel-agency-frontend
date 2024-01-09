@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-// import { BsFilter } from "react-icons/bs";
-// import { IoSearch } from "react-icons/io5";
 import styles from "./page.module.css";
 import DestinationCard from "./destinationCard";
 import { package_data } from "@/data/data";

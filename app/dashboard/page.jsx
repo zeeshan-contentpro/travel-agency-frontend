@@ -94,9 +94,7 @@ const Dashboard = () => {
             <p>No Package booked yet.</p>
           )
         ) : null}
-      </div>
 
-      <div className={styles.bookedContainer}>
         {showFlightData ? (
           flightData ? (
             <BookedFlight flight={flightData} />
