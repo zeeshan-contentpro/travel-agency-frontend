@@ -1,6 +1,8 @@
 .main {
-  min-height: 60vh;
-  padding: 10%;
+  min-height: 70vh;
+  padding: 0 3% 5% 3%;
+  margin: 8% 20% 10% 20%;
+  border: 1px solid rgb(216, 210, 210);
 }
 
 .inner1 {
@@ -9,10 +11,20 @@
   padding: 30px;
 }
 
+.inner1Left {
+  flex: 2;
+  border: 1px solid rgb(216, 210, 210);
+}
+
 .inner1Right {
+  flex: 6;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+
+.inner1Right h4 {
+  font-size: 14px;
 }
 
 .inner2 {
@@ -22,13 +34,132 @@
 
 .inner2Left {
   flex: 1;
+  padding: 8px;
 }
+
+.inner2Left .bankInfoTable {
+  width: 100%; /* Optional: adjust the width as needed */
+}
+
+.inner2Left th,
+.inner2Left td {
+  text-align: left;
+  padding-right: 10px; /* Optional: adjust padding for spacing */
+  font-size: 15px;
+  line-height: 22px;
+}
+
+/* .inner2Left .bankInfoTable1 {} */
 
 .inner2Right {
   flex: 1;
+  padding: 8px;
+  background-color: rgb(224, 224, 224);
+}
+
+.inner2Right .bankInfoTable {
+  width: 100%; /* Optional: adjust the width as needed */
+}
+
+.inner2Right th,
+.inner2Right td {
+  text-align: left;
+  padding-right: 10px; /* Optional: adjust padding for spacing */
+  font-size: 15px;
+  line-height: 22px;
+}
+
+/* .inner2Right .bankInfoTable1 {} */
+
+.inner2Right p {
+  font-size: 14px;
+}
+
+.inner3 {
+  padding: 8px;
+  background-color: rgb(224, 224, 224);
+}
+
+.inner3 p {
+  font-size: 14px;
+}
+
+.inner4 {
+  padding: 8px;
+  background-color: rgb(224, 224, 224);
+}
+
+.inner4 p {
+  font-size: 14px;
+}
+
+.inner5 {
+  display: flex;
+}
+
+.inner5Left {
+  flex: 6;
+}
+
+.inner5 .content1 {
+  display: flex;
+  gap: 15px;
+}
+
+.inner5 .content2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner5 .content2 .content2bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.inner5 .content3 {
+  padding: 5px;
+  margin-right: 8px;
+  background-color: rgb(224, 224, 224);
+}
+
+.inner5 .content3 h5 {
+  margin: 5px 0 5px 0;
+}
+
+.inner5 .content3 p {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.inner5 .content3 span {
+  color: red;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.inner5Right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+  border: 2px solid rgb(196, 192, 192);
 }
 
 .inner6 {
   display: flex;
   justify-content: space-between;
+}
+
+.inner6Right p {
+  font-size: 12px;
+}
+
+.inner7 {
+  padding: 10px;
+  border: 2px solid rgb(196, 192, 192);
+}
+
+.inner7 li {
+  margin-left: 20px;
+  font-size: 12px;
 }

@@ -6,55 +6,57 @@ function MyHotel() {
   return (
     <div className={styles.main}>
       <div className={styles.inner1}>
-        <div>
+        <div className={styles.inner1Left}>
           <Image
             className={styles.logo}
-            src="../../../public/logo.svg"
+            src="/logo.svg"
             alt="logo"
-            width={300}
-            height={50}
+            width={200}
+            height={40}
           />
         </div>
         <div className={styles.inner1Right}>
           <h2>Booking Confirmation</h2>
           <h4>
             Please present either an electronic or paper copy of your booking
-            confiemation upon check-in.
+            confirmation upon check-in.
           </h4>
         </div>
       </div>
+      <hr />
+      <br />
       <div className={styles.inner2}>
         <div className={styles.inner2Left}>
           <table className={styles.bankInfoTable}>
             <tbody>
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Booking ID</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>3333</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Booking ID</th>
+                <th>:</th>
+                <th>3333</th>
               </tr>
 
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Booking Referenece No</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>1111</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Booking Referenece No</th>
+                <th>:</th>
+                <th>1111</th>
               </tr>
 
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Client</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>Mr. ABC</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Client</th>
+                <th>:</th>
+                <th>Mr. ABC</th>
               </tr>
 
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Booked Hotel</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>XYZ Hotel & Resort</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Booked Hotel</th>
+                <th>:</th>
+                <th>XYZ Hotel & Resort</th>
               </tr>
 
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Address</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>Kuta, Thailand</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Address</th>
+                <th>:</th>
+                <th>Kuta, Thailand</th>
               </tr>
             </tbody>
           </table>
@@ -62,34 +64,39 @@ function MyHotel() {
         <div className={styles.inner2Right}>
           <table className={styles.bankInfoTable}>
             <tbody>
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Booking ID</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>3333</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Number of Rooms</th>
+                <th>:</th>
+                <th>1</th>
               </tr>
 
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Booking Referenece No</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>1111</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Number of Extra Beds</th>
+                <th>:</th>
+                <th>0</th>
               </tr>
 
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Client</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>Mr. ABC</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Number of Adults</th>
+                <th>:</th>
+                <th>2</th>
               </tr>
 
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Booked Hotel</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>XYZ Hotel & Resort</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Number of Children</th>
+                <th>:</th>
+                <th>0</th>
               </tr>
 
-              <tr className={styles.bankInfoTable}>
-                <th className={styles.bankInfoTable1}>Address</th>
-                <th className={styles.bankInfoTable2}>:</th>
-                <th className={styles.bankInfoTable}>Kuta, Thailand</th>
+              <tr className={styles.bankInfoTable1}>
+                <th>Room Type</th>
+                <th>:</th>
+                <th>Queen Studio</th>
+              </tr>
+              <tr className={styles.bankInfoTable1}>
+                <th>Promotion</th>
+                <th>:</th>
+                <th>N/A</th>
               </tr>
             </tbody>
           </table>
@@ -98,6 +105,7 @@ function MyHotel() {
           </p>
         </div>
       </div>
+      <br />
       <div className={styles.inner3}>
         <p>
           Cancellation Policy: This booking is Non-Refundable and cannot be
@@ -111,8 +119,34 @@ function MyHotel() {
       </div>
       <br />
       <div className={styles.inner5}>
-        <div className={styles.inner5Left}></div>
-        <div className={styles.inner5Right}></div>
+        <div className={styles.inner5Left}>
+          <div className={styles.content1}>
+            <h5>Check-in: April 25, 2024</h5>
+            <h5>Check-out: April 28, 2024</h5>
+          </div>
+          <div className={styles.content2}>
+            <h5>Payment Details:</h5>
+            <div className={styles.content2bottom}>
+              <h5>Payment Method: VISA</h5>
+              <h5>Card No: xxxx-xxxx-xxxx-7890</h5>
+              <h5>EXP: 1/2026</h5>
+            </div>
+          </div>
+          <div className={styles.content3}>
+            <h5>Booked And Payable By:</h5>
+            <div>
+              <p>Travel Buddy</p>
+              <p>Niketon, Gulshan 1</p>
+              <p>
+                <span>Note to property: </span> Reservation was made under
+                Travel Buddy booking ID: 111111
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.inner5Right}>
+          <h5>Authorized Stamp & Signature</h5>
+        </div>
       </div>
       <br />
       <div className={styles.inner6}>
