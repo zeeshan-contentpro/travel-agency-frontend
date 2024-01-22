@@ -1,12 +1,25 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { useSession } from "next-auth/react";
 
 function MyHotel() {
+  const [hotel, setHotel] = useState(null);
   const pdfRef = useRef();
+
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    // Retrieve data from localStorage
+    const dataFromLocalStorage = localStorage.getItem("hotelInfo");
+    if (dataFromLocalStorage) {
+      const parsedData = JSON.parse(dataFromLocalStorage);
+      setHotel(parsedData);
+    }
+  }, []);
 
   const downloadPDF = () => {
     const input = pdfRef.current;
@@ -19,7 +32,7 @@ function MyHotel() {
       const imgHeight = canvas.height;
       const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
       const imgX = (pdfWidth - imgWidth * ratio) / 2;
-      const imgY = 30;
+      const imgY = 18;
       pdf.addImage(
         imgData,
         "PNG",
@@ -28,8 +41,14 @@ function MyHotel() {
         imgWidth * ratio,
         imgHeight * ratio
       );
-      pdf.save("bokking.pdf");
+      pdf.save("booking.pdf");
     });
+  };
+
+  let uniqueId = () => {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
   };
 
   return (
@@ -62,31 +81,32 @@ function MyHotel() {
                 <tr className={styles.bankInfoTable1}>
                   <th>Booking ID</th>
                   <th>:</th>
-                  <th>3333</th>
+                  <th>{uniqueId() + uniqueId()}</th>
                 </tr>
 
                 <tr className={styles.bankInfoTable1}>
                   <th>Booking Referenece No</th>
                   <th>:</th>
-                  <th>1111</th>
+                  <th>{uniqueId()}</th>
                 </tr>
 
                 <tr className={styles.bankInfoTable1}>
                   <th>Client</th>
                   <th>:</th>
-                  <th>Mr. ABC</th>
+                  <th>{session?.user.name}</th>
                 </tr>
 
                 <tr className={styles.bankInfoTable1}>
                   <th>Booked Hotel</th>
                   <th>:</th>
-                  <th>XYZ Hotel & Resort</th>
+                  <th>{hotel ? hotel.hotelName : "N/A"}</th>
+                  {/* <th>Abc</th> */}
                 </tr>
 
                 <tr className={styles.bankInfoTable1}>
                   <th>Address</th>
                   <th>:</th>
-                  <th>Kuta, Thailand</th>
+                  <th>{hotel ? hotel.location : "N/A"}</th>
                 </tr>
               </tbody>
             </table>
@@ -144,9 +164,9 @@ function MyHotel() {
           </p>
         </div>
         <br />
-        <div className={styles.inner4}>
+        {/* <div className={styles.inner4}>
           <p>Benefits Included: -</p>
-        </div>
+        </div> */}
         <br />
         <div className={styles.inner5}>
           <div className={styles.inner5Left}>
@@ -167,10 +187,10 @@ function MyHotel() {
               <div>
                 <p>Travel Buddy</p>
                 <p>Niketon, Gulshan 1</p>
-                <p>
+                {/* <p>
                   <span>Note to property: </span> Reservation was made under
                   Travel Buddy booking ID: 111111
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -207,7 +227,9 @@ function MyHotel() {
           </ul>
         </div>
       </div>
-      <button onClick={downloadPDF}>Download PDF</button>
+      <button onClick={downloadPDF} className={styles.btn}>
+        Download PDF
+      </button>
     </>
   );
 }

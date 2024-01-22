@@ -3,19 +3,17 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import styles from "./page.module.css";
-// import HotelInfo from "./hotelInfo";
-// import FlightInfo from "./flightInfo";
 import BookedHotel from "./bookedHotel";
 import BookedFlight from "./bookedFlight";
+import styles from "./page.module.css";
 
 const Dashboard = () => {
   const { data: session } = useSession();
   const [hotelData, setHotelData] = useState(null);
   const [flightData, setFlightData] = useState(null);
-  const [showHotelData, setShowHotelData] = useState(false);
+  const [showHotelData, setShowHotelData] = useState(true);
   const [showFlightData, setShowFlightData] = useState(false);
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButton, setActiveButton] = useState("package");
   const router = useRouter();
 
   useEffect(() => {
