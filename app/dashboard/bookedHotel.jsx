@@ -6,7 +6,7 @@ import styles from "./bookedHotel.module.css";
 export default function BookedHotel({ hotelData }) {
   const router = useRouter();
 
-  const onHandleClick = () => router.push(`/dashboard/my-hotel`);
+  const onHandleClick = () => router.push(`/dashboard/booking/my-hotel`);
 
   function onCancelClick() {
     if (confirm("You are cancelling the booking")) {

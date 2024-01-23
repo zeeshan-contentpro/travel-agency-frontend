@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { airlinesImagesLinks } from "@/data/flight";
 import styles from "./bookedFlight.module.css";
 
 export default function BookedFlight({ flight }) {
-  const handleClick = () => {};
+  const router = useRouter();
+  const handleClick = () => router.push(`/dashboard/booking/my-flight`);
 
   function onCancelClick() {
     if (confirm("You are cancelling the booking")) {
